@@ -1,0 +1,25 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "Anderson and Wilfredo Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragonpipe/aWeb4Devs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dragonpipe/aWeb4Devs/issues"
+  },
+  "homepage": "https://github.com/dragonpipe/aWeb4Devs#readme",
+  "dependencies": {
+    "next": "^9.5.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
