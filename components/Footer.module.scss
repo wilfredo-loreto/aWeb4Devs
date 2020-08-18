@@ -7,28 +7,64 @@
   width: 100%;
   min-height: 60vh;
   background-color: $white;
+  .titles {
+    text-align: center;
+    font-family: "CenturyBold";
+    color: $black;
+    font-size: 27px;
+  }
+  /* 
+  * the maincontainer has 3 containers:
+  * logo, icons and a small text 
+  * links
+  * contact form
+  */ 
   .colcontainer {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     margin-top: 1%;
     width: 28%;
+
+    // Styling 1st container (Logo, icons and a small text)
+    .logo {
+      width: 45%;
+      min-width: 200px;
+    }
+    .informativetext {
+      font-size: 24px;
+      font-family: "CenturyBold";
+      color: $black;
+      width: 120%;
+    }
+    a {
+      .whatsapp,
+      .email {
+        display: flex;
+        flex-flow: row nowrap;
+        cursor: pointer;
+        align-items: center;
+        justify-content: flex-start;
+        width: 120%;
+        .footericon {
+          color: $black;
+          margin-right: 4%;
+        }
+        span {
+          color: $black;
+          font-size: 26px;
+          font-family: "CenturyBold";
+          font-weight: bold;
+        }
+      }
+    }
   }
+
   .rowcontainer {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
   }
-}
-
-.footericon {
-  color: $black;
-  margin-right: 4%;
-}
-
-.logo {
-  width: 45%;
-  min-width: 200px;
 }
 
 .linklist {
@@ -41,19 +77,7 @@
   height: 85%;
 }
 
-.titles {
-  text-align: center;
-  font-family: "CenturyBold";
-  color: $black;
-  font-size: 27px;
-}
-
-.informativetext {
-  font-size: 24px;
-  font-family: "CenturyBold";
-  color: $black;
-  width: 120%;
-}
+// Styling 2nd container (Links)
 
 li {
   span {
@@ -62,26 +86,12 @@ li {
     margin-left: -3%;
   }
 }
-.whatsapp,
-.email {
-  display: flex;
-  flex-flow: row nowrap;
-  cursor: pointer;
-  align-items: center;
-  justify-content: flex-start;
-  width: 120%;
-
-  span {
-    color: $black;
-    font-size: 26px;
-    font-family: "CenturyBold";
-    font-weight: bold;
-  }
-}
 
 .break {
   display: none;
 }
+
+// Styling 3rd container (contact form), advice and send button with flexbox
 
 form {
   width: 100%;
@@ -158,89 +168,102 @@ form {
   }
 }
 
+
+// Ended the styling from Desktop  
+
+// Creating breakpoints for mobile other devices.
+
 $breakpoint-mobile: 576px;
 $breakpoint-form-advice: 1012px;
 $breakpoint-aweb4devs-email-text: 1100px;
-$breakpoint-hidden-email-number-texts: 400px;
-$breakpoint-change-font-size:826px;
+$breakpoint-hidden-email-number-texts: 229px;
+$breakpoint-change-font-size: 826px;
+
+
+// Main breakpoint for mobile. 
 
 @media (max-width: $breakpoint-mobile) {
+
+// hidding the contact form in mobile devices
+  .maincontainer div:nth-child(3) {
+    display: none;
+  }
+  .maincontainer div:nth-child(2) {
+    margin-top: 5%;
+  }
+
+// Styling the maincontainer (1 column in mobile)
   .maincontainer {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    height: 170vh;
-  .informativetext{
-      text-align: center;
-  }
-    .colcontainer{
-    width: 70%;
-    height: 30%;
-    align-items: center;
-    
-    }
-  }
-  .logo{
-      min-width: 100px;
-  }
-  .whatsapp,.email{
-      display: flex;
-      flex-flow: column;
+    height: 100vh;
+  
+    .colcontainer {
+      width: 70%;
+      height: 100%;
       align-items: center;
-      margin-right: 15% 0px;
-      
-  }
-  .break{
-      display: none !important;
-  }
-  .linklist{
-      padding-left: 0;
-  }
-  form {
-    .emailfield{
-        height: 50px;
+// Styling 1st container (logo and icons)
+      .informativetext {
+        text-align: center;
+      }
     }
-    .rowcontainer {
-      margin-top: 15px;  
-      display: flex;
-      flex-flow: column-reverse nowrap;
+  }
+  .logo {
+    min-width: 100px;
+  }
+  .whatsapp,
+  .email {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-right: 15% 0px;
+    img {
+      color: $black;
     }
+    span {
+      display: none;
+    }
+  }
+
+  .break {
+    display: none !important;
   }
 }
 
-@media screen and (max-width:$breakpoint-aweb4devs-email-text){
+@media screen and (max-width: $breakpoint-aweb4devs-email-text) {
   .break {
     display: block;
   }
 }
 
-@media screen and (max-width:$breakpoint-hidden-email-number-texts){
-    .whatsapp , .email{
-        span{
-            display: none;
-        }
-    }
+@media screen and (max-width: $breakpoint-hidden-email-number-texts) {
+  .linklist {
+    margin-left: -4vh;
   }
-
-
+}
 
 @media (max-width: $breakpoint-change-font-size) {
-  .linklist {
-    padding-left: 15%;
-    span {
-      font-size: 20px;
+  .maincontainer {
+    .colcontainer {
+      .linklist {
+        padding-left: 15%;
+        span {
+          font-size: 20px;
+        }
+      }
+      .email,
+      .whatsapp {
+        span {
+          font-size: 20px !important;
+        }
+      }
     }
   }
-  
-  .whatsapp,
-  .email {
-    span {
-      font-size: 20px;
-    }
-  }
+
   .informativetext {
-    font-size: 20px;
+    font-size: 20px !important;
   }
   input,
   textarea {

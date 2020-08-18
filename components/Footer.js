@@ -3,6 +3,7 @@ import styles from "./Footer.module.scss";
 export default function Footer() {
   return (
     <div className={styles.maincontainer}>
+      {/* First container: logo, icons and a small text */}
       <div className={styles.colcontainer}>
         <img className={styles.logo} src="/img/logo.png" />
         <h2 className={styles.informativetext}>
@@ -23,7 +24,8 @@ export default function Footer() {
           </div>
         </a>
       </div>
-      <div className={[styles.colcontainer, styles.cont2].join(" ")}>
+      {/* Second container: links */}
+      <div className={styles.colcontainer}>
         <h5 className={styles.titles}>Links</h5>
         <ul className={styles.linklist}>
           <li>
@@ -65,7 +67,8 @@ export default function Footer() {
         </ul>
       </div>
 
-      <div className={[styles.colcontainer].join(" ")}>
+      {/* Third container: contact form */}
+      <div className={styles.colcontainer}>
         <form action="">
           <h5 className={styles.titles}>Contact us</h5>
           <div className={styles.fieldscontainer}>
