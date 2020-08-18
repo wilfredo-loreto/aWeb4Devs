@@ -1,0 +1,28 @@
+/* Fonts */
+@font-face {
+  font-family: "Century";
+  src: url("/fonts/CenturyGothic.ttf");
+}
+
+@font-face {
+  font-family: "CenturyBold";
+  src: url("/fonts/CenturyGothicBold.ttf");
+}
+/* Colors */
+$main-color: #d11149ff;
+$background-color: #f9f9f9;
+
+/* Media Query */
+$tablet: "(max-width: 768px) and (min-width: 577px)";
+$phone: "(max-width: 700px)";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Century";
+  background: $background-color;
+}
+
+a {
+  text-decoration: none;
+}

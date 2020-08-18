@@ -4,7 +4,7 @@ function Layout({ children }) {
   return (
     <div>
       <Head>
-        <title>aWeb4Devs</title>
+        <title>AWeb4Devs</title>
       </Head>
       <Header />
       <div>{children}</div>
