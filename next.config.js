@@ -1,4 +1,8 @@
 const withSass = require('@zeit/next-sass')
-module.exports = withSass({
-    cssModules: true
-})
+const withFonts = require('nextjs-fonts')
+module.exports = withSass(withFonts({
+  webpack(config, options) {
+   return config
+  },
+  cssModules: true
+}))
