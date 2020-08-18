@@ -7,7 +7,7 @@
   justify-content: space-around;
   width: 100%;
   min-height: 60vh;
-  background-color: $white;
+  background-color: $background-color;
   .titles {
     text-align: center;
     font-family: "Century";
@@ -62,7 +62,7 @@
         }
         &:hover{
           span{
-            color:$crimson;
+            color:$main-color;
           }
         }
       }
@@ -109,7 +109,7 @@ li {
       transform: translateX(15%);
     }
     span{
-      color: $crimson;
+      color: $main-color;
     }
   }
 }
@@ -126,7 +126,7 @@ form {
   input,
   textarea {
     resize: none;
-    border: solid 2px $crimson;
+    border: solid 2px $main-color;
     border-radius: 30px;
     padding-left: 5%;
     padding-right: 5%;
@@ -172,7 +172,7 @@ form {
       p {
         font-size: 10px;
         span {
-          color: $crimson;
+          color: $main-color;
         }
       }
     }
@@ -180,7 +180,7 @@ form {
     button {
       cursor: pointer;
       border: none;
-      color: white;
+      color: $background-color;
       font-family: "Century";
       font-weight: 600;
       background-color: #d11149;
@@ -192,9 +192,9 @@ form {
       letter-spacing: 1px;
       transition: 400ms;
       &:hover{
-        color: $crimson;
-        background-color: $white;
-        border: solid 2px $crimson;
+        color: $main-color;
+        background-color: $background-color;
+        border: solid 2px $main-color;
       }
     }
   }
@@ -214,7 +214,7 @@ $breakpoint-change-font-size: 826px;
 
 // Main breakpoint for mobile. 
 
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: $breakpoint-mobile) {
 
 // hidding the contact form in mobile devices
   .maincontainer div:nth-child(3) {
@@ -243,7 +243,7 @@ $breakpoint-change-font-size: 826px;
     }
   }
   .logo {
-    min-width: 100px;
+    min-width: 120px !important;
   }
   .whatsapp,
   .email {
@@ -276,7 +276,7 @@ $breakpoint-change-font-size: 826px;
   }
 }
 
-@media (max-width: $breakpoint-change-font-size) {
+@media screen and (max-width: $breakpoint-change-font-size) {
   .maincontainer {
     .colcontainer {
       .linklist {
@@ -303,7 +303,7 @@ $breakpoint-change-font-size: 826px;
   }
 }
 
-@media (max-width: $breakpoint-form-advice) {
+@media screen and (max-width: $breakpoint-form-advice) {
   form {
     .rowcontainer {
       display: flex !important;
