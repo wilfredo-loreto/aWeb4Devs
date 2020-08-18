@@ -1,6 +1,7 @@
 @import "./../styles/global.scss";
 
 .maincontainer {
+  user-select: none;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -9,7 +10,7 @@
   background-color: $white;
   .titles {
     text-align: center;
-    font-family: "CenturyBold";
+    font-family: "Century";
     color: $black;
     font-size: 27px;
   }
@@ -33,7 +34,7 @@
     }
     .informativetext {
       font-size: 24px;
-      font-family: "CenturyBold";
+      font-family: "Century";
       color: $black;
       width: 120%;
     }
@@ -46,26 +47,38 @@
         align-items: center;
         justify-content: flex-start;
         width: 120%;
-        .footericon {
-          color: $black;
+        
+        .footericon { 
           margin-right: 4%;
+          transition: 400ms;
+          filter: invert(15%) sepia(100%) saturate(3586%) hue-rotate(332deg) brightness(86%) contrast(98%);
         }
         span {
           color: $black;
           font-size: 26px;
-          font-family: "CenturyBold";
+          font-family: "Century";
           font-weight: bold;
+          transition: 400ms;
+        }
+        &:hover{
+          span{
+            color:$crimson;
+          }
         }
       }
     }
   }
-
+  
   .rowcontainer {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
   }
 }
+.break {
+  display: none;
+}
+// Styling 2nd container (Links)
 
 .linklist {
   list-style-type: none;
@@ -73,23 +86,34 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-
+  
   height: 85%;
 }
 
-// Styling 2nd container (Links)
 
 li {
+  cursor: pointer;
   span {
-    font-family: "CenturyBold";
+    transition: 400ms;
+    font-family: "Century";
     font-size: 24px;
+    font-weight: 800;
     margin-left: -3%;
+  }
+  img{
+    transition: 400ms;
+
+  }
+  &:hover{
+    img{
+      transform: translateX(15%);
+    }
+    span{
+      color: $crimson;
+    }
   }
 }
 
-.break {
-  display: none;
-}
 
 // Styling 3rd container (contact form), advice and send button with flexbox
 
@@ -101,6 +125,7 @@ form {
   justify-content: space-between;
   input,
   textarea {
+    resize: none;
     border: solid 2px $crimson;
     border-radius: 30px;
     padding-left: 5%;
@@ -153,6 +178,7 @@ form {
     }
 
     button {
+      cursor: pointer;
       border: none;
       color: white;
       font-family: "Century";
@@ -164,6 +190,12 @@ form {
       min-height: 30px;
       line-height: 25px;
       letter-spacing: 1px;
+      transition: 400ms;
+      &:hover{
+        color: $crimson;
+        background-color: $white;
+        border: solid 2px $crimson;
+      }
     }
   }
 }
