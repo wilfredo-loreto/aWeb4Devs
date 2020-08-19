@@ -1,0 +1,31 @@
+@mixin test(){
+    border: solid 5px black;
+}
+
+@font-face {
+    font-family:'Century';
+    src: url('/fonts/Century.ttf');
+}
+@font-face {
+    font-family:'CenturyBold';
+    src: url('/fonts/CenturyBold.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Century'
+}
+
+a{
+    text-decoration: none;
+}
+
+$main-color: #D11149;
+$background-color: #F9F9F9;
+$black: #2E2F2F;
+
+
+
+
+
