@@ -1,10 +1,12 @@
-
+import News from "../components/News";
 import Layout from "../components/Layout";
 
 function HomePage() {
   return (
     <Layout>
-      <div></div>
+      <div>
+        <News />
+      </div>
     </Layout>
   );
 }
