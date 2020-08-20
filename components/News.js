@@ -11,8 +11,8 @@ export default function Footer() {
         <div className={styles.container50width}>
           <div className={styles.bigimage}>
             <div className={styles.hidden}>
-              <h3>ReactJs vs AngularJs</h3>
-              <span>
+              <h3 className={styles.bigarticletitle}>ReactJs vs AngularJs</h3>
+              <span className={styles.summary}>
                 lorem ipsum irtugus masxum erg contors, martusus elim pague...
               </span>
             </div>

@@ -1,28 +1,26 @@
 @import "./global.scss";
 
-section div {
-  @include test(black);
-}
-
 .maincontainer {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 88vh;
-  width: 100%;
+  width: 94%;
+  margin: auto;
   background-color: $background-color;
+  margin-top: 12vh;
   .title {
     font-size: 36px;
     text-align: center;
     color: $black;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    padding: 5% 0;
+    padding: 3% 0 1%;
   }
   .rowcontainer {
     width: 100%;
     height: 100%;
-    @include test(green);
+
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -30,7 +28,7 @@ section div {
     .colcontainer {
       display: flex;
       flex-flow: column nowrap;
-      @include test(red);
+
       width: 40%;
       align-items: center;
       justify-content: space-around;
@@ -40,39 +38,112 @@ section div {
         flex-flow: column nowrap;
         justify-content: flex-end;
         align-items: center;
-        
+        cursor: pointer;
         border-radius: 10px;
         width: 72%;
         height: 42%;
-        filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25)) drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
-        background: linear-gradient(180deg, rgba(68, 68, 68, 0.56) 99.98%, rgba(68, 68, 68, 0.5) 99.99%, rgba(255, 255, 255, 0) 100%), url("/img/example.png");
+        transition: 400ms;
+        filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
+          drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
+        background: linear-gradient(
+            180deg,
+            rgba(68, 68, 68, 0.56) 99.98%,
+            rgba(68, 68, 68, 0.5) 99.99%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          url("/img/example.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
 
-        .articletitle{
-            text-align: center;
-            background: none;
-            color: $background-color;
-            font-weight: 900;
+        &:hover{
+            transform: scale(1.1);
         }
-        .morebutton{
-            width: 38%;
-            margin: 6% 0;
-            background-color: $main-color;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            height: 10%;
+        .articletitle {
+          text-align: center;
+          background: none;
+          color: $background-color;
+          font-weight: 900;
+        }
+        .morebutton {
+          max-width: 38%;
+          min-width: 70px;
+          margin: 6% 0;
+          background-color: $main-color;
+          color: white;
+          border: none;
+          border-radius: 30px;
+          height: 10%;
+          &:hover {
+            cursor: pointer;
+            color: $main-color;
+            background-color: $background-color;
+            border: solid 2px $main-color;
+          }
         }
       }
     }
     .container50width {
       width: 100%;
-      @include test(blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .bigimage {
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        width: 92.4%;
+        height: 92.4%;
+        filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
+          drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
+        background-image: url("/img/example.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        overflow: hidden;
+        &:hover {
+          background: linear-gradient(
+              180deg,
+              rgba(68, 68, 68, 0.56) 99.98%,
+              rgba(68, 68, 68, 0.5) 99.99%,
+              rgba(255, 255, 255, 0) 100%
+            ),
+            url("/img/example.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          .hidden {
+            transform: translateY(0%);
+            visibility: visible;
+          }
+        }
+        .hidden {
+          padding: 3.5%;
+          justify-self: center;
+          width: 100%;
+          background-color: rgba(46, 47, 47, 0.7);
+          transform: translateY(105%);
+          visibility: hidden;
+          transition: 400ms;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+          .bigarticletitle {
+            background: none;
+            color: $background-color;
+            font-size: 36px;
+            font-weight: 100;
+            margin-bottom: 2%;
+            margin-left: -0.5%;
+          }
+          .summary {
+            background: none;
+            color: $background-color;
+          }
+        }
+      }
     }
-  }
-  .hidden {
-    display: none;
   }
 }
