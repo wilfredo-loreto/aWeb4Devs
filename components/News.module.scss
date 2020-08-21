@@ -6,10 +6,17 @@
   align-items: center;
   justify-content: space-around;
   height: 88vh;
-  width: 94%;
+  width: 88%;
   margin: auto;
   background-color: $background-color;
   margin-top: 12vh;
+  .subcontainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    @include test(black);
+  }
   .title {
     font-size: 36px;
     text-align: center;
@@ -25,69 +32,14 @@
     flex-flow: row nowrap;
     justify-content: space-between;
 
-    .colcontainer {
-      display: flex;
-      flex-flow: column nowrap;
-
-      width: 40%;
-      align-items: center;
-      justify-content: space-around;
-      height: 100%;
-      .smallcard {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 10px;
-        width: 72%;
-        height: 42%;
-        transition: 400ms;
-        filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
-          drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
-        background: linear-gradient(
-            180deg,
-            rgba(68, 68, 68, 0.56) 99.98%,
-            rgba(68, 68, 68, 0.5) 99.99%,
-            rgba(255, 255, 255, 0) 100%
-          ),
-          url("/img/example.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        &:hover{
-            transform: scale(1.1);
-        }
-        .articletitle {
-          text-align: center;
-          background: none;
-          color: $background-color;
-          font-weight: 900;
-        }
-        .morebutton {
-          max-width: 38%;
-          min-width: 70px;
-          margin: 6% 0;
-          background-color: $main-color;
-          color: white;
-          border: none;
-          border-radius: 30px;
-          height: 10%;
-          &:hover {
-            cursor: pointer;
-            color: $main-color;
-            background-color: $background-color;
-            border: solid 2px $main-color;
-          }
-        }
-      }
-    }
     .container50width {
       width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 1.4%;
+      margin-left: 1.4%;
       .bigimage {
         cursor: pointer;
         display: flex;
@@ -97,12 +49,13 @@
         height: 92.4%;
         filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
           drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
-        background-image: url("/img/example.png");
+        background: url("/img/example.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 10px;
         overflow: hidden;
+        transition: 400ms;
         &:hover {
           background: linear-gradient(
               180deg,
@@ -141,6 +94,141 @@
           .summary {
             background: none;
             color: $background-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.colcontainer {
+  display: flex;
+  flex-flow: column nowrap;
+
+  width: 40%;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  .smallcard {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 72%;
+    height: 43%;
+    transition: 400ms;
+    filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
+      drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
+    background: linear-gradient(
+        180deg,
+        rgba(68, 68, 68, 0.56) 99.98%,
+        rgba(68, 68, 68, 0.5) 99.99%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("/img/example.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    .articletitle {
+      text-align: center;
+      background: none;
+      color: $background-color;
+      font-weight: 900;
+    }
+    .morebutton {
+      max-width: 38%;
+      min-width: 70px;
+      margin: 6% 0;
+      background-color: $main-color;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      height: 10%;
+      transition: 200ms;
+      &:hover {
+        cursor: pointer;
+        color: $main-color;
+        background-color: $background-color;
+        border: solid 2px $main-color;
+      }
+    }
+  }
+}
+
+@media screen and #{$breakpoint-header} {
+  .maincontainer {
+    height: 180vh;
+    .title{
+      font-size:30px;
+    }
+    .rowcontainer {
+      display: flex;
+      flex-flow: column nowrap;
+      .container50width {
+        order: -1;
+        align-self: center;
+        width: 100%;
+        height: 160%;
+        .bigimage{
+          .hidden{
+            transform: translateY(0%);
+            visibility: visible;
+            background-color: rgba(46, 47, 47, 0.9);
+
+            .bigarticletitle{
+              font-size:28px;
+              margin-bottom: 0%;
+            }
+            .summary{
+              display: none;
+            }
+          }
+        } 
+      }
+      .colcontainer{
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        .smallcard{
+          width: 42%;
+          height: 90%;
+        }
+      }
+    }
+  }
+}
+@media screen and #{$breakpoint-mobile-small} {
+  .maincontainer {
+    
+   height: 300vh;
+   .title{
+     font-size: 26px;
+   }
+    .rowcontainer {
+      
+      .container50width {
+        order: -1;
+        align-self: center;
+        width: 100%;
+        height: 60%;
+        
+      }
+      .colcontainer{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        height: 100%;
+        .smallcard{
+          width: 92.5%;
+          height: 47%;
+          &:hover{
+            transform: none;
           }
         }
       }
