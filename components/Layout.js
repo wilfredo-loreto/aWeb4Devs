@@ -8,7 +8,7 @@ function Layout({ children }) {
         <title>AWeb4Devs</title>
       </Head>
       <Header />
-      <div>{children}</div>
+      <div> {children}</div>
       <Footer />
     </div>
   );
