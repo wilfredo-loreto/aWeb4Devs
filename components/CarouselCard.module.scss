@@ -21,7 +21,7 @@
     
 }
 
-@media only screen and #{$phone} { 
+@media only screen and #{$breakpoint-mobile} { 
 
     .carouselCard{
   
@@ -37,7 +37,7 @@
     }
 }
 
-@media only screen and #{$tablet} { 
+@media only screen and #{$breakpoint-tablet} { 
 
     .carouselCard{
       

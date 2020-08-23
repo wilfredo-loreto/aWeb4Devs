@@ -14,8 +14,10 @@ $background-color: #f9f9f9;
 $shadow-color: rgba(68, 68, 68, 0.15);
 
 /* Media Query */
-$tablet: "(max-width: 768px) and (min-width: 700px)";
-$phone: "(max-width: 700px)";
+$breakpoint-tablet: "(max-width: 768px) and (min-width: 700px)";
+$breakpoint-header: "(max-width: 700px)";
+$breakpoint-mobile: "(max-width: 578px)";
+$breakpoint-mobile-small:"(max-width:428px)";
 
 * {
   margin: 0;

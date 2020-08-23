@@ -126,7 +126,7 @@
 }
 
 /* Media querys */
-@media only screen and #{$phone} {
+@media only screen and #{$breakpoint-mobile} {
   .contentCarousel {
     padding-top: 8vh;
     height: 80vh;
@@ -198,7 +198,7 @@
   }
 }
 
-@media only screen and #{$tablet} {
+@media only screen and #{$breakpoint-tablet} {
   .contentCarousel {
     padding-top: 12vh;
     height: 67vh;

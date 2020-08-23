@@ -218,7 +218,7 @@
 
 /* Media Query */
 /* Phone Media query */
-@media only screen and #{$phone} {
+@media only screen and #{$breakpoint-header} {
   .header {
     justify-content: space-between;
     .logoLink {
@@ -314,7 +314,7 @@
   }
 }
 /* Tablet Media query */
-@media only screen and #{$tablet} {
+@media only screen and #{$breakpoint-tablet} {
   .nav {
     margin-top: 0;
     margin-bottom: 3px;
