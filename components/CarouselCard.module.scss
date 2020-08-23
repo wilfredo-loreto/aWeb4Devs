@@ -1,0 +1,53 @@
+@import "./global.scss";
+
+.globalContainer{
+
+    
+}
+
+.carouselCard{
+  
+    border-radius: 10px;
+    width: 100%;
+    height: 45vh;
+    max-height: 450px;
+
+    .image{
+        border-radius: 10px; 
+        width: 100%;
+        height: 45vh;
+        max-height: 450px;
+    }
+    
+}
+
+@media only screen and #{$phone} { 
+
+    .carouselCard{
+  
+        border-radius: 10px;
+        height: 20vh;
+     
+    
+        .image{
+            width: 100%;
+            height: 20vh;
+           
+        } 
+    }
+}
+
+@media only screen and #{$tablet} { 
+
+    .carouselCard{
+      
+        border-radius: 10px;
+        height: 35vh;
+
+        .image{
+       
+            width: 100%;
+            height: 35vh;     
+        }      
+    }
+}

@@ -1,0 +1,251 @@
+@import "./global.scss";
+
+/* Carousel main container */
+.contentCarousel {
+  padding-top: 10vh;
+  margin-top: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 78vh;
+  background-image: url("/images/carouselBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+
+  h2 {
+    background: none;
+    color: $background-color;
+    font-family: "Century";
+    font-size: 34px;
+    font-weight: 500;
+    text-shadow: 0px 1px 4px black;
+    text-align: center;
+  }
+
+  .arrows {
+    background: none;
+    cursor: pointer;
+    margin-top: 25vh;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: none;
+    width: 90%;
+  }
+
+  /*Carousel container  */
+  .carousel {
+    background: none;
+    width: 85%;
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+
+    .contentCardD {
+      position: absolute;
+      transition: 400ms;
+      transform: scale(0.8);
+      right: 15vw;
+      left: 65vw;
+      max-width: 20vw;
+      box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      &:hover{
+        box-shadow: 10px 14px 20px rgba(0, 0, 0, 0.25);
+        transform: scale(1);
+      }
+    }
+    .contentCardI {
+      position: absolute;
+      transition: 400ms;
+      transform: scale(0.8);
+      right: 65vw;
+      left: 15vw;
+      max-width: 20vw;
+      box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+
+      &:hover{
+        box-shadow: 10px 14px 20px rgba(0, 0, 0, 0.25);
+        transform: scale(1);
+      }
+    }
+
+    .mainCard {
+      position: absolute;
+      right: 40vw;
+      left: 40vw;
+      transition: 400ms;
+      max-width: 20vw;
+      box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+
+      &:hover{
+        box-shadow: 10px 14px 20px rgba(0, 0, 0, 0.25);
+        transform: scale(1.1);
+      }
+    }
+
+    .hideCardI {
+      transition: 400ms;
+      width: 0;
+      height: 0;
+      margin-right: 1000px;
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    .hideCardD {
+      transition: 400ms;
+      margin-left: 1000px;
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    .hideCard {
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-radius: 10px;
+    }
+  }
+
+  .movilAnimationI {
+    height: 0;
+  }
+  .movilAnimationD {
+    height: 0;
+  }
+}
+
+/* Media querys */
+@media only screen and #{$phone} {
+  .contentCarousel {
+    padding-top: 8vh;
+    height: 80vh;
+
+    h2 {
+      max-width: 80%;
+      text-align: center;
+    }
+  }
+  .contentCardD {
+    transition: 600ms;
+    transform: scale(0.8) !important;
+    top: 50vh;
+    right: 5vw !important;
+    left: 75vw !important;
+  }
+  .contentCardI {
+    transform: scale(0.8) !important;
+    transition: 600ms;
+    top: 50vh;
+    right: 75vw !important;
+    left: 5vw !important;
+  }
+  .mainCard {
+    top: 50vh;
+    right: 40vw !important;
+    left: 40vw !important;
+    max-height: 200px;
+    transition: 400ms;
+    transform: scale(2);
+    max-width: 20vw;
+    box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.5) !important;
+    
+    &:hover{
+        transform: scale(2.1) !important;
+      }
+  }
+
+  .arrows {
+    margin-top: 50vh !important;
+    width: 40px;
+    max-height: 42px;
+  }
+
+  .movilAnimationI {
+    height: 60vh !important;
+    width: 25vw;
+    position: absolute;
+    z-index: 20;
+    right: 80vw !important;
+    left: 0vw !important;
+    display: flex;
+    justify-content: center;
+    background: none;
+    margin-top: 3vh;
+  }
+
+  .movilAnimationD {
+    height: 60vh !important;
+    width: 25vw;
+    position: absolute;
+    z-index: 20;
+    right: 5vw !important;
+    left: 75vw !important;
+    display: flex;
+    justify-content: center;
+    background: none;
+    margin-top: 3vh;
+  }
+}
+
+@media only screen and #{$tablet} {
+  .contentCarousel {
+    padding-top: 12vh;
+    height: 67vh;
+  }
+}
+
+@media only screen and (min-height: 1024px) and (max-height: 1359px) {
+  .contentCarousel {
+    padding-top: 10vh;
+    height: 67vh;
+  }
+
+  .carousel {
+    margin-top: 6vh;
+  }
+}
+
+@media only screen and (min-height: 1360px) {
+  .contentCarousel {
+    padding-top: 6vh;
+    height: 50vh;
+
+    .carousel {
+      margin-top: 6vh;
+    }
+
+    .arrows {
+      margin-top: 18vh;
+    }
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .contentCarousel {
+    padding-top: 5vh;
+    height: 83vh;
+    .carousel {
+      margin-top: 6vh;
+    }
+
+    h2{
+      font-size: 24px;
+    }
+
+    .arrows {
+      margin-top: 12vh;
+    }
+  }
+}
+

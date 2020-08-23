@@ -1,10 +1,14 @@
-
 import Layout from "../components/Layout";
+import Carousel from "../components/Carousel"
 
 function HomePage() {
   return (
     <Layout>
-      <div></div>
+      <div>
+        <Carousel
+        subtitle = "Frontend Technologies"
+        />
+      </div>
     </Layout>
   );
 }
