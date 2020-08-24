@@ -7,7 +7,14 @@ function HomePage() {
       <div>
         <Carousel
         subtitle = "Frontend Technologies"
+        aux = {true} 
         />
+         <Carousel
+        subtitle = "Backend Technologies"
+        aux = {false} 
+        />
+     
+     
       </div>
     </Layout>
   );

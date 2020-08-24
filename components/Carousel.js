@@ -6,34 +6,42 @@ import CarouselCard from "./CarouselCard";
 export default class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { actualCard: 2, maxCards: 9 };
+    this.state = { actualCardF: 2, maxCardsF: 9, actualCardB: 2, maxCardsB: 9  };
   }
 
   //Animation left Carousel
   animationCarouselLeft(x, max) {
 
+    if(this.props.aux){
+
+      var card = "cardF";
+
+    }else{
+      var card = "cardB";
+    }
+
     //Cards are laaded
-    var actual = document.getElementById("card" + x);
+    var actual = document.getElementById(card + x);
 
     if (x == max) {
-      var siguiente = document.getElementById("card1");
+      var siguiente = document.getElementById(card + 1);
     } else {
-      var siguiente = document.getElementById("card" + (x + 1));
+      var siguiente = document.getElementById(card + (x + 1));
     }
 
     if (x == 1) {
-      var nueva = document.getElementById("card" + max);
-      var oculta = document.getElementById("card" + (max - 1));
+      var nueva = document.getElementById(card + max);
+      var oculta = document.getElementById(card + (max - 1));
 
       x = max;
     } else if (x == 2) {
-      var nueva = document.getElementById("card1");
-      var oculta = document.getElementById("card" + max);
+      var nueva = document.getElementById(card + 1);
+      var oculta = document.getElementById(card + max);
 
       x = 1;
     } else {
-      var nueva = document.getElementById("card" + (x - 1));
-      var oculta = document.getElementById("card" + (x - 2));
+      var nueva = document.getElementById(card + (x - 1));
+      var oculta = document.getElementById(card + (x - 2));
 
       x -= 1;
     }
@@ -52,43 +60,59 @@ export default class Carousel extends Component {
 
     this.componentDidMount();
 
-    return x;
+    if(this.props.aux){
+      this.state.actualCardF = x; 
+    
+    }else{
+      this.state.actualCardB = x; 
+     
+    }
+
   }
 
   
   //Animation right Carousel
   animationCarouselRight(x, max) {
-    var actual = document.getElementById("card" + x);
+
+    if(this.props.aux){
+
+      var card = "cardF";
+
+    }else{
+      var card = "cardB";
+    }
+
+    var actual = document.getElementById(card + x);
 
     if (x == max) {
-      var nueva = document.getElementById("card1");
+      var nueva = document.getElementById(card + 1);
     } else {
-      var nueva = document.getElementById("card" + (x + 1));
+      var nueva = document.getElementById(card + (x + 1));
     }
 
     if (x == 1) {
-      var siguiente = document.getElementById("card" + max);
-      var oculta = document.getElementById("card" + (x + 2));
+      var siguiente = document.getElementById(card + max);
+      var oculta = document.getElementById(card + (x + 2));
 
       x = 2;
     } else if (x == 2) {
-      var siguiente = document.getElementById("card1");
-      var oculta = document.getElementById("card4");
+      var siguiente = document.getElementById(card + 1);
+      var oculta = document.getElementById(card + 4);
 
       x = 3;
     } else if (x == max - 1) {
-      var siguiente = document.getElementById("card" + (x - 1));
-      var oculta = document.getElementById("card1");
+      var siguiente = document.getElementById(card + (x - 1));
+      var oculta = document.getElementById(card + 1);
 
       x += 1;
     } else if (x == max) {
-      var siguiente = document.getElementById("card" + (x - 1));
-      var oculta = document.getElementById("card2");
+      var siguiente = document.getElementById(card + (x - 1));
+      var oculta = document.getElementById(card + 2);
 
       x = 1;
     } else {
-      var siguiente = document.getElementById("card" + (x - 1));
-      var oculta = document.getElementById("card" + (x + 2));
+      var siguiente = document.getElementById(card + (x - 1));
+      var oculta = document.getElementById(card + (x + 2));
 
       x += 1;
     }
@@ -106,16 +130,24 @@ export default class Carousel extends Component {
 
     this.componentDidMount();
 
-    return x;
+    if(this.props.aux){
+      this.state.actualCardF = x; 
+    
+    }else{
+      this.state.actualCardB = x; 
+    
+    }
+
+
   }
 
   //Time animation of carousel 
   componentDidMount() {
     this.timerID = setInterval(
       () =>
-        (this.state.actualCard = this.animationCarouselRight(
-          this.state.actualCard,
-          this.state.maxCards
+        ( this.animationCarouselRight(
+          this.props.aux ? this.state.actualCardF : this.state.actualCardB,
+          this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
         )),
       5000
     );
@@ -132,9 +164,9 @@ export default class Carousel extends Component {
 
           {/* Left arrow and left div for carousel activation */}
           <div  className={styles.movilAnimationI}  onClick={() =>
-              (this.state.actualCard = this.animationCarouselLeft(
-                this.state.actualCard,
-                this.state.maxCards
+              ( this.animationCarouselLeft(
+                this.props.aux ? this.state.actualCardF : this.state.actualCardB,
+                this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
               ))
             }>
           <img
@@ -148,40 +180,40 @@ export default class Carousel extends Component {
           <div className={styles.carousel} id="carousel">
             
             {/* Carousel items/cards */}
-            <div id="card1" className={styles.contentCardI}>
+            <div id={this.props.aux ? "cardF1" : "cardB1"} className={styles.contentCardI}>
               <CarouselCard 
               image = "images/html1.jpg"
               />
             </div>
-            <div id="card2" className={styles.mainCard}>
+            <div id={this.props.aux ? "cardF2" : "cardB2"} className={styles.mainCard}>
               <CarouselCard 
               image = "images/css.jpg"/>
             </div>
-            <div id="card3" className={styles.contentCardD}>
+            <div id={this.props.aux ? "cardF3" : "cardB3"} className={styles.contentCardD}>
               <CarouselCard 
               image = "images/js.jpg"/>
             </div>
-            <div id="card4" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF4" : "cardB4"} className={styles.hideCard}>
               <CarouselCard 
               image = "images/html1.jpg"/>
             </div>
-            <div id="card5" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF5" : "cardB5"} className={styles.hideCard}>
               <CarouselCard
               image = "images/css.jpg" />
             </div>
-            <div id="card6" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF6" : "cardB6"} className={styles.hideCard}>
               <CarouselCard 
               image = "images/js.jpg"/>
             </div>
-            <div id="card7" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF7" : "cardB7"} className={styles.hideCard}>
               <CarouselCard 
               image = "images/html1.jpg"/>
             </div>
-            <div id="card8" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF8" : "cardB8"} className={styles.hideCard}>
               <CarouselCard 
               image = "images/css.jpg"/>
             </div>
-            <div id="card9" className={styles.hideCard}>
+            <div id={this.props.aux ? "cardF9" : "cardB9"} className={styles.hideCard}>
               <CarouselCard 
               image = "images/js.jpg"/>
             </div>
@@ -189,9 +221,9 @@ export default class Carousel extends Component {
           </div>
           {/* Right Arrow and right div for carousel activation */}
           <div  className={styles.movilAnimationD}  onClick={() =>
-              (this.state.actualCard = this.animationCarouselRight(
-                this.state.actualCard,
-                this.state.maxCards
+              (this.animationCarouselRight(
+                this.props.aux ? this.state.actualCardF : this.state.actualCardB,
+                this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
               ))
             }>
           <img
