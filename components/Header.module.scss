@@ -212,7 +212,7 @@
 
 /* Media Query */
 /* Phone Media query */
-@media only screen and #{$breakpoint-header} {
+@media only screen and #{$breakpoint-tablet} {
   .header {
     justify-content: space-between;
 

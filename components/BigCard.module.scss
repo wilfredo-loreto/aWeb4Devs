@@ -46,7 +46,7 @@
     .bigarticletitle {
       background: none;
       color: $background-color;
-      font-size: 36px;
+      @include fontSize(title);
       font-weight: 100;
       margin-bottom: 2%;
       margin-left: -0.5%;
@@ -54,11 +54,12 @@
     .summary {
       background: none;
       color: $background-color;
+      @include fontSize(text);
     }
   }
 }
 
-@media screen and #{$breakpoint-header} {
+@media screen and #{$breakpoint-tablet} {
   .bigimage {
     .hidden {
       transform: translateY(0%);
@@ -66,7 +67,6 @@
       background-color: rgba(46, 47, 47, 0.9);
 
       .bigarticletitle {
-        font-size: 28px;
         margin-bottom: 0%;
       }
       .summary {
