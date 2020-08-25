@@ -22,7 +22,7 @@ export default class Carousel extends Component {
 
     //Cards are laaded
     var actual = document.getElementById(card + x);
-
+  
     if (x == max) {
       var siguiente = document.getElementById(card + 1);
     } else {
@@ -54,20 +54,20 @@ export default class Carousel extends Component {
     oculta.classList.replace(styles.hideCardI, styles.contentCardI);
     actual.classList.replace(styles.mainCard, styles.contentCardD);
 
-    console.log(x);
 
     clearInterval(this.timerID);
 
-    this.componentDidMount();
+    this.auxFunction();
 
     if(this.props.aux){
-      this.state.actualCardF = x; 
-    
+     this.setState({actualCardF: x});
+     
+
     }else{
-      this.state.actualCardB = x; 
+      this.setState({actualCardB: x});
      
     }
-
+  
   }
 
   
@@ -81,9 +81,9 @@ export default class Carousel extends Component {
     }else{
       var card = "cardB";
     }
-
+   
     var actual = document.getElementById(card + x);
-
+  
     if (x == max) {
       var nueva = document.getElementById(card + 1);
     } else {
@@ -124,25 +124,40 @@ export default class Carousel extends Component {
     oculta.classList.replace(styles.hideCardD, styles.contentCardD);
     actual.classList.replace(styles.mainCard, styles.contentCardI);
 
-    console.log(x);
-
+  
     clearInterval(this.timerID);
 
-    this.componentDidMount();
+    this.auxFunction();
 
     if(this.props.aux){
-      this.state.actualCardF = x; 
-    
+      this.setState({actualCardF: x});
+      console.log(x);
+      console.log(this.state.actualCardF);
+      
+   
     }else{
-      this.state.actualCardB = x; 
+      this.setState({actualCardB: x});
     
     }
-
 
   }
 
   //Time animation of carousel 
   componentDidMount() {
+   
+
+    this.setState({actualCardF: 2});
+    this.setState({actualCardB: 2});
+   
+    this.auxFunction();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+
+  }
+
+  auxFunction(){
     this.timerID = setInterval(
       () =>
         ( this.animationCarouselRight(
@@ -154,6 +169,7 @@ export default class Carousel extends Component {
   }
 
   render() {
+  
     return (
       <div className={styles.contentCarousel}>
         {/* Subtitle */}

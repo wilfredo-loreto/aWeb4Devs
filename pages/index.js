@@ -11,6 +11,7 @@ function HomePage() {
         subtitle = "Frontend Technologies"
         aux = {true} 
         />
+        <News subtitle="Recent Articles of Web Development Technologies" order={0}/>
          <Carousel
         subtitle = "Backend Technologies"
         aux = {false} 

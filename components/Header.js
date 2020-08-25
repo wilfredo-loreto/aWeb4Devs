@@ -52,7 +52,7 @@ export default class Header extends Component {
             </a>
           </Link>
           <div className={styles.nav}>
-            <Link href="/">
+            <Link href="/articles">
               <a>
                 <div onClick={() => this.activeLink(1)} className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Articles</h3>
