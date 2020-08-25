@@ -16,9 +16,21 @@ $black:#2E2F2F;
 
 /* Media Query */
 $breakpoint-tablet: "(max-width: 768px) and (min-width: 700px)";
-$breakpoint-header: "(max-width: 700px)";
+$breakpoint-header: "(max-width: 768px)";
 $breakpoint-mobile: "(max-width: 578px)";
 $breakpoint-mobile-small:"(max-width:428px)";
+$breakpoint-high-height-devices:"(min-height:1081px)";
+
+/* Fonts Sizes */
+$M-text: 16px;
+$M-subtitle: 18px;
+$M-title: 20px;
+$T-text: 17px;
+$T-subtitle: 21px;
+$T-title: 24px;
+$D-text: 18px;
+$D-subtitle: 22px;
+$D-title: 36px;
 
 * {
   margin: 0;

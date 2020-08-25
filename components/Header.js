@@ -44,6 +44,7 @@ export default class Header extends Component {
     return (
       <div className={styles.mainContainer}>
       {/* Header: Main logo, nav, search bar, burguer icon menu */}
+        <div className={styles.auxDiv}></div>
         <div className={styles.header}>
           <Link href="/">
             <a className={styles.logoLink} >

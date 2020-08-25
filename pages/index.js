@@ -14,7 +14,6 @@ function HomePage() {
         aux = {false} 
         />
      
-     
       </div>
     </Layout>
   );
