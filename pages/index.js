@@ -9,11 +9,14 @@ function HomePage() {
         <News subtitle="Recent Articles of Web Development Technologies" order={0}/>
         <Carousel
         subtitle = "Frontend Technologies"
+        aux = {true} 
         />
         <News subtitle="Most Visited Articles" order={1}/>
-        <Carousel
+         <Carousel
         subtitle = "Backend Technologies"
+        aux = {false} 
         />
+     
       </div>
     </Layout>
   );
