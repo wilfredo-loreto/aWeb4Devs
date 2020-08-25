@@ -346,7 +346,11 @@
 @media only screen and #{$breakpoint-high-height-devices}{
 
   .header{
+    height: 10vh;
     padding-right: 20px;
+  }
+  .auxDiv{
+    height: 10vh;
   }
 
   .logo {

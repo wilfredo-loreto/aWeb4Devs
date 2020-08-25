@@ -8,6 +8,8 @@
   width: 100%;
   min-height: 60vh;
   background-color: $background-color;
+  margin-top: 5vh;
+  box-shadow: 0 -5px 10px -5px $black;
   .titles {
     text-align: center;
     font-family: "Century";
@@ -122,6 +124,7 @@ form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  overflow: hidden;
   input,
   textarea {
     resize: none;

@@ -32,6 +32,10 @@ $D-text: 18px;
 $D-subtitle: 22px;
 $D-title: 36px;
 
+@mixin test($color){
+  border: solid 1px $color;
+}
+
 * {
   margin: 0;
   padding: 0;

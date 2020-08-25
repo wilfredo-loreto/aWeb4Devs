@@ -1,0 +1,68 @@
+@import "./global.scss";
+
+.smallcard {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 72%;
+  height: 43%;
+  transition: 400ms;
+  filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
+    drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
+  background: linear-gradient(
+      180deg,
+      rgba(68, 68, 68, 0.56) 99.98%,
+      rgba(68, 68, 68, 0.5) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url("/img/example.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  .articletitle {
+    text-align: center;
+    background: none;
+    color: $background-color;
+    font-weight: 900;
+  }
+  .morebutton {
+    max-width: 38%;
+    min-width: 70px;
+    margin: 6% 0;
+    background-color: $main-color;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    height: 10%;
+    transition: 200ms;
+    &:hover {
+      cursor: pointer;
+      color: $main-color;
+      background-color: $background-color;
+      border: solid 2px $main-color;
+    }
+  }
+}
+
+@media screen and #{$breakpoint-header} {
+  .smallcard {
+    width: 42%;
+    height: 90%;
+  }
+}
+@media screen and #{$breakpoint-mobile-small} {
+  .smallcard {
+    width: 92.5%;
+    height: 47%;
+    &:hover {
+      transform: none;
+    }
+  }
+}

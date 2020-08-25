@@ -1,0 +1,78 @@
+@import "./global.scss";
+
+.bigimage {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 92.4%;
+  height: 92.4%;
+  filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
+    drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
+  background: url("/img/example.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 400ms;
+  &:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(68, 68, 68, 0.56) 99.98%,
+        rgba(68, 68, 68, 0.5) 99.99%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      url("/img/example.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .hidden {
+      transform: translateY(0%);
+      visibility: visible;
+    }
+  }
+  .hidden {
+    padding: 3.5%;
+    justify-self: center;
+    width: 100%;
+    background-color: rgba(46, 47, 47, 0.7);
+    transform: translateY(105%);
+    visibility: hidden;
+    transition: 400ms;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    .bigarticletitle {
+      background: none;
+      color: $background-color;
+      font-size: 36px;
+      font-weight: 100;
+      margin-bottom: 2%;
+      margin-left: -0.5%;
+    }
+    .summary {
+      background: none;
+      color: $background-color;
+    }
+  }
+}
+
+@media screen and #{$breakpoint-header} {
+  .bigimage {
+    .hidden {
+      transform: translateY(0%);
+      visibility: visible;
+      background-color: rgba(46, 47, 47, 0.9);
+
+      .bigarticletitle {
+        font-size: 28px;
+        margin-bottom: 0%;
+      }
+      .summary {
+        display: none;
+      }
+    }
+  }
+}
+
