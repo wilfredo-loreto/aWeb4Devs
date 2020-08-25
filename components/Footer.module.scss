@@ -6,15 +6,15 @@
   flex-flow: row nowrap;
   justify-content: space-around;
   width: 100%;
-  min-height: 60vh;
+  height: 50vh;
   background-color: $background-color;
-  margin-top: 5vh;
   box-shadow: 0 -5px 10px -5px $black;
+  overflow: hidden;
   .titles {
     text-align: center;
     font-family: "Century";
     color: $black;
-    font-size: 27px;
+    @include fontSize(title)
   }
   /* 
   * the maincontainer has 3 containers:
@@ -26,19 +26,21 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
-    margin-top: 1%;
+    margin-top: 2%;
     width: 28%;
 
     // Styling 1st container (Logo, icons and a small text)
     .logo {
       width: 45%;
       min-width: 200px;
+      
     }
     .informativetext {
-      font-size: 24px;
+      @include fontSize(text);
       font-family: "Century";
       color: $black;
       width: 120%;
+
     }
     a {
       .whatsapp,
@@ -54,8 +56,9 @@
           margin-right: 4%;
          }
         span {
+          z-index: 10;
           color: $black;
-          font-size: 26px;
+          @include fontSize(text);
           font-family: "Century";
           font-weight: bold;
           transition: 400ms;
@@ -86,7 +89,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  
   height: 85%;
 }
 
@@ -96,8 +98,9 @@ li {
   span {
     transition: 400ms;
     font-family: "Century";
-    font-size: 24px;
-    font-weight: 800;
+    @include fontSize(subtitle);
+    color: $black;
+    font-weight: 900;
     margin-left: -3%;
     z-index: 10;
   }
@@ -124,18 +127,17 @@ form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  overflow: hidden;
   input,
   textarea {
     resize: none;
-    border: solid 2px $main-color;
+    border: solid 3px $main-color;
     border-radius: 30px;
     padding-left: 5%;
     padding-right: 5%;
     overflow: hidden;
     width: 80%;
     margin-top: 5%;
-    font-size: 20px;
+    @include fontSize(text);
 
     &:focus {
       outline: none;
@@ -143,6 +145,7 @@ form {
     &::placeholder {
       font-weight: normal;
       color: #a39999;
+      font-size: 18px;
     }
   }
   .fieldscontainer {
@@ -154,11 +157,11 @@ form {
     padding-left: 5%;
     padding-right: 5%;
     .emailfield {
-      min-height: 13%;
+      height:50px;
     }
     .messagefield {
-      padding-top: 1%;
-      min-height: 70%;
+      padding-top: 2%;
+      height: 68%;
     }
   }
   .rowcontainer {
@@ -172,7 +175,7 @@ form {
 
     .advice {
       p {
-        font-size: 10px;
+        font-size: 12px;
         span {
           color: $main-color;
         }
@@ -193,6 +196,8 @@ form {
       line-height: 25px;
       letter-spacing: 1px;
       transition: 400ms;
+      outline: none;
+      margin-top: 2%;
       &:hover{
         color: $main-color;
         background-color: $background-color;
@@ -207,16 +212,14 @@ form {
 
 // Creating breakpoints for mobile other devices.
 
-$breakpoint-mobile: 576px;
 $breakpoint-form-advice: 1012px;
-$breakpoint-aweb4devs-email-text: 1100px;
-$breakpoint-hidden-email-number-texts: 229px;
+
 $breakpoint-change-font-size: 826px;
 
 
 // Main breakpoint for mobile. 
 
-@media screen and (max-width: $breakpoint-mobile) {
+@media screen and #{$breakpoint-mobile} {
 
 // hidding the contact form in mobile devices
   .maincontainer div:nth-child(3) {
@@ -232,7 +235,7 @@ $breakpoint-change-font-size: 826px;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: fit-content;
   
     .colcontainer {
       width: 70%;
@@ -266,44 +269,21 @@ $breakpoint-change-font-size: 826px;
   }
 }
 
-@media screen and (max-width: $breakpoint-aweb4devs-email-text) {
-  .break {
-    display: block;
+@media screen and (max-width:820px){
+
+  .break{
+    display:block;
   }
 }
 
-@media screen and (max-width: $breakpoint-hidden-email-number-texts) {
-  .linklist {
-    margin-left: -4vh;
+@media screen and #{$breakpoint-high-height-devices} {
+  .maincontainer{
+    height: 30vh;
   }
 }
 
-@media screen and (max-width: $breakpoint-change-font-size) {
-  .maincontainer {
-    .colcontainer {
-      .linklist {
-        padding-left: 15%;
-        span {
-          font-size: 20px;
-        }
-      }
-      .email,
-      .whatsapp {
-        span {
-          font-size: 20px !important;
-        }
-      }
-    }
-  }
 
-  .informativetext {
-    font-size: 20px !important;
-  }
-  input,
-  textarea {
-    font-size: 18px;
-  }
-}
+
 
 @media screen and (max-width: $breakpoint-form-advice) {
   form {

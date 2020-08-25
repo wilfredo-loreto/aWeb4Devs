@@ -16,10 +16,9 @@
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    @include test(black);
   }
   .title {
-    font-size: 36px;
+    @include fontSize(title);
     text-align: center;
     color: $black;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -73,12 +72,9 @@
 
 //Tablet devices
 
-@media screen and #{$breakpoint-header} {
+@media screen and #{$breakpoint-tablet} {
   .maincontainer {
     height: 180vh;
-    .title {
-      font-size: 30px;
-    }
     .rowcontainer {
       display: flex;
       flex-flow: column nowrap;
@@ -99,12 +95,9 @@
 
 // Mobile Devices
 
-@media screen and #{$breakpoint-mobile-small} {
+@media screen and #{$breakpoint-mobile} {
   .maincontainer {
     height: 300vh;
-    .title {
-      font-size: 26px;
-    }
     .rowcontainer {
       .container50width {
         order: -1;
@@ -119,5 +112,10 @@
         height: 100%;
       }
     }
+  }
+}
+@media screen and #{$breakpoint-high-height-devices}{
+  .maincontainer{
+    height: 50vh;
   }
 }

@@ -30,6 +30,7 @@
     text-align: center;
     background: none;
     color: $background-color;
+    @include fontSize(text);
     font-weight: 900;
   }
   .morebutton {
@@ -42,6 +43,7 @@
     border-radius: 30px;
     height: 10%;
     transition: 200ms;
+    outline: none;
     &:hover {
       cursor: pointer;
       color: $main-color;
@@ -51,13 +53,13 @@
   }
 }
 
-@media screen and #{$breakpoint-header} {
+@media screen and #{$breakpoint-tablet} {
   .smallcard {
     width: 42%;
     height: 90%;
   }
 }
-@media screen and #{$breakpoint-mobile-small} {
+@media screen and #{$breakpoint-mobile} {
   .smallcard {
     width: 92.5%;
     height: 47%;
