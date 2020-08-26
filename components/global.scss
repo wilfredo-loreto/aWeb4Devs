@@ -64,9 +64,9 @@ $D-title: 36px;
 }
 
 @mixin test($color){
-  @if ($color == hola){
-    border: solid 1px black;
-  }
+  
+   border: solid 5px $color;
+  
 }
 
 * {
