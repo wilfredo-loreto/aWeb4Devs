@@ -8,6 +8,11 @@
   font-family: "CenturyBold";
   src: url("/fonts/CenturyGothicBold.ttf");
 }
+
+@font-face{
+  font-family:"OpenSans";
+  src: url("/fonts/OpenSans.ttf");
+}
 /* Colors */
 $main-color: #d11149ff;
 $background-color: #f9f9f9;
@@ -27,7 +32,7 @@ $M-title: 24px;
 
 $T-text: 17px;
 $T-subtitle: 21px;
-$T-title: 24px;
+$T-title: 28px;
 
 $D-text: 18px;
 $D-subtitle: 22px;
