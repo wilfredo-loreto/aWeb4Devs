@@ -99,7 +99,7 @@ export default class Header extends Component {
       {/* Drop Menu: Nav, search bar */}
         <div className={styles.menu} id="menu">
           <div className={styles.nav}>
-            <Link href="/">
+            <Link href="/articles">
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Articles</h3>

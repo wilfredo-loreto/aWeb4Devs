@@ -108,6 +108,10 @@
       &:focus {
         outline: none;
       }
+        
+      &::placeholder{
+        color: #A39999
+      }
     }
 
     .searchIcon {
@@ -199,6 +203,10 @@
 
       &:focus {
         outline: none;
+      }
+     
+      &::placeholder{
+        color: #A39999
       }
     }
 
@@ -337,6 +345,7 @@
     .searchBar2{
       input{
         font-size: $M-subtitle;
+        
       }
     }
   

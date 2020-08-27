@@ -57,7 +57,7 @@ export default class Carousel extends Component {
 
     clearInterval(this.timerID);
 
-    this.auxFunction();
+    this.automaticCarousel();
 
     if(this.props.aux){
      this.setState({actualCardF: x});
@@ -127,7 +127,7 @@ export default class Carousel extends Component {
   
     clearInterval(this.timerID);
 
-    this.auxFunction();
+    this.automaticCarousel();
 
     if(this.props.aux){
       this.setState({actualCardF: x});
@@ -142,14 +142,13 @@ export default class Carousel extends Component {
 
   }
 
+  
   //Time animation of carousel 
   componentDidMount() {
-   
-
     this.setState({actualCardF: 2});
     this.setState({actualCardB: 2});
    
-    this.auxFunction();
+    this.automaticCarousel();
   }
 
   componentWillUnmount() {
@@ -157,7 +156,7 @@ export default class Carousel extends Component {
 
   }
 
-  auxFunction(){
+  automaticCarousel(){
     this.timerID = setInterval(
       () =>
         ( this.animationCarouselRight(
