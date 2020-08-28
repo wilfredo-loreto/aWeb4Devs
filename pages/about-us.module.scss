@@ -28,6 +28,8 @@
         margin: 20px;
         margin-right: 10px;
         margin-left: 10px;
+        letter-spacing:3%;
+        line-height: 30px;
         
     }
     ul{
@@ -36,11 +38,14 @@
         li{
             cursor: text;
             @include fontSize(text);
+            letter-spacing:3%;
+            line-height: 30px;
         }
     }
 
     a{
         color: $main-color;
+        text-decoration: underline;
     }
 
     img{
@@ -64,7 +69,7 @@
 @media only screen and #{$breakpoint-mobile} {
 
     .mainContainer{
-
+        padding-top: 10% !important;
        .rowContainer{
            flex-direction: column;
             align-items: center;
@@ -72,6 +77,12 @@
 
        img{
            width: 250px;
+           order: 2;
+           margin-bottom: 5px;
+       }
+
+       h3{
+           margin-top: 0;
        }
     }
 
