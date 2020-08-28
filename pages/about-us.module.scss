@@ -1,0 +1,80 @@
+@import "../components/global.scss";
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+    padding-top: 3%;
+
+    .rowContainer{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h3{
+        @include fontSize(title);
+        color: $main-color;
+        margin: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    p{
+        font-family: "OpenSans";
+        @include fontSize(text);
+        margin: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+        
+    }
+    ul{
+        margin: 20px;
+        margin-left: 40px;
+        li{
+            cursor: text;
+            @include fontSize(text);
+        }
+    }
+
+    a{
+        color: $main-color;
+    }
+
+    img{
+        width: 400px;
+    }
+}
+
+@media only screen and #{$breakpoint-tablet2} {
+
+    .mainContainer{
+
+        img{
+            width: 250px;
+        }
+    }
+
+
+    
+}
+
+@media only screen and #{$breakpoint-mobile} {
+
+    .mainContainer{
+
+       .rowContainer{
+           flex-direction: column;
+            align-items: center;
+       }
+
+       img{
+           width: 250px;
+       }
+    }
+
+
+    
+}
