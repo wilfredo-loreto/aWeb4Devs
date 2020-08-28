@@ -2,6 +2,7 @@
 
 .globalContainer {
   width: 90%;
+  max-width: 480px;
   height: 318px;
   border-radius: 10px;
   box-shadow: -2px -2px 6px rgba(68, 68, 68, 0.25),
@@ -11,6 +12,7 @@
   align-items: center;
   margin-left: 1%;
   transition: 400ms;
+  max-height: 380px;
 
   .title {
     text-align: center;
@@ -72,6 +74,6 @@
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.025);
   }
 }

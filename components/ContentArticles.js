@@ -15,8 +15,10 @@ export default class ContentArticles extends Component {
     var option1 = document.getElementById("option1");
     var option2 = document.getElementById("option2");
     var option3 = document.getElementById("option3");
-
+    var icon = document.getElementById("icon");
+    
     options.classList.toggle(styles.hide);
+    icon.classList.toggle(styles.iconActive);
 
     if (option1.classList.item(0) == styles.option) {
       option1.classList.replace(styles.option, styles.optionHide);
@@ -70,7 +72,7 @@ export default class ContentArticles extends Component {
 
         {/* Order select */}
         <div className={styles.order}>
-          <span>Sort by:</span>
+          <span onClick={() => this.showOptions()} >Sort by:</span>
           <div className={styles.selected}>
             <span onClick={() => this.showOptions()} className={styles.showed}>
               {this.state.optionSelected}
@@ -103,6 +105,7 @@ export default class ContentArticles extends Component {
             </div>
           </div>
           <img
+            id="icon"
             onClick={() => this.showOptions()}
             className={styles.icon}
             src="/icons/optionArros.png"
