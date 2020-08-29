@@ -11,7 +11,7 @@ export default class Concept extends Component {
         <br/>
         <p className={styles.text}>{this.props.description}</p>
         <br/>
-        <p className={styles.text}>In the next sections you will find the most used technologies for {this.props.title} web development</p>
+        <p className={styles.text}>In the next sections you will find the most used technologies for {this.props.title} web development.</p>
     </div>
   );
 
