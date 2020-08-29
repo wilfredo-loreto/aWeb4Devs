@@ -12,31 +12,24 @@ export default class Accordion extends Component {
     var acc = []
     for (var i = 0; i <= 2; i++) {
       acc[i] = document.getElementById("accordionItem" + i);
-
       acc[i].addEventListener("click", function () {
-        this.classList.toggle(styles.active);
-        closeOpenPanel(acc);
+       
         var panel = this.nextElementSibling;
-        console.log(panel.style.maxHeight)
-        if (panel.style.maxHeight == 0) {
-          console.log('im in if')
-          panel.style.maxHeight = panel.scrollHeight + "px";
-          console.log(panel.style.maxHeight)
-        } else {
-          panel.style.maxHeight = null;
-        }
+        closeOpenPanel(acc,panel);
+        this.classList.toggle(styles.active)
+        panel.classList.toggle(styles.panelHidden)
       });
     }
 
-    function closeOpenPanel(acc) {
-      var flag = true;
+    function closeOpenPanel(accordion,actualPanel) {
+      
       var i = 0;
-      while (flag && i <= 2) {
-        var panel = acc[i].nextElementSibling;
-        if (panel.style.maxHeight) {
-          acc[i].classList.toggle(styles.active);
-          panel.style.maxHeight = null;
-          flag = false;
+      while (i <= 2) {
+        var panel = accordion[i].nextElementSibling;
+        console.log(actualPanel.id)
+        if (panel.id != actualPanel.id) {
+          panel.classList.add(styles.panelHidden);
+          accordion[i].classList.remove(styles.active)
         }
 
         i++;
@@ -58,7 +51,7 @@ export default class Accordion extends Component {
           </div>
           <img className={styles.logo} src="/img/html.png" />
         </div>
-        <div id={"panel0"} className={styles.panel}>
+        <div id={"panel0"} className={[styles.panel,styles.panelHidden].join(' ')}>
           <ul className={styles.list}>
             <li className={styles.panelItem}>
               <div className={styles.bulletcontainer}>
@@ -129,13 +122,13 @@ export default class Accordion extends Component {
         <div id={"accordionItem1"} className={styles.accordionItem}>
           Section 2
         </div>
-        <div id={"panel1"} className={styles.panel}>
+        <div id={"panel1"} className={[styles.panel,styles.panelHidden].join(' ')}>
           <p>Lorem ipsum...</p>
         </div>
         <div id={"accordionItem2"} className={styles.accordionItem}>
           Section 3
         </div>
-        <div id={"panel2"} className={styles.panel}>
+        <div id={"panel2"} className={[styles.panel,styles.panelHidden].join(' ')}>
           <p>Lorem ipsum...</p>
         </div>
       </div>

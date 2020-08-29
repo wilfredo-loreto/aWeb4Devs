@@ -56,9 +56,8 @@
     margin-top: -2.25vh;
     z-index: 0;
     padding: 1vh 18px 0;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition-delay: 400ms;
     * {
       background: none;
     }
@@ -134,7 +133,10 @@
 .active{
   background-color: #fac16d !important; 
 }
-
+.panelHidden{
+  max-height: 0;
+  transition-delay: 400ms;
+}
 
 
 $breakpoint-title-tag: "(max-width:1190px)";
