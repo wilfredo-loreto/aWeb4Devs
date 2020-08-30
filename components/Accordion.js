@@ -16,8 +16,17 @@ export default class Accordion extends Component {
        
         var panel = this.nextElementSibling;
         closeOpenPanel(acc,panel);
+        console.log(panel.id)
+        console.log(panel.style.maxHeight)
         this.classList.toggle(styles.active)
-        panel.classList.toggle(styles.panelHidden)
+        if (panel.style.maxHeight== 0 || panel.style.maxHeight == 0+"px"){
+          panel.style.maxHeight = panel.scrollHeight + "px"
+          console.log('im in if')
+        }else{
+          
+          console.log('im in else')
+          panel.style.maxHeight = null
+        }
       });
     }
 
@@ -26,9 +35,8 @@ export default class Accordion extends Component {
       var i = 0;
       while (i <= 2) {
         var panel = accordion[i].nextElementSibling;
-        console.log(actualPanel.id)
         if (panel.id != actualPanel.id) {
-          panel.classList.add(styles.panelHidden);
+          panel.style.maxHeight= 0
           accordion[i].classList.remove(styles.active)
         }
 
