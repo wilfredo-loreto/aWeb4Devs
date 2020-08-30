@@ -1,0 +1,118 @@
+@import "./global.scss";
+
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 2%;
+
+    a{
+        width: 85%;
+    }
+
+    .circle{
+        width: 15px;
+        height: 15px;
+        border-radius: 10px;
+        background: $main-color;
+        margin-right: 4%;
+    }
+    .container{
+        box-shadow:-1px -1px 8px rgba(68, 68, 68, 0.25),
+        2px 2px 4px rgba(68, 68, 68, 0.25);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 4%;
+        padding-right: 2%;
+        height: 60px;
+        width: 100%;
+        
+        .titleContainer{
+            width: 90%;
+           
+        }
+        h3{
+            @include fontSize(subtitle);
+            color: $main-color;
+        }
+
+        p{
+            margin-left: 5%;
+            color: black;
+            @include fontSize(text);
+            height: 22px;
+            text-overflow: ellipsis;
+            white-space:wrap;
+            overflow: hidden;
+        }
+
+        h4{
+            width: 33%;
+            @include fontSize(text);
+            color: black;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and #{$breakpoint-mobile} {
+   .mainContainer{
+        margin-bottom: 5%;
+
+    .container{
+
+        height: 120px !important;
+        padding-right: 4%;
+        flex-direction: column ;
+        align-items: center;
+        justify-content: space-around !important;
+        .titleContainer{
+            margin-top: 8px;
+            height: 108px;
+            
+        }
+        p{  
+            margin-top: 5px;
+            height: 40px;
+        }
+
+        h4{
+            text-align: center;
+            width: 80%;
+            margin-bottom: 8px;
+        }
+    }
+   }
+}
+   @media only screen and #{$breakpoint-tablet2} {
+        .mainContainer{
+
+
+            a{
+                width: 90%;
+            }
+            .container{
+                padding-right: 1%;
+            }
+
+            .circle{
+                margin-right: 2%;
+            }
+
+            .titleContainer{
+                width: 70% !important;
+
+                p{
+                    height: 22px;
+                }
+            }
+        }
+
+   }
+   
+    
