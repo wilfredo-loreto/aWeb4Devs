@@ -7,9 +7,11 @@ export default class SearchResults extends Component{
 
     render(){
         return(
-
+            /* Results Page */
             <div className={styles.mainContainer}>
             <span className={styles.resultsFound}>4 results found</span>
+            
+            {/* Result List */}
             <div className={styles.container}>
                 <ResultCard/>
                 <ResultCard/>
@@ -18,6 +20,7 @@ export default class SearchResults extends Component{
                 <ResultCard/>
             </div>
 
+            {/* Results no found */}
             <div className={styles.noResults} >
 
             <img src="/images/sad.png"/>
