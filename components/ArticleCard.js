@@ -20,7 +20,7 @@ export default class ArticleCard extends Component {
               <h3 className={styles.title}>Top 5 Javascript tips </h3>
               {/* Resume */}
               <p className={styles.info}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
               </p>
               {/* Date and vitists */}
               <div className={styles.dataContainer}>
