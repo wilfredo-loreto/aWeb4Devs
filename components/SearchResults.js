@@ -9,7 +9,7 @@ export default class SearchResults extends Component{
         return(
 
             <div className={styles.mainContainer}>
-            <span>4 results found</span>
+            <span className={styles.resultsFound}>4 results found</span>
             <div className={styles.container}>
                 <ResultCard/>
                 <ResultCard/>
