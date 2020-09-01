@@ -1,5 +1,7 @@
 @import 'global.scss';
 
+// Main container of dynamic item
+
 .accordionItem {
   width: 95%;
   z-index: 1;
@@ -66,7 +68,7 @@
   }
 } 
 
-
+// Breakpoints needed in this component
 
 $breakpoint-logo-size: "(max-width:860px)";
 $breakpoint-mobile-panel-item: "(min-width:320px) and (max-width:489.98px)";
@@ -75,7 +77,7 @@ $breakpoint-dissapear-bullet: "(max-width:250px)";
 
 
 
-
+// Only 1 column of panel items in tablet and mobile devices
 
 @media screen and #{$breakpoint-tablet} {
   

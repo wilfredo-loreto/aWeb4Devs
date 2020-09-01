@@ -5,6 +5,7 @@ import React, {Component} from "react";
 export default class PanelItem extends Component {
   render() {
     var item;
+    /*  if this item is the first item (Definition), it will have a different HTML structure (arrows)   */ 
     if (this.props.isDefinition) {
       item = <Link href="/">
         <a className={styles.linkDefinition}>
@@ -14,6 +15,8 @@ export default class PanelItem extends Component {
         </a>
       </Link>
     } else {
+     
+    /* Standard structure for items in the panel */  
       item = <Link href="/">
         <a className={styles.link}>
           <img className={styles.itemLogo} src="/img/html.png"/>

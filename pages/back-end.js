@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Concept from "../components/Concept"
 import Accordion from "../components/Accordion"
-function FrontEnd() {
+function BackEnd() {
   return (
     <Layout>
       <div>
@@ -12,4 +12,4 @@ function FrontEnd() {
   );
 }
 
-export default FrontEnd;
+export default BackEnd;

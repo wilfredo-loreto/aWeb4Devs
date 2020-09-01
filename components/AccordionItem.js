@@ -1,5 +1,4 @@
 import styles from "./AccordionItem.module.scss";
-import Link from "next/link";
 import React, {Component} from "react";
 import PanelItem from "./PanelItem"
 
@@ -8,6 +7,7 @@ export default class AccordionItem extends Component {
 
   render() {
     return (
+    // accordion item and panel
       <React.Fragment>
 
         <div id={this.props.accordionId} className={styles.accordionItem}>
@@ -24,10 +24,11 @@ export default class AccordionItem extends Component {
           id={this.props.panelId}
           className={styles.panel}>
           <ul className={styles.list}>
+            {/* Dynamic insert of panel items. Need Logo, title and TAG */}
             <PanelItem isDefinition={true}/>
-            <PanelItem isDefinition={false}/>
-            <PanelItem isDefinition={false}/>
-            <PanelItem isDefinition={false}/>
+            <PanelItem />
+            <PanelItem />
+            <PanelItem />
           </ul>
         </div>
       </React.Fragment>

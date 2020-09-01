@@ -1,5 +1,8 @@
 @import 'global.scss';
 
+/*Styling for desktop*/
+
+
 .panelItem {
     display: flex;
     flex-flow: row nowrap;
@@ -60,13 +63,17 @@
       }
     }
   }
+
+  /* Breakpoints only needed in this component*/
+
   $breakpoint-title-tag: "(max-width:1190px)";
   $breakpoint-logo-size: "(max-width:860px)";
   $breakpoint-mobile-title-tag: "(min-width:490px) and (max-width:767.98px)";
   $breakpoint-mobile-panel-item: "(min-width:320px) and (max-width:489.98px)";
   $breakpoint-mobile-small: "(max-width:319.98px)";
   $breakpoint-dissapear-bullet: "(max-width:250px)";
-  
+
+
   @media screen and #{$breakpoint-title-tag} {
     .itemContent {
   
@@ -104,6 +111,7 @@
         }
       }}
   }
+
 
   @media screen and #{$breakpoint-tablet} {
 
