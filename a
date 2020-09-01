@@ -1,0 +1,247 @@
+[33mcommit 5d426e6e9f49581e0baf0fad5039ff9c2d3e1e28[m[33m ([m[1;36mHEAD -> [m[1;32mdefinition_index[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Sat Aug 29 19:09:51 2020 -0400
+
+    update from 29 august 7:09pm
+
+[33mcommit 9d707c8af1548b374cad1d0c4edbacceec5e0611[m[33m ([m[1;31morigin/definition_index[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Sat Aug 29 01:00:39 2020 -0400
+
+    Accordion almost finished. Not modularized. Totally Responsive. Toggle does not work correctly, idk why, help.
+
+[33mcommit 9f8b09c2b7e24732613ae12d55acd4adc6df4835[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Wed Aug 26 22:15:10 2020 -0400
+
+    First edition of the accordion. Html Almost finished, need to design the layout of panel class.
+
+[33mcommit 66f19e3a5ce038c1efcfeba8e74d45a844683aa4[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Wed Aug 26 15:32:42 2020 -0400
+
+    start developing front end and backend pages
+
+[33mcommit e6240d2fdef4bb9b1337243be930999560eda321[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 25 17:54:45 2020 -0400
+
+    Merged footer and carousel seccusfully
+
+[33mcommit 68257ed89f6b980cb7f05116a7132a3edf882311[m
+Merge: 289b644 50e8a29
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Mon Aug 24 22:41:49 2020 -0400
+
+    Merged footer font sizes and carosules font sizes. Error generated
+
+[33mcommit 289b644b3f5efe25e0d6f80a6254227e388fd8a6[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Mon Aug 24 22:32:07 2020 -0400
+
+    Modified footer and news with fonts
+
+[33mcommit 50e8a2939a7f8686bf2fd11a11181b3fa0959ca5[m
+Merge: 70cd8c8 d0c76b7
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Mon Aug 24 22:13:23 2020 -0400
+
+    joined dinamic carousels
+
+[33mcommit 70cd8c835f539fdaa6ae7efed355cfcc2e740aa5[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Mon Aug 24 22:03:21 2020 -0400
+
+    fix: Meadia query and fonts size
+
+[33mcommit b4caa1261acdafcd4db4ab601c558ea3a64c3a50[m
+Merge: 4602ca1 0da0b55
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Mon Aug 24 18:35:55 2020 -0400
+
+    Merge branch 'carrusel'
+
+[33mcommit 0da0b555979a3a197985075a193bacf74bc69a59[m[33m ([m[1;31morigin/carrusel[m[33m)[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Mon Aug 24 18:31:23 2020 -0400
+
+    fix: dinamic carousel
+
+[33mcommit d0c76b799130eb5b27102bea7a43990fd951c52a[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Mon Aug 24 18:06:52 2020 -0400
+
+    Fixed Footer bottom scrollbar
+
+[33mcommit 8a7456abd79c2d2884437e8b44c2267d208a5bd9[m
+Merge: 4602ca1 6cf7f82
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Sat Aug 22 22:36:41 2020 -0400
+
+    Seccusfully merged master and news branches. Carousel generates a problem with the states, footer width scrollbar and header sticky in the landing screen
+
+[33mcommit 6cf7f8214a6e18edb5b41537570ef196f378ff02[m[33m ([m[1;31morigin/news[m[33m, [m[1;32mnews[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Sat Aug 22 22:21:54 2020 -0400
+
+    News Component Finished
+
+[33mcommit 4602ca1d48481b12d471ccf4bb0a3c8f7f9276a0[m
+Merge: ba97426 effd304
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Sat Aug 22 21:52:57 2020 -0400
+
+    Joinet Carousel 1.1
+
+[33mcommit ba974269134b786569b10635d9fcab674aed91f2[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Sat Aug 22 21:49:41 2020 -0400
+
+    Joined Carousel
+
+[33mcommit c2637ddff91293115dc311332e92788bde5f00c4[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Sat Aug 22 21:29:47 2020 -0400
+
+    Finished Carousel 1.0
+
+[33mcommit 5e436ea1893628244ef92e672fa06ab5794251d1[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Fri Aug 21 19:14:00 2020 -0400
+
+    Commited changes, before start modularizing
+
+[33mcommit d86d78f686e5a73c36247a416e36f5ba89b9fbdf[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Wed Aug 19 20:18:21 2020 -0400
+
+    finished work from today. need to fix margins and all the responsives things
+
+[33mcommit 961852db97d058260a720f61b0ebc27e9db0e0c8[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Wed Aug 19 19:01:44 2020 -0400
+
+    like 60% progress in this section. example imagen and small card added and finished. Columns containers finished.
+
+[33mcommit 435cdf6739ded402279769736eee9ec6c0ab5e92[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Wed Aug 19 15:46:17 2020 -0400
+
+    creating the branch called news (a homepage section
+
+[33mcommit effd304413a5eb32067659bab43f08ba3808c6b9[m
+Merge: 615efbd 6c2bba2
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 18 20:04:48 2020 -0400
+
+    succefully merged master and footer branches. need to update whatsapp and email .svg icons
+
+[33mcommit 615efbd5f8c1d59877324d4025c55807b296e835[m
+Merge: e7a4c60 46ffd6f
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 18 19:34:43 2020 -0400
+
+    Merge branch 'master' of https://github.com/dragonpipe/aWeb4Devs
+
+[33mcommit 6c2bba2ba092f66833331502fe9cf14f27c2c981[m[33m ([m[1;31morigin/footer[m[33m, [m[1;32mfooter[m[33m)[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 18 19:28:34 2020 -0400
+
+    feat: variables and small changes. nothing important
+
+[33mcommit 46ffd6f8806b4b171c45f5a05d65fb6765c33088[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Tue Aug 18 19:24:35 2020 -0400
+
+    Joined header
+
+[33mcommit 027166415aa609879e56fd6af9a435464c3618a7[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 18 18:46:06 2020 -0400
+
+    feat: footer finished. Animations working correctly. js and scss commented
+
+[33mcommit 8d824efde88e92ebd228a4839c5486e30649ab64[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 18 17:40:34 2020 -0400
+
+    Feat: footer almost finished. js and scss optimized and commented, only animations left
+
+[33mcommit 7b83d73a2c3d00a96f641f8511287630ea13ef11[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Mon Aug 17 19:28:11 2020 -0400
+
+    ending version of footer. A lot of changes. Almost finished, Not commented already
+
+[33mcommit e7a4c606720cc26dd5add732eb7b4a0a91cf9e1d[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Sat Aug 15 14:42:09 2020 -0400
+
+    a lot of changes and progress in footer layout. 70% finished
+
+[33mcommit 9f1fd87494f7048de83cd0c62848344e591fdd62[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Fri Aug 14 16:12:21 2020 -0400
+
+    sass working correctly
+
+[33mcommit aac0d8aa3e9a19e71f7613cc99803aef99f7901c[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Fri Aug 14 15:49:39 2020 -0400
+
+    nothing important
+
+[33mcommit aec2b5a9c3317e1232e786a05b45c5b53105525b[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Fri Aug 14 12:20:22 2020 -0400
+
+    little fix
+
+[33mcommit 6607471846e9be6e0d71359e7c9ac0eea8320ac9[m
+Merge: d2f48d0 e65aa8e
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Thu Aug 13 21:05:47 2020 -0400
+
+    Crated Layout and sass configurations
+
+[33mcommit e65aa8e39087b347c85eb08996f5cebc76dd0af5[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Thu Aug 13 20:40:11 2020 -0400
+
+    Testing Merging in Git, added an empty footer.js folder and file
+
+[33mcommit d2f48d0c5db27e675d3a611f36dc933df0bb8a2d[m
+Author: Ander <andersonarciniegas1210@gmail.com>
+Date:   Thu Aug 13 20:40:02 2020 -0400
+
+    Leyout create and Sass configurations
+
+[33mcommit 3fa2d61828eeadec4299e479f68ab09449df1226[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Thu Aug 13 20:32:04 2020 -0400
+
+    added 2 scripts builds and start in package.json
+
+[33mcommit 345beed3721aeea8fc96154c9eba85aa7647f31e[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Thu Aug 13 20:02:35 2020 -0400
+
+    Created a new Branch, to start developing footer component
+
+[33mcommit 76fbe2d3d987093e4577bc6b1e45f05913f311a3[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 11 18:25:02 2020 -0400
+
+    Testing push nothing important changed
+
+[33mcommit 712ef407a49fe13b42bed06573b2f918f6a2b1dd[m
+Author: Wilfredo Loreto <pipeloreto99@gmail.com>
+Date:   Tue Aug 11 18:04:42 2020 -0400
+
+    Initial Template (index without content)
+
+[33mcommit dba4c650ce0266cd1f6ad5cc2da3ca338ba24fc9[m
+Author: dragonpipe <50421959+dragonpipe@users.noreply.github.com>
+Date:   Mon Aug 10 20:22:53 2020 -0400
+
+    Initial commit
