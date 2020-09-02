@@ -10,7 +10,7 @@
   background-color: $background-color;
   box-shadow: 0 -5px 10px -5px $black;
   height: fit-content;
-  overflow: hidden;
+ 
   .titles {
     text-align: center;
     font-family: "Century";
@@ -71,6 +71,30 @@
         }
       }
     }
+    li {
+      cursor: pointer;
+      a {
+        transition: 400ms;
+        font-family: "Century";
+        @include fontSize(subtitle);
+        color: $black;
+        font-weight: 900;
+        margin-left: -3%;
+        z-index: 10;
+      }
+      img{
+        transition: 400ms;
+    
+      }
+      &:hover{
+        img{
+          transform: translateX(15%);
+        }
+        a{
+          color: $main-color;
+        }
+      }
+    }
   }
   
   .rowcontainer {
@@ -94,30 +118,7 @@
 }
 
 
-li {
-  cursor: pointer;
-  span {
-    transition: 400ms;
-    font-family: "Century";
-    @include fontSize(subtitle);
-    color: $black;
-    font-weight: 900;
-    margin-left: -3%;
-    z-index: 10;
-  }
-  img{
-    transition: 400ms;
 
-  }
-  &:hover{
-    img{
-      transform: translateX(15%);
-    }
-    span{
-      color: $main-color;
-    }
-  }
-}
 
 
 // Styling 3rd container (contact form), advice and send button with flexbox
@@ -128,6 +129,7 @@ form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  
   input,
   textarea {
     resize: none;
@@ -136,7 +138,7 @@ form {
     padding-left: 5%;
     padding-right: 5%;
     overflow: hidden;
-    width: 80%;
+    width: 88%;
     margin-top: 5%;
     @include fontSize(text);
 
@@ -155,28 +157,34 @@ form {
     width: 100%;
     height: 100%;
     justify-content: flex-start;
-    padding-left: 5%;
-    padding-right: 5%;
+    
+    
+  
+    
+    
+    
     .emailfield {
       height:50px;
+      
     }
     .messagefield {
       padding-top: 2%;
       height: 68%;
+      
     }
   }
   .rowcontainer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: flex-start !important;
+    align-items: center !important;
     height: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
+    
+   
 
     .advice {
       p {
-        font-size: 12px;
+        font-size: 11px;
         span {
           color: $main-color;
         }
@@ -296,7 +304,7 @@ $breakpoint-change-font-size: 826px;
     }
     .advice {
       p {
-        width: 100%;
+        font-size:8px;
       }
     }
   }

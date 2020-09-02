@@ -2,21 +2,25 @@
 
 .mainContainer{
     width: 88%;
-    margin: auto;
-
-    background: #F9F9F9;
+    margin: 5vh auto 3.75vh;
+    background: $background-color;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px; 
+    padding: 3%;
+    
 }
 
 .title{
     @include fontSize(title);
     color:$main-color;
+    font-weight: 300;
     text-align: center;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .text{
     @include fontSize(text);
+    font-family: 'OpenSans';
+    font-weight: normal;
     color: $black;
 }
