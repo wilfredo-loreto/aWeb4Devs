@@ -8,6 +8,11 @@
   font-family: "CenturyBold";
   src: url("/fonts/CenturyGothicBold.ttf");
 }
+
+@font-face {
+  font-family:  "OpenSans";
+  src: url("/fonts/OpenSans-Regular.ttf");
+}
 /* Colors */
 $main-color: #d11149ff;
 $background-color: #f9f9f9;
@@ -16,6 +21,7 @@ $black:#2E2F2F;
 
 /* Media Query */
 $breakpoint-tablet: "(max-width: 769px)";
+$breakpoint-tablet2: "(max-width: 769px) and (min-width: 579px)";
 $breakpoint-mobile: "(max-width: 578px)";
 $breakpoint-high-height-devices:"(min-height:1081px)";
 
@@ -27,7 +33,7 @@ $M-title: 24px;
 
 $T-text: 17px;
 $T-subtitle: 21px;
-$T-title: 24px;
+$T-title: 28px;
 
 $D-text: 18px;
 $D-subtitle: 22px;

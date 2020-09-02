@@ -1,0 +1,115 @@
+@import "./global.scss";
+
+.globalContainer {
+  width: 90%;
+  max-width: 480px;
+  height: 318px;
+  border-radius: 10px;
+  box-shadow: -2px -2px 6px rgba(68, 68, 68, 0.25),
+    2px 5px 6px rgba(68, 68, 68, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1%;
+ 
+  max-height: 380px;
+ 
+  .title {
+    text-align: center;
+    background: none;
+    @include fontSize(subtitle);
+    color: $main-color;
+ 
+  }
+  a {
+    border-radius: 10px;
+  }
+
+  .imageArticle {
+    width: 100%;
+    height: 190px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .infoContainer {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: none;
+    width: 100%;
+    max-height: 125px;
+    margin-top: 5px;
+  }
+
+  .info {
+    font-family: "OpenSans";
+    @include fontSize(text);
+    width: 90%;
+    margin-left: 5%;
+    color: $black;
+    height: 47px;
+    display: flex;
+    max-height: 47px;
+    text-overflow: ellipsis;
+    white-space:wrap;
+    overflow: hidden;
+    transition: 400ms;
+
+   
+  }
+  .dataContainer {
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    max-height: 18px;
+  
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  span {
+    color: #a39999;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+
+  .icon {
+    width: 18px;
+  }
+
+  &:hover{
+    
+
+      animation: animation 1500ms linear infinite both;
+    
+    
+    /* Generated with Bounce.js. Edit at http://bouncejs.com#%7Bl%3A1%2Cs%3A%5B%7BT%3A%22t%22%2Ce%3A%22B%22%2Cd%3A1500%2CD%3A0%2Cf%3A%7Bx%3A0%2Cy%3A0%7D%2Ct%3A%7Bx%3A0%2Cy%3A-5%7D%2Cs%3A5%2Cb%3A2%7D%5D%7D */
+    
+    @keyframes animation { 
+      0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+      2.5% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.779, 0, 1); }
+      5.01% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -3.008, 0, 1); }
+      10.01% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -4.343, 0, 1); }
+      15.02% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -4.847, 0, 1); }
+      20.02% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5, 0, 1); }
+      25.63% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -4.971, 0, 1); }
+      60.06% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5, 0, 1); }
+      65.67% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5, 0, 1); }
+      100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -5, 0, 1); } 
+    }
+    
+    
+  }
+
+  
+}

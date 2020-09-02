@@ -1,0 +1,91 @@
+@import "../components/global.scss";
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    padding:5%;
+    padding-top: 3%;
+
+    .rowContainer{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h3{
+        @include fontSize(title);
+        color: $main-color;
+        margin: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    p{
+        font-family: "OpenSans";
+        @include fontSize(text);
+        margin: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+        letter-spacing:3%;
+        line-height: 30px;
+        
+    }
+    ul{
+        margin: 20px;
+        margin-left: 40px;
+        li{
+            cursor: text;
+            @include fontSize(text);
+            letter-spacing:3%;
+            line-height: 30px;
+        }
+    }
+
+    a{
+        color: $main-color;
+        text-decoration: underline;
+    }
+
+    img{
+        width: 400px;
+    }
+}
+
+@media only screen and #{$breakpoint-tablet2} {
+
+    .mainContainer{
+
+        img{
+            width: 250px;
+        }
+    }
+
+
+    
+}
+
+@media only screen and #{$breakpoint-mobile} {
+
+    .mainContainer{
+        padding-top: 10% !important;
+       .rowContainer{
+           flex-direction: column;
+            align-items: center;
+       }
+
+       img{
+           width: 250px;
+           order: 2;
+           margin-bottom: 5px;
+       }
+
+       h3{
+           margin-top: 0;
+       }
+    }
+
+
+    
+}

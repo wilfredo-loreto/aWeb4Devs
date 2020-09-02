@@ -1,46 +1,10 @@
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import React, { Component } from "react";
+import { useRouter } from "next/router";
 
-export default class Header extends Component {
-
-  // Animate function for drop menu 
-  animationMenu() {
-    var icono = document.getElementById("nav-icon3");
-    var menu = document.getElementById("menu");
-
-    icono.classList.toggle(styles.open);
-    menu.classList.toggle(styles.openMenu);
-  }
-  // Animate active function for nevegation menu 
-  activeLink(x) {
-    
-    var active1 = document.getElementById("active1");
-    var active2 = document.getElementById("active2");
-    var active3 = document.getElementById("active3");
-    
-    switch(x){
-
-      case 1:
-        active1.classList.toggle(styles.activeNav);
-        active2.classList.remove(styles.activeNav);
-        active3.classList.remove(styles.activeNav);
-      break;
-      case 2:
-        active2.classList.toggle(styles.activeNav);
-        active1.classList.remove(styles.activeNav);
-        active3.classList.remove(styles.activeNav);
-      break;
-      case 3:
-        active3.classList.toggle(styles.activeNav);
-        active2.classList.remove(styles.activeNav);
-        active1.classList.remove(styles.activeNav);
-      break;
-
-    }
-
-  }
-  render() {
+export default function Header (){
+  
+  const router = useRouter();
     return (
       <div className={styles.mainContainer}>
       {/* Header: Main logo, nav, search bar, burguer icon menu */}
@@ -52,27 +16,27 @@ export default class Header extends Component {
             </a>
           </Link>
           <div className={styles.nav}>
-            <Link href="/">
+            <Link href="/articles">
               <a>
-                <div onClick={() => this.activeLink(1)} className={styles.ColContainer}>
+                <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Articles</h3>
-                  <div id="active1" className={styles.activeBar}></div>
+                  <div id="active1" className={[styles.activeBar, router.pathname == "/articles" ? styles.activeNav : null].join(" ")}></div>
                 </div>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/front-end">
               <a >
-                <div onClick={() => this.activeLink(2)} className={styles.ColContainer}>
+                <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Front-end</h3>
-                  <div id="active2" className={styles.activeBar}></div>
+                  <div id="active2" className={[styles.activeBar, router.pathname == "/frontend" ? styles.activeNav : null].join(" ")}></div>
                 </div>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/back-end">
               <a>
-                <div onClick={() => this.activeLink(3)} className={styles.ColContainer}>
+                <div  className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Back-end</h3>
-                  <div id="active3" className={styles.activeBar}></div>
+                  <div id="active3" className={[styles.activeBar, router.pathname == "/backend" ? styles.activeNav : null].join(" ")}></div>
                 </div>
               </a>
             </Link>
@@ -86,7 +50,7 @@ export default class Header extends Component {
           <div className={styles.movilMenu}>
             <div
               className={styles.menuIcon}
-              onClick={this.animationMenu}
+              onClick={AnimationMenu}
               id="nav-icon3"
             >
               <span></span>
@@ -99,7 +63,7 @@ export default class Header extends Component {
       {/* Drop Menu: Nav, search bar */}
         <div className={styles.menu} id="menu">
           <div className={styles.nav}>
-            <Link href="/">
+            <Link href="/articles">
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Articles</h3>
@@ -107,7 +71,7 @@ export default class Header extends Component {
                 </div>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/front-end">
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Front-end</h3>
@@ -115,7 +79,7 @@ export default class Header extends Component {
                 </div>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/back-end">
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Back-end</h3>
@@ -132,4 +96,13 @@ export default class Header extends Component {
       </div>
     );
   }
+
+  
+function AnimationMenu(){
+
+  var icono = document.getElementById("nav-icon3");
+  var menu = document.getElementById("menu");
+
+  icono.classList.toggle(styles.open);
+  menu.classList.toggle(styles.openMenu);
 }
