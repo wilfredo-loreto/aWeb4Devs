@@ -1,0 +1,51 @@
+import styles from "./ContactInfo.module.scss";
+import Link from "next/link";
+import React, { Component } from "react";
+
+export default class ContactInfo extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h4 className={styles.title}>Contact us</h4>
+        <div className={styles.mainContainer}>
+          <div className={styles.colContainer}>
+            <span className={styles.subtitle}>Get in Touch</span>
+            <div className={styles.rrssContainer}>
+              <a className={styles.emailWhatsapp} href="">
+                <img src="/img/whatsapp.svg" />
+                <span>+58 4244320635</span>
+              </a>
+            </div>
+            <div className={styles.rrssContainer}>
+              <a className={styles.emailWhatsapp} href="">
+                <img src="/img/email.svg" />
+                <span>support@aweb4devs.com</span>
+              </a>
+            </div>
+          </div>
+          <div className={styles.colContainer}>
+            <span className={styles.subtitle}>Follow us</span>
+            <div className={styles.rrssContainer}>
+              <a href="https://github.com/dragonpipe/" target="_blank">
+                <img src="/icons/linkedin.svg" />
+              </a>
+              <a href="https://www.linkedin.com/in/wilfredo-alexander-loreto-irady-3600291ab/" target="_blank">
+                <img src="/icons/github.svg" />
+              </a>
+              <span>Wilfredo Loreto</span>
+            </div>
+            <div className={styles.rrssContainer}>
+              <a href="https://www.linkedin.com/in/anderson-arciniegas-728b2b1b3/" target="_blank">
+                <img src="/icons/linkedin.svg" />
+              </a>
+              <a href="https://github.com/anderDarkStorm" target="_blank">
+                <img src="/icons/github.svg" />
+              </a>
+              <span>Anderson Arciniegas</span>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
