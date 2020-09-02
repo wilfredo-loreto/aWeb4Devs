@@ -73,7 +73,7 @@
     }
     li {
       cursor: pointer;
-      span {
+      a {
         transition: 400ms;
         font-family: "Century";
         @include fontSize(subtitle);
@@ -90,7 +90,7 @@
         img{
           transform: translateX(15%);
         }
-        span{
+        a{
           color: $main-color;
         }
       }
