@@ -5,6 +5,7 @@ function Contact() {
   return (
     <Layout>
       <ContactInfo />
+      <ContactForm />
     </Layout>
   );
 }

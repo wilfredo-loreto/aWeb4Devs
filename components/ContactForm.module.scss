@@ -1,0 +1,95 @@
+@import "global.scss";
+.form{
+    display:block;
+    margin-bottom:5%;
+    .mainContainer{
+        display:flex;
+    flex-flow: column nowrap;
+    
+    justify-content: space-between;
+    align-items: center;
+    height: 480px;
+    width: 80%;
+    max-width: 1100px;
+    margin:auto;
+    
+    .fieldsContainer{
+        display: flex;
+        flex-flow: row nowrap;
+        width: 90%;
+        justify-content: space-between;
+        .field{
+            width: 45%;
+            max-width: 300px;
+            
+            .label{
+                @include fontSize(subtitle);
+                font-weight: 900;
+            }
+            input{
+                margin-top: 10px;
+                height: 40px;
+            }
+        }
+    }
+    
+    .yourMessage{
+        width: 90%;
+        
+        display: flex;
+        flex-flow: column nowrap;
+    
+        .label{
+            @include fontSize(subtitle);
+            font-weight: 900;
+        }
+        textarea{
+            margin-top:10px;
+            height: 250px;
+            width: 96%;
+            padding: 10px 15px;
+        }
+        .adviceContainer{
+            margin-top:10px;
+            span, .link{
+                font-size:16px;
+                color: $main-color;
+            }
+            span:nth-child(2){
+                color: $black;
+            }
+            .link{
+                text-decoration: underline;
+            }
+        }
+        .sendButton{
+            
+            cursor: pointer;
+            border: none;
+            color: $background-color;
+            font-family: "Century";
+            font-weight: 600;
+            background-color: #d11149;
+            box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.25);
+            border-radius: 30px;
+            min-width: 110px;
+            min-height: 33px;
+                line-height: 25px;
+                letter-spacing: 1px;
+                transition: 400ms;
+                outline: none;
+                align-self: flex-end;
+                margin-right: 0.7%;
+                
+                @include fontSize(text);
+                &:hover{
+                    color: $main-color;
+                    background-color: $background-color;
+                    border: solid 2px $main-color;
+                }
+                
+            }
+        }
+        
+    }
+}
