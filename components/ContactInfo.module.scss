@@ -41,12 +41,16 @@
                 span{
                     color: $black;
                     transition: 400ms;
+                    .break{
+                        display: none;
+                    }
                 }
                 &:hover{
                     span{
                         color: $main-color;
                     }
                 }
+                
             }
             a{
                 background:none;
@@ -62,4 +66,91 @@
     }
 }
 
-$breakpoint-email-text : "(max-width:800px)"
+$breakpoint-email-text : "(max-width:900px)";
+$breakpoint-mobile-small : "(max-width:460px)";
+$breakpoint-mobile-small-2 : "(max-width:300px)";
+
+@media screen and #{$breakpoint-email-text}{
+    .break{display:block !important;}
+}
+
+@media screen and #{$breakpoint-tablet}{
+    .break{display:none !important}
+
+    .mainContainer{
+        flex-flow: column nowrap !important;
+        align-items: center;
+        margin: 10% auto;
+        height: 500px;
+        
+        .colContainer{
+            
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+          
+            height: 100%;
+            width: 60%;
+        }
+    }
+}
+
+@media screen and #{$breakpoint-mobile}{
+    
+    .mainContainer{
+        width: 90%;
+        .colContainer{
+           width: 60%;
+        }
+    }
+}
+
+@media screen and #{$breakpoint-mobile-small}{
+    .break{
+        display: block !important;
+    }
+    .emailWhatsapp{
+        justify-content: center;
+    }
+    .mainContainer{
+        .colContainer{
+            width: 80%;
+        }
+    }
+}
+
+@media screen and #{$breakpoint-mobile-small-2}{
+    
+    .mainContainer{
+        height: 100%;
+        min-height: 500px;
+        .colContainer{
+            align-items: center;
+            
+            height: 100%;
+            min-height: 250px;
+            justify-content: space-around;
+           .rrssContainer{
+               flex-flow: row wrap !important;
+               justify-content: center;
+               text-align: center;
+               margin: 30px 0;
+               img{
+                   margin: auto;
+               }
+               .emailWhatsapp{
+                   
+                flex-flow: column nowrap !important ;
+                text-align: center;
+                img{
+                    margin: 0;
+                }
+                
+                .hiddenMobile{
+                    display: none;
+                }
+             }
+           }
+        }
+    }
+}

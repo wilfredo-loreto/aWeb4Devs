@@ -3,10 +3,6 @@ import Link from "next/link";
 import React, { Component } from "react";
 
 export default class ContactInfo extends Component {
-    componentWillUnmount(){
-        
-        
-    }
     componentDidMount(){
        
         var containerList = document.getElementsByTagName("ul")[0].parentNode

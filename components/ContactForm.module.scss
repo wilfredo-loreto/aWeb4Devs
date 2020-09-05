@@ -2,6 +2,7 @@
 .form{
     display:block;
     margin-bottom:5%;
+    min-height: 100%;
     .mainContainer{
         display:flex;
     flex-flow: column nowrap;
@@ -12,6 +13,8 @@
     width: 80%;
     max-width: 1100px;
     margin:auto;
+    min-height: 100%;
+  
     
     .fieldsContainer{
         display: flex;
@@ -52,8 +55,9 @@
         .adviceContainer{
             margin-top:10px;
             span, .link{
-                font-size:16px;
+                font-size:14px;
                 color: $main-color;
+                
             }
             span:nth-child(2){
                 color: $black;
@@ -74,22 +78,89 @@
             border-radius: 30px;
             min-width: 110px;
             min-height: 33px;
-                line-height: 25px;
-                letter-spacing: 1px;
-                transition: 400ms;
-                outline: none;
-                align-self: flex-end;
-                margin-right: 0.7%;
-                
-                @include fontSize(text);
-                &:hover{
-                    color: $main-color;
-                    background-color: $background-color;
-                    border: solid 2px $main-color;
+            line-height: 25px;
+            letter-spacing: 1px;
+            transition: 400ms;
+            outline: none;
+            align-self: flex-end;
+            margin-right: 0.7%;
+            
+            @include fontSize(text);
+            &:hover{
+                color: $main-color;
+                background-color: $background-color;
+                border: solid 2px $main-color;
+               
+            }
+            
+        }
+    }
+    
+}
+}
+
+$breakpoint-mobile-small: '(max-width:370px)'; 
+
+@media screen and #{$breakpoint-mobile}{
+
+.form{
+    .mainContainer{
+        height: 100%;
+        min-height: min-content;
+        .fieldsContainer{
+            flex-flow: column nowrap !important;
+            
+            width: 100%;
+            .field{
+                margin: 15px 0;
+                width: 100%;
+                max-width: 100% !important;
+                input{
+                    display: block;
+                    width: 65%;
                 }
-                
             }
         }
-        
+        .yourMessage{
+            width: 100%;
+            
+            textarea{
+                width: 80%;
+            }
+        }
+    }
     }
 }
+  
+@media screen and #{$breakpoint-mobile-small}{
+
+.form{
+    .mainContainer{
+        height: 100%;
+        min-height: min-content;
+        .fieldsContainer{
+            flex-flow: column nowrap !important;
+            width: 100%;
+            .field{
+                margin: 15px 0;
+                width: 100%;
+                max-width: 100% !important;
+                input{
+                    display: block;
+                    width: 90%;
+                }
+            }
+        }
+        .yourMessage{
+            width: 100%;
+            padding: 0 10%;
+           
+            
+            textarea{
+                width: 90%;
+            }
+        }
+    }
+    }
+}
+  
