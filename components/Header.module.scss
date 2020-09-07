@@ -67,6 +67,8 @@
     transition: 400ms;
     cursor: pointer;
     background: none;
+    max-width: 200px;
+    max-height: 90px;
   }
 
   .nav {
@@ -77,7 +79,7 @@
     width: 39%;
     height: 30px;
     background: none;
-
+    max-width: 480px;
     h3 {
       font-family: "Century";
       font-size: $D-subtitle;
@@ -93,9 +95,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 26px;
+    height: 30px;
     justify-content: space-around;
     padding-right: 5px;
+    max-width: 310px;
     
 
     input {
@@ -193,7 +196,7 @@
     border-radius: 30px;
     justify-content: space-around;
     padding-right: 5px;
-
+    max-width: 400px;
     input {
       height: 5vh;
       border-radius: 30px;

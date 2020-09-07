@@ -12,7 +12,7 @@ export default function Header (){
         <div className={styles.header}>
           <Link href="/">
             <a className={styles.logoLink} >
-              <img className={styles.logo} src="AWeb4Devs.png" alt="" />
+              <img className={styles.logo} src="/images/AWeb4Devs.png" alt="" />
             </a>
           </Link>
           <div className={styles.nav}>
@@ -44,7 +44,7 @@ export default function Header (){
 
           <div className={styles.searchBar}>
             <input type="text" placeholder="Search..." />
-            <img className={styles.searchIcon} src="icons/search.png" alt="" />
+            <img className={styles.searchIcon} src="/icons/search.png" alt="" />
           </div>
 
           <div className={styles.movilMenu}>
@@ -90,7 +90,7 @@ export default function Header (){
           </div>
           <div className={styles.searchBar2}>
             <input type="text" placeholder="Search..." />
-            <img className={styles.searchIcon} src="icons/search.png" alt="" />
+            <img className={styles.searchIcon} src="/icons/search.png" alt="" />
           </div>
         </div>
       </div>
