@@ -379,10 +379,7 @@ function PrivacyPolicyContent() {
         unlawfully processing your personal information, you also have the right
         to complain to your local data protection supervisory authority. You can
         find their contact details 
-        <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm."> 
-        
-here
-        </a>
+        <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm."> here</a>
         .
         <br />
         If you are resident in Switzerland, the contact details for the data
