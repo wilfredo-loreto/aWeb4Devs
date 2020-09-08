@@ -1,0 +1,18 @@
+@import "./global.scss";
+
+.mainContainer {
+  width: 95.85%;
+  align-self: center;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto 5%;
+  align-items: center;
+  
+}
+
+/* Active class when clicking an accordion component*/
+
+.active{
+  background-color: #FF9BB8 !important; 
+}
+

@@ -1,0 +1,130 @@
+@import 'global.scss';
+
+// Main container of dynamic item
+
+.accordionItem {
+  width: 95%;
+  z-index: 1;
+  background-color: $background-color;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25),
+    2px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  transition: 400ms;
+  margin: 1.25vh 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  &:hover {
+    background-color: #FF9BB8;
+  }
+
+  .textsContainer {
+    background: none;
+    .title {
+      @include fontSize(title);
+      margin-bottom: 2%;
+      background: none;
+    }
+    .summary {
+      @include fontSize(subtitle);
+      margin-top: 2%;
+      background: none;
+    }
+  }
+  .logo {
+    background: none;
+  }
+}
+.panel {
+  width: 95%;
+  background-color: #FFDFE8;
+  display: block;
+  box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.25),
+    2px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 10px 10px;
+  margin-top: -2.25vh;
+  z-index: 0;
+  padding: 1vh 18px 0;
+  overflow: hidden;
+  transition: 800ms ease-out;
+  max-height: 0;
+  * {
+    background: none;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: 130px;
+    list-style-type: none;
+
+  }
+} 
+
+// Breakpoints needed in this component
+
+$breakpoint-logo-size: "(max-width:860px)";
+$breakpoint-mobile-panel-item: "(min-width:320px) and (max-width:489.98px)";
+$breakpoint-mobile-small: "(max-width:319.98px)";
+$breakpoint-dissapear-bullet: "(max-width:250px)";
+
+
+
+// Only 1 column of panel items in tablet and mobile devices
+
+@media screen and #{$breakpoint-tablet} {
+  
+    .panel {
+      .list {
+        display: grid;
+        grid-template-columns: auto;
+       
+      }
+     
+      
+    }
+  }
+
+
+
+
+
+
+@media screen and #{$breakpoint-mobile-panel-item} {
+ 
+    .accordionItem {
+      .textsContainer + img{
+        display: none;
+      }
+    }
+  }  
+
+
+@media screen and #{$breakpoint-mobile-small} {
+    .panel {
+      .list {
+        grid-auto-rows: 210px;
+      }
+    }
+    .accordionItem {
+      .textsContainer {
+        .summary, + img{
+          display: none;
+        }
+      }
+      
+    }
+  }
+
+@media screen and #{$breakpoint-dissapear-bullet}{
+  .accordionItem{
+      flex-flow: column nowrap !important;
+  }
+}

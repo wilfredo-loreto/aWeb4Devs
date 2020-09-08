@@ -1,0 +1,61 @@
+@import 'global.scss';
+
+.title{
+    text-align: center;
+    @include fontSize(title);
+    margin-top: 5vh;
+    color: $main-color;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 300;
+}
+
+.mainContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 80%;
+    margin: 3% auto;
+    justify-content: space-around;
+    height:250px;
+    .colContainer{
+        width: 50%;
+        .subtitle{
+            @include fontSize(subtitle);
+            color: $black;
+            font-weight: 900;
+        }
+        .rrssContainer{
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            height: 38%;
+            .emailWhatsapp{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                text-decoration: none;
+                img{
+                    margin: 0 15px 0 0;
+                }
+                span{
+                    color: $black;
+                    transition: 400ms;
+                }
+                &:hover{
+                    span{
+                        color: $main-color;
+                    }
+                }
+            }
+            a{
+                background:none;
+                margin:0 15px 0 0;
+                text-decoration: none;
+            }
+            
+            span{
+                @include fontSize(subtitle);
+                font-weight: 500;
+            }
+        }
+    }
+}
