@@ -185,8 +185,12 @@ form {
     .advice {
       p {
         font-size: 11px;
-        span {
+        span,a {
           color: $main-color;
+        }
+        a{
+          text-decoration: underline;
+          
         }
       }
     }
@@ -244,11 +248,11 @@ $breakpoint-change-font-size: 826px;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
-    height: fit-content;
+    height: 700px ;
   
     .colcontainer {
       width: 70%;
-      height: 100%;
+      height: 100% ;
       align-items: center;
 // Styling 1st container (logo and icons)
       .informativetext {

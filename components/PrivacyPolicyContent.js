@@ -5,6 +5,7 @@ function PrivacyPolicyContent() {
   return (
     <div className={styles.mainContainer}>
       <h3 className={styles.title}>Privacy Policy</h3>
+      {/*  last update of the privacy policy */}
       <span className={styles.lastUpdate}> Last updated September 21, 2020</span>
       <p className={styles.text}>
         Thank you for choosing to be part of our community at aWeb4Devs
@@ -376,19 +377,23 @@ function PrivacyPolicyContent() {
         If you are resident in the European Economic Area and you believe we are
         unlawfully processing your personal information, you also have the right
         to complain to your local data protection supervisory authority. You can
-        find their contact details here:
-        http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.
+        find their contact details 
+        <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm."> 
+        
+here
+        </a>
+        .
         <br />
         If you are resident in Switzerland, the contact details for the data
-        protection authorities are available here:
-        https://www.edoeb.admin.ch/edoeb/en/home.html.
+        protection authorities are available <a href="https://www.edoeb.admin.ch/edoeb/en/home.html." target="_blank">here</a>
+        
         <br />
         <b> Cookies and similar technologies:</b> Most Web browsers are set to
         accept cookies by default. If you prefer, you can usually choose to set
         your browser to remove cookies and to reject cookies. If you choose to
         remove cookies or reject cookies, this could affect certain features or
         services of our Website. To opt-out of interest-based advertising by
-        advertisers on our Website visit http://www.aboutads.info/choices/.
+        advertisers on our Website visit <a href="http://www.aboutads.info/choices/" target="_blank">aboutads</a>.
       </p>
       <h5 className={styles.subtitle}>9. CONTROLS FOR DO-NOT-TRACK FEATURES</h5>
       <p className={styles.text}>
@@ -439,11 +444,11 @@ function PrivacyPolicyContent() {
         Based on the applicable laws of your country, you may have the right to
         request access to the personal information we collect from you, change
         that information, or delete it in some circumstances. To request to
-        review, update, or delete your personal information, please visit: 
+        review, update, or delete your personal information, please visit the
         <Link href="/contact">
-          <a> http://www.aweb4devs.com/contact. </a>
+          <a> contact page</a>
         </Link>
-         We will respond to your request within 30 days.
+         . We will respond to your request within 30 days.
       </p>
     </div>
   );
