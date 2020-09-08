@@ -286,13 +286,14 @@ function PrivacyPolicyContent() {
         revoke your consent, please contact us using the contact details
         provided in the section below titled "HOW CAN YOU CONTACT US ABOUT THIS
         NOTICE?".
+        </p>
         <ul>
           <li>
             <b>Advertising, Direct Marketing, and Lead Generation</b> <br />{" "}
             Google AdSense
           </li>
         </ul>
-      </p>
+      
       <h5 className={styles.subtitle}>
         5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
       </h5>
