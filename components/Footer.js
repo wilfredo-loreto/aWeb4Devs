@@ -105,7 +105,10 @@ export default function Footer() {
               <p>
                 <span>* </span>
                 By clicking below to send the message, you're agreeing to our
+                <Link href="/privacy-policy">
+                
                 <a> privacy policy</a>
+                </Link>
               </p>
             </div>
             <div className={styles.sendbutton}>

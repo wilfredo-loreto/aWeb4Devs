@@ -3,7 +3,7 @@ import SmallCard from "./SmallCard"
 import BigCard from "./BigCard"
 export default function Footer(props) {
   return (
-    <section className={styles.maincontainer}>
+    <section className={[styles.maincontainer, props.order ? styles.lessPadding:styles.nothing].join(' ')}>
       <div>
   <h1 className={styles.title}>{props.subtitle}</h1>
       </div>
