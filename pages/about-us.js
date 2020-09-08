@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import styles from "./about-us.module.scss";
+import styles from "../components/about-us.module.scss";
 import Link from "next/link";
 
 export default function aboutUs() {
@@ -25,7 +25,7 @@ export default function aboutUs() {
             </p>
             <p>
               Otherwise, if you want to get in touch with some of us, feel free
-              to <a href="contact-us">contact us here.</a>
+              to <Link href="/"><a href="contact-us">contact us here.</a></Link>
             </p>
           </div>
           <img src="images/aboutUs1.jpg" />
@@ -52,7 +52,9 @@ export default function aboutUs() {
               <li>Web Development Companies</li>
               <li>Digital Marketing Agencies</li>
             </ul>
-            <p>Please <a href="/">contact us</a> if you need our help as freelancers or developers.</p>
+            
+            <p>Please <Link href="/"><a >contact us</a></Link> if you need our help as freelancers or developers.</p>
+       
           </div>
         </div>
       </div>

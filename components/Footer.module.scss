@@ -8,7 +8,7 @@
   width: 100%;
   min-height: 50vh;
   background-color: $background-color;
-  box-shadow: 0 -5px 10px -5px $black;
+  box-shadow: 0 -5px 10px -5px rgba(68, 68, 68, 0.25);
   height: fit-content;
   overflow: hidden;
   .titles {

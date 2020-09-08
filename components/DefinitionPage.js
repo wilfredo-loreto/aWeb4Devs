@@ -92,7 +92,7 @@ export default class DefinitionPage extends Component {
               <Link href="/">
                 <a>
                   <img className={styles.arrow} src="/img/listarrow.svg" />
-                  <li>5 tips de javascript para desarrolla</li>
+                  <li>5 tips de javascript para desarrolladores de alto nivel imperdibles</li>
                 </a>
               </Link>
             </ul>

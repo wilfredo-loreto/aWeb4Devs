@@ -6,7 +6,7 @@ export default class ArticleCard extends Component {
   render() {
     return (
       /* Article Card  */
-      <div className={styles.globalContainer}>
+      <div title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit." className={styles.globalContainer}>
         <Link href="/">
           <a>
             {/*Main image*/}
