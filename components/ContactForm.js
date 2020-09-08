@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 export default class ContactInfo extends Component {
     componentDidMount(){
-       
+       //Hidding the contact form from the footer
         var containerList = document.getElementsByTagName("ul")[0].parentNode
         
         containerList.nextSibling.style.display="none"
@@ -12,6 +12,7 @@ export default class ContactInfo extends Component {
     }
   render() {
     return (
+      // Form of the contact page
       <form className={styles.form}>
           <div className={styles.mainContainer}>
               <div className={styles.fieldsContainer}>

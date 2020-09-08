@@ -1,4 +1,7 @@
 @import "global.scss";
+
+// Styling desktop ver.
+
 .form{
     display:block;
     margin-bottom:5%;
@@ -98,6 +101,8 @@
     
 }
 }
+
+// breakpoint needed for this component
 
 $breakpoint-mobile-small: '(max-width:370px)'; 
 

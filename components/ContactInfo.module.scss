@@ -23,6 +23,7 @@
             @include fontSize(subtitle);
             color: $black;
             font-weight: 900;
+            text-align: center;
         }
         .rrssContainer{
             display: flex;
@@ -34,9 +35,9 @@
                 flex-flow: row nowrap;
                 align-items: center;
                 text-decoration: none;
+                // icons
                 img{
                     margin: 0 15px 0 0;
-                    
                 }
                 span{
                     color: $black;
@@ -65,6 +66,8 @@
         }
     }
 }
+
+//breakpoints needed for this component.
 
 $breakpoint-email-text : "(max-width:900px)";
 $breakpoint-mobile-small : "(max-width:460px)";
