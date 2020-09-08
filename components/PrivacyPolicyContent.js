@@ -23,7 +23,6 @@ function PrivacyPolicyContent() {
           <li className={styles.listItem}>HOW DO WE KEEP YOUR INFORMATION SAFE?</li>
           <li className={styles.listItem}>WHAT ARE YOUR PRIVACY RIGHTS?</li>
           <li className={styles.listItem}>CONTROLS FOR DO-NOT TRACK FEATURES</li>
-          <li className={styles.listItem}>DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</li>
           <li className={styles.listItem}>DO WE MAKE UPDATES TO THIS NOTICE?</li>
           <li className={styles.listItem}>HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</li>
       </ol>
@@ -98,16 +97,36 @@ We may process or share your data that we hold based on the following legal basi
       We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than 90 days. <br/>
       When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
       <h5 className={styles.subtitle}>7. HOW DO WE KEEP YOUR INFORMATION SAFE?</h5>
-      <p className={styles.text}><i><b>In Short:</b> We aim to protect your personal information through a system of organizational and technical security measures.</i><br/>
-      We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than 90 days. <br/>
-      When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
-      <p className={styles.text}> </p>
+      <p className={styles.text}>
+      We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security, and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Website is at your own risk. You should only access the Website within a secure environment.</p>
+      <p className={styles.text}>8. WHAT ARE YOUR PRIVACY RIGHTS? 
+      <i><b>In Short:</b> In some regions, such as the European Economic Area, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.</i><br/>
+      In some regions (like the European Economic Area), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; and (iv) if applicable, to data portability. In certain circumstances, you may also have the right to object to the processing of your personal information. To make such a request, please use the contact details provided below. We will consider and act upon any request in accordance with applicable data protection laws.<br/>
+If we are relying on your consent to process your personal information, you have the right to withdraw your consent at any time. Please note however that this will not affect the lawfulness of the processing before its withdrawal, nor will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.<br/>
+If you are resident in the European Economic Area and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here: http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.<br/>
+If you are resident in Switzerland, the contact details for the data protection authorities are available here: https://www.edoeb.admin.ch/edoeb/en/home.html.<br/>
+
+<b> Cookies and similar technologies:</b> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Website. To opt-out of interest-based advertising by advertisers on our Website visit http://www.aboutads.info/choices/.
+
+
+      </p>
+      <h5 className={styles.subtitle}>9. CONTROLS FOR DO-NOT-TRACK FEATURES</h5>
+      <p className={styles.text}>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (“DNT”) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
+      <h5 className={styles.subtitle}>10. DO WE MAKE UPDATES TO THIS NOTICE?</h5>
+      <i><b>In Short:</b> Yes, we will update this notice as necessary to stay compliant with relevant laws.</i><br/>
+      We may update this privacy notice from time to time. awebfordevs reserves the right to change, modify, add and / or remove some or more of the rules that are governed in these privacy policies at any time. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.
+      <h5 className={styles.subtitle}>11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h5>
+      <p className={styles.text}>
+      If you have questions or comments about this notice, you may email us at contact@aweb4devs.com or by post to:<br/>
+aWeb4Devs<br/> 
+Valencia, Urbanización La Isabelica, Sector 4, Vereda 1, House N° 29<br/>
+Valencia, Carabobo 2003<br/>
+Venezuela<br/>
+
+     </p>
+     <h6>HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h6>
+      <p className={styles.text}>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please visit: <Link href="/contact">
+      <a>http://www.aweb4devs.com/contact.</a></Link> We will respond to your request within 30 days. </p>
     </div>
   );
 }
