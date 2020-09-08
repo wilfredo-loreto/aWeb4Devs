@@ -1,5 +1,31 @@
 @import "./global.scss";
 
 .mainContainer{
-    font-family:"OpenSans";
+    margin:4% 5%;
+    @include fontSize(text);
+    text-align: justify;
+    line-height: 25px;
+    font-family: "OpenSans";
+    .title{
+        color:$main-color;
+        @include fontSize(title);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .lastUpdate{
+        text-align: center;
+    }
+    .text{
+        margin: 15px 0;
+    }
+    h5,h6{
+        @include fontSize(subtitle);
+        margin: 15px 0;
+    }
+    ol{
+        margin-left: 35px;
+        li{
+            margin:5px 0;
+        }
+    }
 }
