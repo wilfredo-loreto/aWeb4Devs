@@ -5,6 +5,7 @@ import React, { Component } from "react";
 export default class ContactInfo extends Component {
   render() {
     return (
+      // Title, Logos and links for each developer
       <React.Fragment>
         <h4 className={styles.title}>Contact us</h4>
         <div className={styles.mainContainer}>
@@ -13,23 +14,23 @@ export default class ContactInfo extends Component {
             <div className={styles.rrssContainer}>
               <a className={styles.emailWhatsapp} href="">
                 <img src="/img/whatsapp.svg" />
-                <span>+58 4244320635</span>
+                <span className={styles.hiddenMobile}>+58 4244320635</span>
               </a>
             </div>
             <div className={styles.rrssContainer}>
               <a className={styles.emailWhatsapp} href="">
                 <img src="/img/email.svg" />
-                <span>support@aweb4devs.com</span>
+                <span className={styles.hiddenMobile}>support@<span className={styles.break}> </span>aweb4devs.com</span>
               </a>
             </div>
           </div>
           <div className={styles.colContainer}>
             <span className={styles.subtitle}>Follow us</span>
             <div className={styles.rrssContainer}>
-              <a href="https://github.com/dragonpipe/" target="_blank">
+              <a href="https://www.linkedin.com/in/wilfredo-alexander-loreto-irady-3600291ab/" target="_blank">
                 <img src="/icons/linkedin.svg" />
               </a>
-              <a href="https://www.linkedin.com/in/wilfredo-alexander-loreto-irady-3600291ab/" target="_blank">
+              <a href="https://github.com/dragonpipe/" target="_blank">
                 <img src="/icons/github.svg" />
               </a>
               <span>Wilfredo Loreto</span>
