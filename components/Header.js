@@ -12,7 +12,7 @@ export default function Header (){
         <div className={styles.header}>
           <Link href="/">
             <a className={styles.logoLink} >
-              <img className={styles.logo} src="/images/AWeb4Devs.png" alt="" />
+              <img className={styles.logo} src="/img/AWeb4Devs.png" alt="" />
             </a>
           </Link>
           <div className={styles.nav}>

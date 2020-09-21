@@ -23,7 +23,7 @@ export default class SearchResults extends Component{
             {/* Results no found */}
             <div className={styles.noResults} >
 
-            <img src="/images/sad.png"/>
+            <img src="/img/sad.png"/>
             <span>Opss... <br/> No results found <br/> Try with another keywords</span>
             </div>
 

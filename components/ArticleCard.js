@@ -12,7 +12,7 @@ export default class ArticleCard extends Component {
             {/*Main image*/}
             <img
               className={styles.imageArticle}
-              src="/images/desarrollo.png"
+              src="/img/desarrollo.png"
               alt=""
             />
             <div className={styles.infoContainer}>

@@ -13,9 +13,9 @@ export default function ResultCard() {
             <div className={styles.titleContainer}>
               {/* Title */}
               <h3>ReactJs</h3>
-              {/* Description */}
+              {/* Summary */}
               <p>
-                ReactJs es uno de los principales frameworks de javascript...
+                ReactJs is one of the bests javacript frameworks...
               </p>
             </div>
               {/* Main tag */}

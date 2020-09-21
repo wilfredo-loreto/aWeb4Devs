@@ -34,7 +34,7 @@ export default class ArticlePage extends Component {
             metus risus. Cras ut aliquam erat. Nullam ultrices maximus
             venenatis. Suspendisse id lacinia sapien.
           </p>
-          <img src="/images/desarrollo.png" />
+          <img src="/img/desarrollo.png" />
 
           <h3 className={styles.subtitle}>Javascript</h3>
           <p>
@@ -62,7 +62,7 @@ export default class ArticlePage extends Component {
             metus risus. Cras ut aliquam erat. Nullam ultrices maximus
             venenatis. Suspendisse id lacinia sapien.
           </p>
-          <img src="/images/desarrollo.png" />
+          <img src="/img/desarrollo.png" />
 
           <div className={styles.references}>
             <h5>References:</h5>
@@ -90,7 +90,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>5 tips de javascript para desarrolla</li>
                   </div>
                 </a>
@@ -99,7 +99,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>Definition</li>
                   </div>
                 </a>
@@ -110,7 +110,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>React</li>
                   </div>
                 </a>
@@ -119,7 +119,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>React</li>
                   </div>
                 </a>
@@ -128,7 +128,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>React</li>
                   </div>
                 </a>
@@ -137,7 +137,7 @@ export default class ArticlePage extends Component {
               <Link href="/">
                 <a>
                   <div>
-                    <img className={styles.arrow} src="/img/listarrow.svg" />
+                    <img className={styles.arrow} src="/icons/listarrow.svg" />
                     <li>React</li>
                   </div>
                 </a>

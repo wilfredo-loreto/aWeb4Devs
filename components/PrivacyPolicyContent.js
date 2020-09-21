@@ -6,7 +6,7 @@ function PrivacyPolicyContent() {
     <div className={styles.mainContainer}>
       <h3 className={styles.title}>Privacy Policy</h3>
       {/*  last update of the privacy policy */}
-      <span className={styles.lastUpdate}> Last updated September 21, 2020</span>
+      <span className={styles.lastUpdate}> Last updated Octobe 1, 2020</span>
       <p className={styles.text}>
         Thank you for choosing to be part of our community at aWeb4Devs
         (“Company”, “we”, “us”, or “our”). We are committed to protecting your

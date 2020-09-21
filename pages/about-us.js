@@ -25,13 +25,13 @@ export default function aboutUs() {
             </p>
             <p>
               Otherwise, if you want to get in touch with some of us, feel free
-              to <Link href="/"><a href="contact-us">contact us here.</a></Link>
+              to <Link href="/contact"><a href="">contact us here.</a></Link>
             </p>
           </div>
-          <img src="images/aboutUs1.jpg" />
+          <img src="img/aboutUs1.jpg" />
         </div>
         <div className={styles.rowContainer}>
-          <img src="images/aboutUs2.jpg" />
+          <img src="img/aboutUs2.jpg" />
           <div>
             <h3>What we do?</h3>
             <p>

@@ -131,8 +131,7 @@ export default class Carousel extends Component {
 
     if(this.props.aux){
       this.setState({actualCardF: x});
-      console.log(x);
-      console.log(this.state.actualCardF);
+      
       
    
     }else{
@@ -197,40 +196,40 @@ export default class Carousel extends Component {
             {/* Carousel items/cards */}
             <div id={this.props.aux ? "cardF1" : "cardB1"} className={styles.contentCardI}>
               <CarouselCard 
-              image = "images/html1.jpg"
+              image = "img/html1.jpg"
               />
             </div>
             <div id={this.props.aux ? "cardF2" : "cardB2"} className={styles.mainCard}>
               <CarouselCard 
-              image = "images/css.jpg"/>
+              image = "img/css.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF3" : "cardB3"} className={styles.contentCardD}>
               <CarouselCard 
-              image = "images/js.jpg"/>
+              image = "img/js.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF4" : "cardB4"} className={styles.hideCard}>
               <CarouselCard 
-              image = "images/html1.jpg"/>
+              image = "img/html1.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF5" : "cardB5"} className={styles.hideCard}>
               <CarouselCard
-              image = "images/css.jpg" />
+              image = "img/css.jpg" />
             </div>
             <div id={this.props.aux ? "cardF6" : "cardB6"} className={styles.hideCard}>
               <CarouselCard 
-              image = "images/js.jpg"/>
+              image = "img/js.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF7" : "cardB7"} className={styles.hideCard}>
               <CarouselCard 
-              image = "images/html1.jpg"/>
+              image = "img/html1.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF8" : "cardB8"} className={styles.hideCard}>
               <CarouselCard 
-              image = "images/css.jpg"/>
+              image = "img/css.jpg"/>
             </div>
             <div id={this.props.aux ? "cardF9" : "cardB9"} className={styles.hideCard}>
               <CarouselCard 
-              image = "images/js.jpg"/>
+              image = "img/js.jpg"/>
             </div>
          
           </div>

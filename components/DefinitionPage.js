@@ -7,7 +7,7 @@ export default class DefinitionPage extends Component {
     return (
       /* Definition of technologies */
       <div className={styles.mainContainer}>
-        <img className={styles.logo2} src="/images/articleLogo.png" />
+        <img className={styles.logo2} src="/img/articleLogo.png" />
         <div className={styles.content}>
           <h2 className={styles.title}>Javascript</h2>
           <p>
@@ -35,7 +35,7 @@ export default class DefinitionPage extends Component {
             metus risus. Cras ut aliquam erat. Nullam ultrices maximus
             venenatis. Suspendisse id lacinia sapien.
           </p>
-          <img src="/images/desarrollo.png" />
+          <img src="/img/desarrollo.png" />
 
           <h3 className={styles.subtitle}>Javascript</h3>
           <p>
@@ -63,7 +63,7 @@ export default class DefinitionPage extends Component {
             metus risus. Cras ut aliquam erat. Nullam ultrices maximus
             venenatis. Suspendisse id lacinia sapien.
           </p>
-          <img src="/images/desarrollo.png" />
+          <img src="/img/desarrollo.png" />
 
           <div className={styles.references}>
             <h5>References:</h5>
@@ -84,14 +84,14 @@ export default class DefinitionPage extends Component {
 
         {/* Lateral Aside */}
         <div className={styles.aside}>
-          <img className={styles.logo} src="/images/articleLogo.png" />
+          <img className={styles.logo} src="/img/articleLogo.png" />
           <h3>More Content</h3>
           <div  className={styles.asideContent}>
             <h4>HTMl</h4>
             <ul>
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>5 tips de javascript para desarrolladores de alto nivel imperdibles</li>
                 </a>
               </Link>
@@ -100,7 +100,7 @@ export default class DefinitionPage extends Component {
             <ul>
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>Definition</li>
                 </a>
               </Link>
@@ -109,28 +109,28 @@ export default class DefinitionPage extends Component {
             <ul>
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>React</li>
                 </a>
               </Link>
 
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>React</li>
                 </a>
               </Link>
 
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>React</li>
                 </a>
               </Link>
 
               <Link href="/">
                 <a>
-                  <img className={styles.arrow} src="/img/listarrow.svg" />
+                  <img className={styles.arrow} src="/icons/listarrow.svg" />
                   <li>React</li>
                 </a>
               </Link>
