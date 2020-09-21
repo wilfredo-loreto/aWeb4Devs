@@ -2,7 +2,7 @@ import Layout from "../../components/Layout";
 import DefinitionPage from "../../components/DefinitionPage";
 
 
-export default function article(){
+export default function definitionFrontend(){
 
     return(
 

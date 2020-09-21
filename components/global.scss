@@ -80,6 +80,14 @@ $D-title: 36px;
   padding: 0;
   font-family: "Century";
   background: $background-color;
+  ::selection{
+
+    background: #FFDFE8
+    
+  }
+  ::-moz-selection{
+    background: #FFDFE8
+  }
 }
 
 a {
