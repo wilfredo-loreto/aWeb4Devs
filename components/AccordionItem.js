@@ -11,14 +11,14 @@ export default class AccordionItem extends Component {
       <React.Fragment>
 
         <div id={this.props.accordionId} className={styles.accordionItem}>
-          <img className={styles.logo} src="/img/html.png"/>
+          <img className={styles.logo} src={this.props.logo}/>
           <div className={styles.textsContainer}>
-            <h3 className={styles.title}>HTML</h3>
+    <h3 className={styles.title}>{this.props.title}</h3>
             <span className={styles.summary}>
-              Defines the structure of the websites
+              {this.props.summary}
             </span>
           </div>
-          <img className={styles.logo} src="/img/html.png"/>
+          <img className={styles.logo} src={this.props.logo}/>
         </div>
         <div
           id={this.props.panelId}
