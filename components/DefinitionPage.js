@@ -3,96 +3,82 @@ import Link from "next/link";
 import React, { Component } from "react";
 
 export default class DefinitionPage extends Component {
+  componentDidMount() {
+    console.log(this.props.allContent.content.type);
+  }
   render() {
+    var finalContent = [];
+    this.props.allContent.content.map((block) => {
+      var i;
+      switch(block.type){
+       
+
+        case "subtitle":
+          finalContent.push(<h2 className={styles.subtitle}>{block.content}</h2>);
+          break
+
+        case "image":
+          finalContent.push( <img src={block.content.src} alt={block.content.alt} />)
+          break
+
+        case "text":
+          for(i=0;i<=block.content.length - 1;i++)
+          finalContent.push(<p>{block.content[i]}</p>);
+          break
+
+        case "list":
+         
+          finalContent.push(
+            <ul>
+              {block.content.map((item)=>(
+                <li>{item}</li>
+              ))}
+            </ul>
+          )
+          break
+        
+        case "references":
+          finalContent.push(
+            <div className={styles.references}>
+              <h5>References:</h5>
+              <ul>
+              {block.content.map((item)=>(
+                <li>{item.author}<a href={item.link} target="_blank">{item.link}</a></li>
+                ))}
+              </ul>
+            </div>
+          )
+        
+
+        
+      }
+    });
+    console.log(finalContent);
     return (
       /* Definition of technologies */
       <div className={styles.mainContainer}>
-        <img className={styles.logo2} src="/img/articleLogo.png" />
+        <img className={styles.logo2} src={this.props.allContent.logo} />
         <div className={styles.content}>
-          <h2 className={styles.title}>Javascript</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-            nunc, bibendum at lorem et, imperdiet viverra velit. Nullam gravida
-            lobortis posuere. Fusce aliquet, quam quis interdum iaculis, orci
-            massa lacinia dolor, et tristique sem nulla et velit. Suspendisse a
-            libero interdum, dictum nisi quis, fermentum sem.
-          </p>
-          <p>
-            Aenean laoreet, nibh in volutpat faucibus, libero dui malesuada mi,
-            in posuere lorem ex pharetra lectus. Etiam convallis fermentum
-            accumsan. Nullam suscipit sed ante eu hendrerit. Etiam turpis massa,
-            tincidunt non arcu ac, fringilla ultrices leo. Nunc eget neque
-            placerat, finibus lacus et, eleifend ante. Nullam in massa sit amet
-            ex gravida bibendum at quis ligula. Nunc pharetra orci euismod
-            ligula blandit hendrerit. Ut consectetur velit nec diam convallis
-            sodales. Sed mollis finibus interdum. Sed cursus nulla eu mi auctor
-            placerat.
-          </p>
-          <p>
-            Nam facilisis quis dui vel iaculis. Nulla facilisis mi lobortis
-            augue ornare porttitor. Aenean et varius libero. Fusce tristique
-            rhoncus risus. Quisque varius odio sed vehicula varius. Fusce at
-            metus risus. Cras ut aliquam erat. Nullam ultrices maximus
-            venenatis. Suspendisse id lacinia sapien.
-          </p>
-          <img src="/img/desarrollo.png" />
+          <h2 className={styles.title}>{this.props.allContent.title}</h2>
+          {finalContent.map((block) => block)}
 
-          <h3 className={styles.subtitle}>Javascript</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-            nunc, bibendum at lorem et, imperdiet viverra velit. Nullam gravida
-            lobortis posuere. Fusce aliquet, quam quis interdum iaculis, orci
-            massa lacinia dolor, et tristique sem nulla et velit. Suspendisse a
-            libero interdum, dictum nisi quis, fermentum sem.
-          </p>
-          <p>
-            Aenean laoreet, nibh in volutpat faucibus, libero dui malesuada mi,
-            in posuere lorem ex pharetra lectus. Etiam convallis fermentum
-            accumsan. Nullam suscipit sed ante eu hendrerit. Etiam turpis massa,
-            tincidunt non arcu ac, fringilla ultrices leo. Nunc eget neque
-            placerat, finibus lacus et, eleifend ante. Nullam in massa sit amet
-            ex gravida bibendum at quis ligula. Nunc pharetra orci euismod
-            ligula blandit hendrerit. Ut consectetur velit nec diam convallis
-            sodales. Sed mollis finibus interdum. Sed cursus nulla eu mi auctor
-            placerat.
-          </p>
-          <p>
-            Nam facilisis quis dui vel iaculis. Nulla facilisis mi lobortis
-            augue ornare porttitor. Aenean et varius libero. Fusce tristique
-            rhoncus risus. Quisque varius odio sed vehicula varius. Fusce at
-            metus risus. Cras ut aliquam erat. Nullam ultrices maximus
-            venenatis. Suspendisse id lacinia sapien.
-          </p>
-          <img src="/img/desarrollo.png" />
-
-          <div className={styles.references}>
-            <h5>References:</h5>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-          </div>
+          
         </div>
 
         {/* Lateral Aside */}
         <div className={styles.aside}>
-          <img className={styles.logo} src="/img/articleLogo.png" />
+          <img className={styles.logo} src={this.props.allContent.logo} />
           <h3>More Content</h3>
-          <div  className={styles.asideContent}>
+          <div className={styles.asideContent}>
             <h4>HTMl</h4>
             <ul>
               <Link href="/">
                 <a>
                   <img className={styles.arrow} src="/icons/listarrow.svg" />
-                  <li>5 tips de javascript para desarrolladores de alto nivel imperdibles</li>
+                  <li>
+                    5 tips de javascript para desarrolladores de alto nivel
+                    imperdibles
+                  </li>
                 </a>
               </Link>
             </ul>
