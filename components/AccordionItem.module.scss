@@ -27,6 +27,7 @@
 
   .textsContainer {
     background: none;
+    width: 55%;
     .title {
       @include fontSize(title);
       margin-bottom: 2%;
@@ -36,6 +37,7 @@
       @include fontSize(subtitle);
       margin-top: 2%;
       background: none;
+    
     }
   }
   .logo {
@@ -61,7 +63,7 @@
 
   .list {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     grid-auto-rows: 130px;
     list-style-type: none;
 
