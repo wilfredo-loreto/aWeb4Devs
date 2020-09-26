@@ -13,21 +13,21 @@
   border-radius: 10px;
   overflow: hidden;
   transition: 400ms;
+  background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
   &:hover {
-    background: linear-gradient(
-        180deg,
-        rgba(68, 68, 68, 0.56) 99.98%,
-        rgba(68, 68, 68, 0.5) 99.99%,
-        rgba(255, 255, 255, 0) 100%
-      ),
-      url("/img/example.png");
     
+    background-size: cover !important; 
+    background-position: center !important; 
+    background-repeat: no-repeat !important; 
     .hidden {
       transform: translateY(0%);
       visibility: visible;
     }
   }
   .hidden {
+    pointer-events: none;
     padding: 3.5%;
     justify-self: center;
     width: 100%;
@@ -70,4 +70,3 @@
     }
   }
 }
-
