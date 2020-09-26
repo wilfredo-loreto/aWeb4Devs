@@ -4,6 +4,7 @@ import Accordion from "../components/Accordion";
 import axios from "axios";
 
 export async function getStaticProps() {
+  
   const res = axios.get("http://aweb4devsapi.herokuapp.com/api/techs/frontend");
   var childrens = (await res).data.techs;
 

@@ -11,15 +11,15 @@ export default function Footer(props) {
       <div className={styles.rowcontainer}>
 
         <div className={[styles.colcontainer, props.order ? styles.order1:styles.order0].join(' ')}>
-          <SmallCard />
-          <SmallCard />
+          <SmallCard img="/img/example.png" title="Example Title vs people"/>
+          <SmallCard img="/img/example.png" title="Example Title vs people"/>
         </div>
         <div className={styles.container50width}>
-          <BigCard />
+          <BigCard img="/img/example.png" title="React vs Angular" summary="Lorem ipsum erg masd fermon nom marsen elum terek asun"/>
         </div>
         <div className={styles.colcontainer}>
-          <SmallCard />
-          <SmallCard />
+          <SmallCard img="/img/example.png" title="Example Title vs people"/>
+          <SmallCard img="/img/example.png" title="Example Title vs people"/>
         </div>        
       </div>
     </section>
