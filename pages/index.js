@@ -10,11 +10,13 @@ function HomePage() {
         <Carousel
         subtitle = "Frontend Technologies"
         aux = {true} 
+        type = "frontend"
         />
         <News subtitle="Most Visited Articles" order={0}/>
          <Carousel
         subtitle = "Backend Technologies"
         aux = {false} 
+        type = "backend"
         />
      
       </div>

@@ -2,9 +2,12 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+
+
 export default function Header (){
-  
+
   const router = useRouter();
+
     return (
       <div className={styles.mainContainer}>
       {/* Header: Main logo, nav, search bar, burguer icon menu */}
@@ -28,7 +31,7 @@ export default function Header (){
               <a >
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Front-end</h3>
-                  <div id="active2" className={[styles.activeBar, router.pathname == "/frontend" ? styles.activeNav : null].join(" ")}></div>
+                  <div id="active2" className={[styles.activeBar, router.pathname == "/front-end" ? styles.activeNav : null].join(" ")}></div>
                 </div>
               </a>
             </Link>
@@ -36,15 +39,19 @@ export default function Header (){
               <a>
                 <div  className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Back-end</h3>
-                  <div id="active3" className={[styles.activeBar, router.pathname == "/backend" ? styles.activeNav : null].join(" ")}></div>
+                  <div id="active3" className={[styles.activeBar, router.pathname == "/back-end" ? styles.activeNav : null].join(" ")}></div>
                 </div>
               </a>
             </Link>
           </div>
 
           <div className={styles.searchBar}>
-            <input type="text" placeholder="Search..." />
-            <img className={styles.searchIcon} src="/icons/search.png" alt="" />
+           
+            <input
+              onKeyUp={() => key(event, 1)}
+             id="searchBar1" type="text" placeholder="Search..." />
+
+            <img onClick={() => search(1)} className={styles.searchIcon} src="/icons/search.png" alt="" />
           </div>
 
           <div className={styles.movilMenu}>
@@ -89,8 +96,8 @@ export default function Header (){
             </Link>
           </div>
           <div className={styles.searchBar2}>
-            <input type="text" placeholder="Search..." />
-            <img className={styles.searchIcon} src="/icons/search.png" alt="" />
+            <input onKeyUp={() => key(event, 2)} id="searchBar2" type="text" placeholder="Search..." />
+            <img onClick={() => search(2)} className={styles.searchIcon} src="/icons/search.png" alt="" />
           </div>
         </div>
       </div>
@@ -105,4 +112,27 @@ function AnimationMenu(){
 
   icono.classList.toggle(styles.open);
   menu.classList.toggle(styles.openMenu);
+}
+
+function key(e, x){
+  
+  if(e.keyCode === 13){
+
+    search(x)
+  }
+
+
+}
+
+
+async function search(x){
+
+  var searchBar = document.getElementById("searchBar" + x);
+  
+  if(searchBar.value != null){
+
+    location.href = "/results/" + searchBar.value; 
+
+  }
+ 
 }

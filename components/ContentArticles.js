@@ -2,11 +2,16 @@ import styles from "./ContentArticles.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
+import axios from 'axios';
 
-export default class ContentArticles extends Component {
+
+class ContentArticles extends Component {
+  
+
   constructor(props) {
-    super(props);
+    super(props)
     this.state = { optionSelected: "Most recents" };
+ 
   }
 
   // Select order desplegable animation 
@@ -65,11 +70,12 @@ export default class ContentArticles extends Component {
     this.showOptions();
   }
 
-  render() {
+  render(){
+    const articles = this.props.articles
+   
     return (
       /* ContentCards  */
       <div className={styles.globalContainer}>
-
         {/* Order select */}
         <div className={styles.order}>
           <span onClick={() => this.showOptions()} >Sort by:</span>
@@ -114,17 +120,20 @@ export default class ContentArticles extends Component {
 
         {/* Article cards container */}
         <div className={styles.articlesContainer}>
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
-          <ArticleCard />
+          
+          {articles.map((article, count) => (
+          
+           <ArticleCard key={count}
+           data = {article} />  
+         
+          ))}
+              
         </div>
       </div>
     );
   }
+
+ 
 }
+
+export default ContentArticles

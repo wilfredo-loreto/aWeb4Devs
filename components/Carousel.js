@@ -2,11 +2,12 @@ import styles from "./Carousel.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import CarouselCard from "./CarouselCard";
+import axios from 'axios';
 
 export default class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { actualCardF: 2, maxCardsF: 9, actualCardB: 2, maxCardsB: 9  };
+    this.state = { actualCardF: 2, actualCardB: 2, techs: []  };
   }
 
   //Animation left Carousel
@@ -145,6 +146,15 @@ export default class Carousel extends Component {
   
   //Time animation of carousel 
   componentDidMount() {
+
+    axios.get('http://aweb4devsapi.herokuapp.com/api/homepage/carousel/'+ this.props.type)
+    .then(res => {
+     
+      this.setState({ techs: res.data.techs});
+      console.log(this.state.techs.length)
+    })
+    
+
     this.setState({actualCardF: 2});
     this.setState({actualCardB: 2});
    
@@ -156,18 +166,27 @@ export default class Carousel extends Component {
 
   }
 
+  increaseCounter(aux){
+
+    aux < 3 ? aux+=1 : aux=3
+
+    return aux;
+  }
+
   automaticCarousel(){
     this.timerID = setInterval(
       () =>
         ( this.animationCarouselRight(
           this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-          this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
-        )),
+          this.state.techs.length)),
       5000
     );
   }
 
   render() {
+    const techs = this.state.techs;
+    var aux = -1 ;
+    var classCard = [styles.contentCardI,styles.mainCard,styles.contentCardD,styles.hideCard]
   
     return (
       <div className={styles.contentCarousel}>
@@ -181,7 +200,7 @@ export default class Carousel extends Component {
           <div  className={styles.movilAnimationI}  onClick={() =>
               ( this.animationCarouselLeft(
                 this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-                this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
+                this.state.techs.length
               ))
             }>
           <img
@@ -195,50 +214,25 @@ export default class Carousel extends Component {
           <div className={styles.carousel} id="carousel">
             
             {/* Carousel items/cards */}
-            <div id={this.props.aux ? "cardF1" : "cardB1"} className={styles.contentCardI}>
+            {techs.map((tech, count) => (
+           
+
+              <div id={this.props.aux ? "cardF"+(count+1) : "cardB"+(count+1)} className={classCard[aux=this.increaseCounter(aux)]}>
               <CarouselCard 
-              image = "images/html1.jpg"
+              image = {tech.img}
               />
-            </div>
-            <div id={this.props.aux ? "cardF2" : "cardB2"} className={styles.mainCard}>
-              <CarouselCard 
-              image = "images/css.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF3" : "cardB3"} className={styles.contentCardD}>
-              <CarouselCard 
-              image = "images/js.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF4" : "cardB4"} className={styles.hideCard}>
-              <CarouselCard 
-              image = "images/html1.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF5" : "cardB5"} className={styles.hideCard}>
-              <CarouselCard
-              image = "images/css.jpg" />
-            </div>
-            <div id={this.props.aux ? "cardF6" : "cardB6"} className={styles.hideCard}>
-              <CarouselCard 
-              image = "images/js.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF7" : "cardB7"} className={styles.hideCard}>
-              <CarouselCard 
-              image = "images/html1.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF8" : "cardB8"} className={styles.hideCard}>
-              <CarouselCard 
-              image = "images/css.jpg"/>
-            </div>
-            <div id={this.props.aux ? "cardF9" : "cardB9"} className={styles.hideCard}>
-              <CarouselCard 
-              image = "images/js.jpg"/>
-            </div>
+              </div>
+        
+            ))}
+
+          
          
           </div>
           {/* Right Arrow and right div for carousel activation */}
           <div  className={styles.movilAnimationD}  onClick={() =>
               (this.animationCarouselRight(
                 this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-                this.props.aux ? this.state.maxCardsF : this.state.maxCardsB
+                this.state.techs.length
               ))
             }>
           <img

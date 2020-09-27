@@ -3,31 +3,44 @@ import Link from "next/link";
 import React, { Component } from "react";
 
 export default class ArticleCard extends Component {
+
+  shortDate(){
+    var date = this.props.data.date.split("T")[0];
+    return date
+  }
+
+  slugSyntax(link){
+    return link.split(" ").join("-")
+  }
+
   render() {
+    var data = this.props.data
+    var date = this.shortDate()
+    var link = this.slugSyntax(data.title);
     return (
       /* Article Card  */
-      <div title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit." className={styles.globalContainer}>
-        <Link href="/">
+      <div title={data.summary} className={styles.globalContainer}>
+        <Link href={"/articles/" + link }>
           <a>
             {/*Main image*/}
             <img
               className={styles.imageArticle}
-              src="/images/desarrollo.png"
+              src={data.img}
               alt=""
             />
             <div className={styles.infoContainer}>
               {/* title */}
-              <h3 className={styles.title}>Top 5 Javascript tips </h3>
+              <h3 className={styles.title}>{data.title} </h3>
               {/* Resume */}
               <p className={styles.info}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              {data.summary}
               </p>
               {/* Date and vitists */}
               <div className={styles.dataContainer}>
-                <span className={styles.date}>26/06/20</span>
+                <span className={styles.date}>{date}</span>
                 <div>
                   <img className={styles.icon} src="/icons/visits.png" alt="" />
-                  <span className={styles.visits}>48</span>
+                  <span className={styles.visits}>{data.visits}</span>
                 </div>
               </div>
             </div>
