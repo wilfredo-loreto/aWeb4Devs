@@ -14,14 +14,14 @@ export default function definitionFrontend({
           allContent={content}
           asideParents={asideParents}
           asideChildrens={asideChildrens}
-          type="front-end"
+          type="frontend"
         />
       </div>
     </Layout>
   );
 }
 export async function getStaticPaths() {
-  const res = axios.get("http://aweb4devsapi.herokuapp.com/api/techs/frontend");
+  const res = axios.get("http://aweb4devsapi.herokuapp.com/aside-techs/frontend");
   const techs = (await res).data.techs;
 
   const paths = techs.map((tech) => ({

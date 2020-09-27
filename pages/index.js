@@ -11,10 +11,10 @@ export async function getStaticProps() {
   }
 
   var res = await Promise.all([
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/homepage/news/3articles`),
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/homepage/news/2techs`),
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/homepage/carousel/`),
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/homepage/news/most-visited-articles`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/3articles`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/2techs`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/homepage/carousel/`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/most-visited-articles`),
   ]);
 
   var i=0

@@ -7,7 +7,7 @@ export default function definitionBackend({ content, asideParents,asideChildrens
     return (
       <Layout>
         <div>
-          <DefinitionPage allContent={content} asideParents={asideParents} asideChildrens={asideChildrens} type="back-end"/>
+          <DefinitionPage allContent={content} asideParents={asideParents} asideChildrens={asideChildrens} type="backend"/>
         </div>
       </Layout>
     );
@@ -25,16 +25,14 @@ export default function definitionBackend({ content, asideParents,asideChildrens
     };
   }
   
-  //  This also gets called at build time
   export async function getStaticProps({ params }) {
-    // params contains the post `id`.
-    // If the route is like /posts/1, then params.id is 1
+ 
     
     const res = await Promise.all([
       axios.get(
-        `https://aweb4devsapi.herokuapp.com/api/tech/${params.techTitle}`
+        `https://aweb4devsapi.herokuapp.com/tech/${params.techTitle}`
       ),
-      axios.get(`https://aweb4devsapi.herokuapp.com/api/techs/backend`),
+      axios.get(`https://aweb4devsapi.herokuapp.com/aside-techs/backend`),
     ]);
   
     var childrens = res[1].data.techs;
@@ -57,16 +55,12 @@ export default function definitionBackend({ content, asideParents,asideChildrens
       }
       orderedChildrens[j].push(childrens[i]);
     }
-  
-    // Pass post data to the page via props
     return {
       props: {
         content: res[0].data.tech,
         asideParents: parents,
         asideChildrens: orderedChildrens,
       },
-      // Re-generate the post at most once per second
-      // if a request comes in
       revalidate: 1,
     };
   }
