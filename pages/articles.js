@@ -20,7 +20,7 @@ function articles({ posts }){
 
 export async function getStaticProps(ctx){
 
-   const res = axios.get('http://aweb4devsapi.herokuapp.com/api/articles/')
+   const res = axios.get('http://aweb4devsapi.herokuapp.com/articles/')
    const posts = (await res).data
 
    return {

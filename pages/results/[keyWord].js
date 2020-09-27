@@ -6,7 +6,7 @@ import {useRouter} from 'next/router'
 export default function results({postsArticles, postsTechs}){
     const router = useRouter()
     const {keyWord} = router.query
-    
+
     return(
         <Layout>
             <div>
@@ -24,8 +24,8 @@ export default function results({postsArticles, postsTechs}){
 export async function getServerSideProps(ctx){
 
   const res = await Promise.all([
-    axios.get('http://aweb4devsapi.herokuapp.com/api/search-articles/'+ ctx.query.keyWord),
-    axios.get('http://aweb4devsapi.herokuapp.com/api/search-techs/'+ ctx.query.keyWord)
+    axios.get('http://aweb4devsapi.herokuapp.com/search-articles/'+ ctx.query.keyWord),
+    axios.get('http://aweb4devsapi.herokuapp.com/search-techs/'+ ctx.query.keyWord)
 
   ]); 
 
