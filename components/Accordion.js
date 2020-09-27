@@ -56,7 +56,7 @@ export default class Accordion extends Component {
             logo={accordion.logo}
             accordionId={"accordionItem" + cont}
             panelId={"panel" + cont}
-            type={this.props.type}
+            type={this.props.requestType}
             childrens={this.props.childrens[cont]} 
             key={cont}
           />

@@ -46,7 +46,7 @@ export default class DefinitionPage extends Component {
             <div className={styles.references}>
               <h5>References:</h5>
               <ul>
-                {block.content.map((item, i) => (
+                {block.content.references.map((item) => (
                   <li>
                     {item.author}
                     <a href={item.link} target="_blank">

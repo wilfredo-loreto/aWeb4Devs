@@ -47,7 +47,6 @@ function FrontEnd({orderedChildrens, parents}) {
           description="The frontend of a website or software is everything with which the user interacts. From a developer, it is design and the programming that makes the interface works correctly."
         />
         <Accordion
-          type="front-end"
           requestType="frontend"
           parents={parents}
           childrens={orderedChildrens}

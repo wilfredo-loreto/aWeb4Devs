@@ -24,7 +24,7 @@ export default function Header (){
                 </div>
               </a>
             </Link>
-            <Link href="/front-end">
+            <Link href="/frontend">
               <a >
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Front-end</h3>
@@ -32,7 +32,7 @@ export default function Header (){
                 </div>
               </a>
             </Link>
-            <Link href="/back-end">
+            <Link href="/backend">
               <a>
                 <div  className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Back-end</h3>
@@ -71,7 +71,7 @@ export default function Header (){
                 </div>
               </a>
             </Link>
-            <Link href="/front-end">
+            <Link href="/frontend"> 
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Front-end</h3>
@@ -79,7 +79,7 @@ export default function Header (){
                 </div>
               </a>
             </Link>
-            <Link href="/back-end">
+            <Link href="/backend">
               <a>
                 <div className={styles.ColContainer}>
                   <h3 className={styles.itemNav}>Back-end</h3>

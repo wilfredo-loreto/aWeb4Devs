@@ -43,13 +43,13 @@ function HomePage({articlesNews,techsNews,mostVisited,frontendCarousel,backendCa
     <Layout>
       
       <div>
-        <News recentArticles={articlesNews} recentTechs={techsNews} subtitle="Recent Articles of Web Development Technologies" order={1}/>
+        <News type="recents" recentArticles={articlesNews} recentTechs={techsNews} subtitle="Recent Articles of Web Development Technologies" order={1}/>
         <Carousel
         subtitle = "Frontend Technologies"
         aux = {true} 
         carouselContent = {frontendCarousel}
         />
-        <News subtitle="Most Visited Articles" order={0} mostVisiteds={mostVisited}/>
+        <News type="visiteds" subtitle="Most Visited Articles" order={0} mostVisiteds={mostVisited}/>
          <Carousel
         subtitle = "Backend Technologies"
         aux = {false}
