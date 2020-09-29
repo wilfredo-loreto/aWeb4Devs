@@ -1,12 +1,12 @@
 import styles from './Smallcard.module.scss'
 import Link from 'next/link'
 
-function SmallCard({img,title,type,isTech}) {
+function SmallCard({img,title,type}) {
   function slugSyntax(link){
     return link.split(" ").join("-")
   }
   var link,finalTitle,gray 
-   if(isTech){
+   if(type){
     link="/" + type + "/" + slugSyntax(title)
     finalTitle = null
     gray = ``

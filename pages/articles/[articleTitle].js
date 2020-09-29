@@ -1,14 +1,19 @@
 import Layout from "../../components/Layout";
 import ArticlePage from "../../components/ArticlePage";
+import axios from "axios"
+import {useRouter} from "next/router"
 
 
-export default function article(){
-
+export default function article({articleContent,relatedArticles}){
+  const router = useRouter()
+  if(router.isFallback){
+    return <h1>Loading...</h1>
+  }
     return(
 
         <Layout>
             <div>
-                <ArticlePage/>
+                <ArticlePage articleContent={articleContent} relatedArticles={relatedArticles}/>
             </div>
         </Layout>
     )
@@ -17,9 +22,8 @@ export default function article(){
 export async function getStaticPaths() {
     const res = axios.get("http://aweb4devsapi.herokuapp.com/articles");
     const articles = (await res).data.articles;
-  
     const paths = articles.map((article) => ({
-      params: { articleTitle: article.title },
+      params: { articleTitle: article.title}
     }));
     return {
       paths,
@@ -28,40 +32,24 @@ export async function getStaticPaths() {
   }
   
   export async function getStaticProps({ params }) {
- 
+    function unSlug(str){
+
+      return str.split("-").join(" ")
+
+    }
+   console.log(params.articleTechnologies);
     
     const res = await Promise.all([
       axios.get(
-        `https://aweb4devsapi.herokuapp.com/api/tech/${params.articleTitle}`
+        `https://aweb4devsapi.herokuapp.com/article/${unSlug(params.articleTitle)}`
       ),
-      axios.get(`https://aweb4devsapi.herokuapp.com/api/aside/backend`),
+      axios.get(`https://aweb4devsapi.herokuapp.com/article/aside/${params.articleTechnologies}`),
     ]);
   
-    var childrens = res[1].data.techs;
-  
-    var parents = [];
-    var i = 0;
-    while (childrens[i].parent == "") {
-      i++;
-    }
-    parents = childrens.splice(0, i);
-  
-    var orderedChildrens = [];
-    for (i = 0; i < parents.length; i++) {
-      orderedChildrens[i] = [];
-    }
-    var j = 0;
-    for (i = 0; i <= childrens.length - 1; i++) {
-      while (parents[j].title != childrens[i].parent) {
-        j++;
-      }
-      orderedChildrens[j].push(childrens[i]);
-    }
     return {
       props: {
-        content: res[0].data.tech,
-        asideParents: parents,
-        asideChildrens: orderedChildrens,
+        articleContent:res[0].data.article,
+        relatedArticles:res[1].data.result
       },
       revalidate: 1,
     };

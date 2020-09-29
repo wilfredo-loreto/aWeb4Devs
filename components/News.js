@@ -90,8 +90,8 @@ export default class News extends Component {
             />
           </div>
           <div className={styles.colcontainer}>
-            <SmallCard isTech={true} type={smallCards2[0].type} img={smallCards2[0].img} title={smallCards2[0].title} />
-            <SmallCard isTech={true} type={smallCards2[1].type} img={smallCards2[1].img} title={smallCards2[1].title} />
+            <SmallCard type={smallCards2[0].type} img={smallCards2[0].img} title={smallCards2[0].title} />
+            <SmallCard type={smallCards2[1].type} img={smallCards2[1].img} title={smallCards2[1].title} />
           </div>
         </div>
       </section>

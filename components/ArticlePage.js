@@ -3,6 +3,11 @@ import Link from "next/link";
 import React, { Component } from "react";
 
 export default class ArticlePage extends Component {
+
+
+  componentDidMount(){
+      
+  }
   render() {
     return (
       /* Informative articles  */

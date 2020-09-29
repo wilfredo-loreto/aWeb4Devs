@@ -1,12 +1,16 @@
 import Layout from "../../components/Layout";
 import DefinitionPage from "../../components/DefinitionPage";
 import axios from "axios";
-
+import {useRouter} from "next/router"
 export default function definitionFrontend({
   content,
   asideParents,
   asideChildrens,
 }) {
+  const router = useRouter()
+  if(router.isFallback){
+    return <h1>Loading...</h1>
+  }
   return (
     <Layout>
       <div>
@@ -44,8 +48,8 @@ export async function getStaticProps({ params }) {
   }
 
   const res = await Promise.all([
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/tech/${unSlug(params.techTitle)}`),
-    axios.get(`https://aweb4devsapi.herokuapp.com/api/techs/frontend`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/tech/${unSlug(params.techTitle)}`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/techs/frontend`),
   ]);
 
   var childrens = res[1].data.techs;
