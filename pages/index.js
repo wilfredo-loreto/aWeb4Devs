@@ -53,7 +53,7 @@ function HomePage({articlesNews,techsNews,mostVisited,frontendCarousel,backendCa
          <Carousel
         subtitle = "Backend Technologies"
         aux = {false}
-        carouselContent={backendCarousel} 
+        carouselContent = {backendCarousel} 
         />
      
       </div>
