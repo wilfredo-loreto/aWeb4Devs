@@ -6,6 +6,7 @@ import {useRouter} from 'next/router'
 export default function results({postsArticles, postsTechs}){
     const router = useRouter()
     const {keyWord} = router.query
+    console.log(postsArticles)
 
     return(
         <Layout>

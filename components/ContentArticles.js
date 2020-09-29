@@ -48,7 +48,6 @@ class ContentArticles extends Component {
       (x == 3 && this.state.optionSelected == "Visits")
     ) {
       aux = false;
-      console.log("hola");
     }
 
     if (aux) {

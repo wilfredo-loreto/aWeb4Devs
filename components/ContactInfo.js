@@ -13,13 +13,13 @@ export default class ContactInfo extends Component {
             <span className={styles.subtitle}>Get in Touch</span>
             <div className={styles.rrssContainer}>
               <a className={styles.emailWhatsapp} href="">
-                <img src="/img/whatsapp.svg" />
+                <img src="/icons/whatsapp.svg" />
                 <span className={styles.hiddenMobile}>+58 4244320635</span>
               </a>
             </div>
             <div className={styles.rrssContainer}>
               <a className={styles.emailWhatsapp} href="">
-                <img src="/img/email.svg" />
+                <img src="/icons/email.svg" />
                 <span className={styles.hiddenMobile}>support@<span className={styles.break}> </span>aweb4devs.com</span>
               </a>
             </div>

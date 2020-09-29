@@ -2,7 +2,7 @@ import styles from "./Carousel.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import CarouselCard from "./CarouselCard";
-import axios from 'axios';
+
 
 export default class Carousel extends Component {
   constructor(props) {
@@ -132,8 +132,7 @@ export default class Carousel extends Component {
 
     if(this.props.aux){
       this.setState({actualCardF: x});
-      console.log(x);
-      console.log(this.state.actualCardF);
+      
       
    
     }else{
@@ -146,14 +145,6 @@ export default class Carousel extends Component {
   
   //Time animation of carousel 
   componentDidMount() {
-
-    axios.get('http://aweb4devsapi.herokuapp.com/api/homepage/carousel/'+ this.props.type)
-    .then(res => {
-     
-      this.setState({ techs: res.data.techs});
-      console.log(this.state.techs.length)
-    })
-    
 
     this.setState({actualCardF: 2});
     this.setState({actualCardB: 2});
@@ -178,13 +169,14 @@ export default class Carousel extends Component {
       () =>
         ( this.animationCarouselRight(
           this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-          this.state.techs.length)),
+          this.props.carouselContent.length)),
       5000
     );
   }
 
   render() {
-    const techs = this.state.techs;
+    const techs = this.props.carouselContent;
+    console.log(techs)
     var aux = -1 ;
     var classCard = [styles.contentCardI,styles.mainCard,styles.contentCardD,styles.hideCard]
   
@@ -200,7 +192,7 @@ export default class Carousel extends Component {
           <div  className={styles.movilAnimationI}  onClick={() =>
               ( this.animationCarouselLeft(
                 this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-                this.state.techs.length
+                this.props.carouselContent.length
               ))
             }>
           <img
@@ -217,9 +209,11 @@ export default class Carousel extends Component {
             {techs.map((tech, count) => (
            
 
-              <div id={this.props.aux ? "cardF"+(count+1) : "cardB"+(count+1)} className={classCard[aux=this.increaseCounter(aux)]}>
+              <div key={"div" + count} id={this.props.aux ? "cardF"+(count+1) : "cardB"+(count+1)} className={classCard[aux=this.increaseCounter(aux)]}>
               <CarouselCard 
               image = {tech.img}
+              title = {tech.title}
+              type = {tech.type}
               />
               </div>
         
@@ -232,7 +226,7 @@ export default class Carousel extends Component {
           <div  className={styles.movilAnimationD}  onClick={() =>
               (this.animationCarouselRight(
                 this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-                this.state.techs.length
+                this.props.carouselContent.length
               ))
             }>
           <img
