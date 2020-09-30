@@ -1,12 +1,14 @@
 import styles from "./DefinitionPage.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
+import Axios from "axios";
 
 export default class DefinitionPage extends Component {
   slugSyntax(link){
     return link.split(" ").join("-")
   }
-  render() {
+  
+  render() { 
     var finalContent = [];
     if (this.props.allContent == undefined) {
       return <h1>Loading</h1>;

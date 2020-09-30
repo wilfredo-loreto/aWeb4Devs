@@ -13,9 +13,8 @@ export default function definitionBackend({ content, asideParents,asideChildrens
     );
   }
   export async function getStaticPaths() {
-    const res = axios.get("http://aweb4devsapi.herokuapp.com/api/techs/backend");
+    const res = axios.get("http://aweb4devsapi.herokuapp.com/techs/backend");
     const techs = (await res).data.techs;
-  
     const paths = techs.map((tech) => ({
       params: { techTitle: tech.title },
     }));
@@ -49,10 +48,15 @@ export default function definitionBackend({ content, asideParents,asideChildrens
       orderedChildrens[i] = [];
     }
     var j = 0;
+    var band = true
     for (i = 0; i <= childrens.length - 1; i++) {
-      while (parents[j].title != childrens[i].parent) {
-        j++;
-      }
+      band = true
+        while (parents[j].title != childrens[i].parent && band) {
+          j++;
+          if(parents[j]== undefined){
+            band=false
+          }
+        }
       orderedChildrens[j].push(childrens[i]);
     }
     return {
