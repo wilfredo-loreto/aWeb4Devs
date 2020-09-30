@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 
   const paths = techs.map((tech) => ({
 
-    params: { techTitle: tech.title },
+    params: { techTitle: tech.title.split(" ").join("-") },
   }));
   console.log(paths);
   return {

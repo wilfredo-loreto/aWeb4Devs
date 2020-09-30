@@ -11,6 +11,7 @@ function articles({ posts }){
             <ContentArticles
 
                 articles = {posts.articles}
+
             />
             </div>
         </Layout>
