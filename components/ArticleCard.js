@@ -23,11 +23,13 @@ export default class ArticleCard extends Component {
         <Link href={"/articles/" + link }>
           <a>
             {/*Main image*/}
+            <div className={styles.contentImage}>
             <img
               className={styles.imageArticle}
               src={data.img}
               alt=""
             />
+            </div>
             <div className={styles.infoContainer}>
               {/* title */}
               <h3 className={styles.title}>{data.title} </h3>

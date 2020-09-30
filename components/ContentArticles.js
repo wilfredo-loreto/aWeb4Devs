@@ -4,14 +4,19 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import axios from 'axios';
 
-
 class ContentArticles extends Component {
   
 
   constructor(props) {
     super(props)
-    this.state = { optionSelected: "Most recents" };
+    this.state = {articles: [], optionSelected: "Most recents" };
  
+  }
+
+  componentDidMount(){
+
+    this.setState({ articles: this.props.articles })
+
   }
 
   // Select order desplegable animation 
@@ -41,6 +46,8 @@ class ContentArticles extends Component {
     var aux = true;
     var result;
     console.log(this.state.optionSelected);
+   
+    console.log(this.props.articles)
 
     if (
       (x == 1 && this.state.optionSelected == "Most recents") ||
@@ -51,27 +58,62 @@ class ContentArticles extends Component {
     }
 
     if (aux) {
+  
       switch (x) {
         case 1:
           result = "Most recents";
+          const newOrder = this.props.articles.sort((a,b) => {
+
+              if(b.date.split("T")[0].split("-")[0] - a.date.split("T")[0].split("-")[0] == 0 ){
+
+                if(b.date.split("T")[0].split("-")[1] - a.date.split("T")[0].split("-")[1] == 0 ){
+
+                  return(b.date.split("T")[0].split("-")[2] - a.date.split("T")[0].split("-")[2])
+                }else{
+
+                  return(b.date.split("T")[0].split("-")[1] - a.date.split("T")[0].split("-")[1])
+
+                }
+
+              }else{
+
+                return(b.date.split("T")[0].split("-")[0] - a.date.split("T")[0].split("-")[0])
+
+              }
+      
+          })
+          this.setState({ articles: newOrder })
           break;
         case 2:
           result = "Technology";
           break;
         case 3:
           result = "Visits";
+     
+          const newOrder1 = this.props.articles.sort((a,b) => {
+
+            return (b.visits - a.visits)
+          })
+
+          console.log(this.props.articles)
+
+          this.setState({ articles: newOrder1 })
+
           break;
       }
 
       this.setState({ optionSelected: result });
     }
 
-    this.showOptions();
+   this.showOptions()
+
   }
 
   render(){
-    const articles = this.props.articles
-   
+  
+    const articles = this.state.articles
+    
+ 
     return (
       /* ContentCards  */
       <div className={styles.globalContainer}>
