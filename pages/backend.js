@@ -20,14 +20,19 @@ export async function getStaticProps() {
     orderedChildrens[i] = [];
   }
   var j = 0;
-  for(i=0;i<=childrens.length - 1; i++){
-
-    while (parents[j].title != childrens[i].parent) {
-      j++;
+   var band = true
+    for (i = 0; i <= childrens.length - 1; i++) {
+      band = true
+        while (parents[j].title != childrens[i].parent && band) {
+          j++;
+          if(parents[j]== undefined){
+            band=false
+          }
+        }
+      
+      
+      orderedChildrens[j].push(childrens[i]);
     }
-    orderedChildrens[j].push(childrens[i]);
-
-}
 console.log(orderedChildrens)
   
   return {

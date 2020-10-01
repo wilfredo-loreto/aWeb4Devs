@@ -1,148 +1,173 @@
 import styles from "./DefinitionPage.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
+import Axios from "axios";
 
 export default class ArticlePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      asideParents: [],
+      asideChilds: [],
+    };
+  }
+
+  slugSyntax(link) {
+    return link.split(" ").join("-");
+  }
+  componentDidMount() {
+    console.log(this.props.articleContent.type);
+    Axios.get(
+      `https://aweb4devsapi.herokuapp.com/aside-techs/${this.props.articleContent.type}`
+    ).then((res) => {
+      var childrens = res.data.techs;
+
+      var parents = [];
+      var i = 0;
+      while (childrens[i].parent == "") {
+        i++;
+      }
+      parents = childrens.splice(0, i);
+
+      var orderedChildrens = [];
+      for (i = 0; i < parents.length; i++) {
+        orderedChildrens[i] = [];
+      }
+      var j = 0;
+      var band = true;
+      for (i = 0; i <= childrens.length - 1; i++) {
+        band = true;
+        while (parents[j].title != childrens[i].parent && band) {
+          j++;
+          if (parents[j] == undefined) {
+            band = false;
+          }
+        }
+
+        orderedChildrens[j].push(childrens[i]);
+      }
+      this.setState({ asideParents: parents, asideChilds: orderedChildrens });
+    });
+  }
   render() {
+    var finalContent = [];
+
+    const { asideParents } = this.state;
+    const { asideChilds } = this.state;
+    console.log(asideParents);
+    console.log(asideChilds);
+
+    this.props.articleContent.content.map((block) => {
+      var i;
+      switch (block.type) {
+        case "subtitle":
+          finalContent.push(
+            <h2 className={styles.subtitle}>{block.content}</h2>
+          );
+          break;
+
+        case "image":
+          finalContent.push(
+            <img src={block.content.src} alt={block.content.alt} />
+          );
+          break;
+
+        case "text":
+          for (i = 0; i <= block.content.length - 1; i++)
+            finalContent.push(<p>{block.content[i]}</p>);
+          break;
+
+        case "list":
+          finalContent.push(
+            <ul>
+              {block.content.map((item, i) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          );
+          break;
+
+        case "references":
+          finalContent.push(
+            <div className={styles.references}>
+              <h5>References:</h5>
+              <ul>
+                {block.content.references.map((item) => (
+                  <li>
+                    {item.author}
+                    <a href={item.link} target="_blank">
+                      {item.link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+      }
+    });
+
     return (
-      /* Informative articles  */
+      /* Definition of technologies */
       <div className={styles.mainContainer}>
+        <img className={styles.logo2} src={this.props.articleContent.logo} />
         <div className={styles.content}>
-          <h2 className={styles.title}>Javascript</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-            nunc, bibendum at lorem et, imperdiet viverra velit. Nullam gravida
-            lobortis posuere. Fusce aliquet, quam quis interdum iaculis, orci
-            massa lacinia dolor, et tristique sem nulla et velit. Suspendisse a
-            libero interdum, dictum nisi quis, fermentum sem.
-          </p>
-          <p>
-            Aenean laoreet, nibh in volutpat faucibus, libero dui malesuada mi,
-            in posuere lorem ex pharetra lectus. Etiam convallis fermentum
-            accumsan. Nullam suscipit sed ante eu hendrerit. Etiam turpis massa,
-            tincidunt non arcu ac, fringilla ultrices leo. Nunc eget neque
-            placerat, finibus lacus et, eleifend ante. Nullam in massa sit amet
-            ex gravida bibendum at quis ligula. Nunc pharetra orci euismod
-            ligula blandit hendrerit. Ut consectetur velit nec diam convallis
-            sodales. Sed mollis finibus interdum. Sed cursus nulla eu mi auctor
-            placerat.
-          </p>
-          <p>
-            Nam facilisis quis dui vel iaculis. Nulla facilisis mi lobortis
-            augue ornare porttitor. Aenean et varius libero. Fusce tristique
-            rhoncus risus. Quisque varius odio sed vehicula varius. Fusce at
-            metus risus. Cras ut aliquam erat. Nullam ultrices maximus
-            venenatis. Suspendisse id lacinia sapien.
-          </p>
-          <img src="/img/desarrollo.png" />
-
-          <h3 className={styles.subtitle}>Javascript</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque
-            nunc, bibendum at lorem et, imperdiet viverra velit. Nullam gravida
-            lobortis posuere. Fusce aliquet, quam quis interdum iaculis, orci
-            massa lacinia dolor, et tristique sem nulla et velit. Suspendisse a
-            libero interdum, dictum nisi quis, fermentum sem.
-          </p>
-          <p>
-            Aenean laoreet, nibh in volutpat faucibus, libero dui malesuada mi,
-            in posuere lorem ex pharetra lectus. Etiam convallis fermentum
-            accumsan. Nullam suscipit sed ante eu hendrerit. Etiam turpis massa,
-            tincidunt non arcu ac, fringilla ultrices leo. Nunc eget neque
-            placerat, finibus lacus et, eleifend ante. Nullam in massa sit amet
-            ex gravida bibendum at quis ligula. Nunc pharetra orci euismod
-            ligula blandit hendrerit. Ut consectetur velit nec diam convallis
-            sodales. Sed mollis finibus interdum. Sed cursus nulla eu mi auctor
-            placerat.
-          </p>
-          <p>
-            Nam facilisis quis dui vel iaculis. Nulla facilisis mi lobortis
-            augue ornare porttitor. Aenean et varius libero. Fusce tristique
-            rhoncus risus. Quisque varius odio sed vehicula varius. Fusce at
-            metus risus. Cras ut aliquam erat. Nullam ultrices maximus
-            venenatis. Suspendisse id lacinia sapien.
-          </p>
-          <img src="/img/desarrollo.png" />
-
-          <div className={styles.references}>
-            <h5>References:</h5>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-            <span>
-              Mauris bibendum ante nec ipsum -{" "}
-              <a href="/">https://www.korvusweb.com</a>
-            </span>
-          </div>
+          <h2 className={styles.title}>{this.props.articleContent.title}</h2>
+          {finalContent.map((block) => block)}
         </div>
 
-        {/* Lateral aside */}
+        {/* Aside */}
         <div className={[styles.aside, styles.articleAside].join(" ")}>
           <h3>More Content</h3>
           <div className={styles.asideContent}>
-            <h4>Related Articles</h4>
-            <ul>
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>5 tips de javascript para desarrolla</li>
-                  </div>
-                </a>
-              </Link>
+            {this.props.relatedArticles.length != 0 ? (
+              <React.Fragment>
+                <h4>Related Articles</h4>
+              <ul>
+                {this.props.relatedArticles.map((title) => (
+                  <Link href={"/articles/" + this.slugSyntax(title)}>
+                    <a>
+                      <div>
+                        <img
+                          className={styles.arrow}
+                          src="/icons/listarrow.svg"
+                        />
+                        <li>{title}</li>
+                      </div>
+                    </a>
+                  </Link>
+                ))}
+              </ul>
+              </React.Fragment>
+            ) : null}
+            
+            {asideParents.length>0 ? (
 
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>Definition</li>
-                  </div>
-                </a>
-              </Link>
-            </ul>
-            <h4>Related Tech</h4>
-            <ul>
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>React</li>
-                  </div>
-                </a>
-              </Link>
-
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>React</li>
-                  </div>
-                </a>
-              </Link>
-
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>React</li>
-                  </div>
-                </a>
-              </Link>
-
-              <Link href="/">
-                <a>
-                  <div>
-                    <img className={styles.arrow} src="/icons/listarrow.svg" />
-                    <li>React</li>
-                  </div>
-                </a>
-              </Link>
-            </ul>
+            
+            <React.Fragment>
+            <h4>Related Techs</h4>
+            {asideParents.map((parent, i) => (
+              <div className={styles.techBlock}>
+                <Link href={"/" + parent.type + "/" + this.slugSyntax(parent.title) }>
+                  <a>
+                    <h4>{parent.title}</h4>
+                  </a>
+                </Link>
+                <ul>
+                  {asideChilds[i].map((child) => (
+                    <Link href={"/" + child.type + "/" + this.slugSyntax(child.title)}>
+                      <a>
+                        <img
+                          className={styles.arrow}
+                          src="/icons/listarrow.svg"
+                          />
+                        <li>{child.title}</li>
+                      </a>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+              ))}
+              </React.Fragment>):null}
           </div>
         </div>
       </div>

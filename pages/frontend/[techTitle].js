@@ -1,12 +1,16 @@
 import Layout from "../../components/Layout";
 import DefinitionPage from "../../components/DefinitionPage";
 import axios from "axios";
-
+import {useRouter} from "next/router"
 export default function definitionFrontend({
   content,
   asideParents,
   asideChildrens,
 }) {
+  const router = useRouter()
+  if(router.isFallback){
+    return <h1>Loading...</h1>
+  }
   return (
     <Layout>
       <div>
@@ -62,12 +66,19 @@ export async function getStaticProps({ params }) {
     orderedChildrens[i] = [];
   }
   var j = 0;
-  for (i = 0; i <= childrens.length - 1; i++) {
-    while (parents[j].title != childrens[i].parent) {
-      j++;
+  var band = true
+    for (i = 0; i <= childrens.length - 1; i++) {
+      band = true
+        while (parents[j].title != childrens[i].parent && band) {
+          j++;
+          if(parents[j]== undefined){
+            band=false
+          }
+        }
+      
+      
+      orderedChildrens[j].push(childrens[i]);
     }
-    orderedChildrens[j].push(childrens[i]);
-  }
 
   // Pass post data to the page via props
   return {
