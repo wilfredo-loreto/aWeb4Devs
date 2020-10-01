@@ -3,20 +3,21 @@ import Link from "next/link";
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import axios from 'axios';
+import Pagination from './Pagination';
 
 class ContentArticles extends Component {
   
 
   constructor(props) {
     super(props)
-    this.state = {articles: [], optionSelected: "Most recents" };
- 
+    this.state = {articles:  this.props.articles , pageOfItems: [], optionSelected: "Most recents" };
+    
+    this.onChangePage = this.onChangePage.bind(this);
   }
 
-  componentDidMount(){
-
-    this.setState({ articles: this.props.articles })
-
+  onChangePage(pageOfItems) {
+    // update state with new page of items
+    this.setState({ pageOfItems: pageOfItems });
   }
 
   // Select order desplegable animation 
@@ -98,20 +99,28 @@ class ContentArticles extends Component {
           console.log(this.props.articles)
 
           this.setState({ articles: newOrder1 })
-
+          this.setState({ optionSelected: result });
+          this.showOptions()
+          return(
+           
+            Pagination 
+            
+          )
           break;
+
+          
       }
 
-      this.setState({ optionSelected: result });
+      
     }
 
-   this.showOptions()
+  
 
   }
 
   render(){
   
-    const articles = this.state.articles
+   var articles = this.state.articles
     
  
     return (
@@ -162,13 +171,13 @@ class ContentArticles extends Component {
         {/* Article cards container */}
         <div className={styles.articlesContainer}>
           
-          {articles.map((article, count) => (
+          {this.state.pageOfItems.map((article, count) => (
           
            <ArticleCard key={count}
            data = {article} />  
          
           ))}
-              
+          <Pagination items={this.state.articles} onChangePage={this.onChangePage} aux={true} />    
         </div>
       </div>
     );
