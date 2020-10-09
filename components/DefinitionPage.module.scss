@@ -61,9 +61,17 @@
         color: $black;
       }
 
+      li{
+        text-overflow: ellipsis !important;
+        white-space:nowrap;
+        overflow: hidden;  
+        max-width: 100%;   
+      }
+
       a {
         color: $main-color;
         text-decoration: underline;
+      
       }
     }
   }
@@ -93,6 +101,7 @@
         width: 75%;
         .techBlock{
           width: 100%;
+          margin-left: 15px;
         }
     }
 

@@ -16,7 +16,7 @@ export default function definitionBackend({ content, asideParents,asideChildrens
     const res = axios.get("http://aweb4devsapi.herokuapp.com/techs/backend");
     const techs = (await res).data.techs;
     const paths = techs.map((tech) => ({
-      params: { techTitle: tech.title },
+      params: {  techTitle: tech.title.split(" ").join("-")},
     }));
     return {
       paths,

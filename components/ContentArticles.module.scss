@@ -4,6 +4,7 @@
   width: 100%;
   display:flex;
   flex-flow: column nowrap;
+  margin-bottom: 10px;
   span {
     @include fontSize(text);
   }
@@ -54,7 +55,7 @@
   .options {
     display: flex;
     flex-direction: column;
-    height: 74px;
+    height: 48px;
     top: 20vh;
     position: absolute;
     z-index: 10;
@@ -111,6 +112,48 @@
 }
 .containerPagination{
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+    ul{
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    li{
+      cursor: pointer;
+      @include fontSize(text);
+      margin-left: 5px;
+      margin-right: 5px;
+      img{
+        transition: 200ms;
+      }
+     
+      a{
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover{
+        color: $main-color;
+
+        img{
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    
+ 
+      .active{
+        color: $main-color;
+      }
+
 }
 
 @media only screen and #{$breakpoint-tablet2} {
@@ -140,6 +183,7 @@
   .options {
     top: 19vh !important;
   }
+
 }
 
 @media only screen and (max-height: 570px){

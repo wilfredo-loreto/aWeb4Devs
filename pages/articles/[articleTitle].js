@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const articles = (await res).data.articles;
  
   const paths = articles.map((article) => ({
-    params: {articleTitle: article.title}
+    params: {articleTitle: article.title.split(" ").join("-")}
   }));
   return {
     paths,
