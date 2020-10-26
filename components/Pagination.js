@@ -11,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
   initialPage: 1,
-  pageSize: 3,
+  pageSize: 12,
 };
 
 class Pagination extends React.Component {
@@ -150,27 +150,27 @@ class Pagination extends React.Component {
     currentPage = currentPage || 1;
 
     // default page size is 10
-    pageSize = pageSize || 3;
+    pageSize = pageSize || 12;
 
     // calculate total pages
     var totalPages = Math.ceil(totalItems / pageSize);
 
     var startPage, endPage;
-    if (totalPages <= 10) {
+    if (totalPages <= 6) {
       // less than 10 total pages so show all
       startPage = 1;
       endPage = totalPages;
     } else {
       // more than 10 total pages so calculate start and end pages
-      if (currentPage <= 6) {
+      if (currentPage <= 3) {
         startPage = 1;
-        endPage = 10;
-      } else if (currentPage + 4 >= totalPages) {
-        startPage = totalPages - 9;
+        endPage = 6;
+      } else if (currentPage + 3 >= totalPages) {
+        startPage = totalPages - 5;
         endPage = totalPages;
       } else {
-        startPage = currentPage - 5;
-        endPage = currentPage + 4;
+        startPage = currentPage - 3;
+        endPage = currentPage + 2;
       }
     }
 
@@ -248,35 +248,41 @@ class Pagination extends React.Component {
           </div>
           <div className={styles.containerPagination}>
             <ul className="pagination">
-              <li className={pager.currentPage === 1 ? "disabled" : ""}>
-                <a onClick={() => this.setPage(1)}>First</a>
+              <li className={pager.currentPage === 1 ? styles.disabled : ""}>
+                <a onClick={() => this.setPage(1)}>
+                  <img src="/icons/double-arrow-left.png" />
+                </a>
               </li>
-              <li className={pager.currentPage === 1 ? "disabled" : ""}>
+              <li className={pager.currentPage === 1 ? styles.disabled : ""}>
                 <a onClick={() => this.setPage(pager.currentPage - 1)}>
-                  Previous
+                  <img src="/icons/arrow-left.png" />
                 </a>
               </li>
               {pager.pages.map((page, index) => (
                 <li
                   key={index}
-                  className={pager.currentPage === page ? "active" : ""}
+                  className={pager.currentPage === page ? styles.active : ""}
                 >
                   <a onClick={() => this.setPage(page)}>{page}</a>
                 </li>
               ))}
               <li
                 className={
-                  pager.currentPage === pager.totalPages ? "disabled" : ""
+                  pager.currentPage === pager.totalPages ? styles.disabled : ""
                 }
               >
-                <a onClick={() => this.setPage(pager.currentPage + 1)}>Next</a>
+                <a onClick={() => this.setPage(pager.currentPage + 1)}>
+                <img src="/icons/arrow-right.png" />
+                </a>
               </li>
               <li
                 className={
-                  pager.currentPage === pager.totalPages ? "disabled" : ""
+                  pager.currentPage === pager.totalPages ? styles.disabled : ""
                 }
               >
-                <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
+                <a onClick={() => this.setPage(pager.totalPages)}>
+                <img src="/icons/double-arrow-right.png" />
+                </a>
               </li>
             </ul>
           </div>

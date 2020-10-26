@@ -93,7 +93,7 @@ export default class ArticlePage extends Component {
               <ul>
                 {block.content.references.map((item) => (
                   <li>
-                    {item.author}
+                    {item.author + ":   "}
                     <a href={item.link} target="_blank">
                       {item.link}
                     </a>
