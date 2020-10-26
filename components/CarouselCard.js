@@ -16,7 +16,7 @@ export default class CarouselCard extends Component {
       <Link href={"/"+ this.props.type + "/"+link}>
         <a className={styles.linkFather}>
           <div className={styles.carouselCard}>
-            <img className={styles.image} src={"/img/"+this.props.image} alt="" />
+            <img className={styles.image} src={"/img/"+this.props.image} alt={this.props.title + " fancy logo"} />
           </div>
         </a>
       </Link>

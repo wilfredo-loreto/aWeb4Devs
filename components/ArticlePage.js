@@ -59,7 +59,7 @@ export default class ArticlePage extends Component {
     console.log(asideParents);
     console.log(asideChilds);
     if (this.props.articleContent == undefined) {
-      return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
+      return <img src="/img/loading.gif" alt="Loading" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
     }
     this.props.articleContent.content.map((block) => {
       var i;
@@ -116,7 +116,7 @@ export default class ArticlePage extends Component {
         <img className={styles.logo2} src={"/img/"+this.props.articleContent.logo} alt={this.props.articleContent.title + " logo"}/>
         <div className={styles.content}>
           <h2 className={styles.title}>{this.props.articleContent.title}</h2>
-          <img className={styles.imageSizes} src={"/img/" + this.props.articleContent.img} alt={this.props.articleContent.title}/>
+          <img className={styles.imageSizes} src={"/img/" + this.props.articleContent.img} alt={""}/>
           {finalContent.map((block) => block)}
         </div>
 
@@ -135,6 +135,7 @@ export default class ArticlePage extends Component {
                         <img
                           className={styles.arrow}
                           src="/icons/listarrow.svg"
+                          alt=""
                         />
                         <li>{title}</li>
                       </div>

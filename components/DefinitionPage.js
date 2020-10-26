@@ -81,6 +81,7 @@ export default class DefinitionPage extends Component {
           <img
             className={styles.logo}
             src={"/img/" + this.props.allContent.logo}
+            alt={this.props.title + " logo"}
           />
           <h3>More Content</h3>
           <div className={styles.asideContent}>
@@ -109,6 +110,7 @@ export default class DefinitionPage extends Component {
                         <img
                           className={styles.arrow}
                           src="/icons/listarrow.svg"
+                          alt=""
                         />
                         <li>{child.title}</li>
                       </a>

@@ -51,7 +51,7 @@ export default function Header (){
               onKeyUp={() => key(event, 1)}
              id="searchBar1" type="text" placeholder="Search..." />
 
-            <img onClick={() => search(1)} className={styles.searchIcon} src="/icons/search.png" alt="" />
+            <img onClick={() => search(1)} className={styles.searchIcon} src="/icons/search.png" alt="search" />
           </div>
 
           <div className={styles.movilMenu}>

@@ -45,7 +45,7 @@ export default class SearchResults extends Component{
               
             <div className={styles.noResults} >
 
-            <img src="/img/sad.png"/>
+            <img src="/img/sad.png" alt="Sad face"/>
             <span>Opss... <br/> No results found <br/> Try with another keywords</span>
             </div> : null
          }

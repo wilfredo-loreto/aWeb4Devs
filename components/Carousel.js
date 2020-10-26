@@ -199,7 +199,7 @@ export default class Carousel extends Component {
            
             className={styles.arrows}
             src="icons/arrowL.png"
-            alt=""
+            alt="Move carousel to left side"
           />
           </div>
           {/* Carousel container */}
@@ -233,7 +233,7 @@ export default class Carousel extends Component {
        
             className={styles.arrows}
             src="icons/arrowR.png"
-            alt=""
+            alt="Move carousel to right side"
           />
           </div>
          
