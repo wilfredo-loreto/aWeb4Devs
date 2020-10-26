@@ -10,7 +10,9 @@
   .logo2 {
     display: none;
   }
-
+  .imageSizes{
+    width: 100%;
+  }
   .content {
     width: 60%;
     padding-left: 5%;
@@ -22,7 +24,7 @@
       @include fontSize(title);
       margin: 40px;
     }
-
+    
     .subtitle {
       text-align: center;
       color: $main-color;
@@ -150,6 +152,7 @@
       li {
         @include fontSize(text);
       }
+      
       a {
         color: $black;
         display: flex;

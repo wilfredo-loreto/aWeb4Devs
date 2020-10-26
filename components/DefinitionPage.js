@@ -12,9 +12,7 @@ export default class DefinitionPage extends Component {
   render() {
     var finalContent = [];
     if (this.props.allContent == undefined) {
-      return (
-        <img src="/img/loading.gif" alt="Loading gif with aweb4devs logo" />
-      );
+      return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
     }
     this.props.allContent.content.map((block) => {
       var i;
@@ -27,7 +25,7 @@ export default class DefinitionPage extends Component {
 
         case "image":
           finalContent.push(
-            <img src={"/img/" + block.content.src} alt={block.content.alt} />
+            <img className={styles.imageSizes} src={"/img/" + block.content.src} alt={block.content.alt} />
           );
           break;
 

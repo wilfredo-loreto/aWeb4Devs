@@ -11,10 +11,13 @@ export default class ArticlePage extends Component {
       asideChilds: [],
     };
   }
-
+  shortURL(link){
+    return link.slice(0,25) + "..."
+  }
   slugSyntax(link) {
     return link.split(" ").join("-");
   }
+  
   componentDidMount() {
     console.log(this.props.articleContent.type);
     Axios.get(
@@ -55,7 +58,9 @@ export default class ArticlePage extends Component {
     const { asideChilds } = this.state;
     console.log(asideParents);
     console.log(asideChilds);
-
+    if (this.props.articleContent == undefined) {
+      return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
+    }
     this.props.articleContent.content.map((block) => {
       var i;
       switch (block.type) {
@@ -67,7 +72,7 @@ export default class ArticlePage extends Component {
 
         case "image":
           finalContent.push(
-            <img src={"/img/" + block.content.src} alt={block.content.alt} />
+            <img className={styles.imageSizes} src={"/img/" + block.content.src} alt={block.content.alt} />
           );
           break;
 
@@ -78,7 +83,7 @@ export default class ArticlePage extends Component {
 
         case "list":
           finalContent.push(
-            <ul>
+            <ul className={styles.list}>
               {block.content.map((item, i) => (
                 <li>{item}</li>
               ))}
@@ -90,12 +95,12 @@ export default class ArticlePage extends Component {
           finalContent.push(
             <div className={styles.references}>
               <h5>References:</h5>
-              <ul>
+              <ul className={styles.list}>
                 {block.content.references.map((item) => (
                   <li>
-                    {item.author + ":   "}
+                    {item.author + " - "}
                     <a href={item.link} target="_blank">
-                      {item.link}
+                      {this.shortURL(item.link)}
                     </a>
                   </li>
                 ))}
@@ -111,6 +116,7 @@ export default class ArticlePage extends Component {
         <img className={styles.logo2} src={"/img/"+this.props.articleContent.logo} alt={this.props.articleContent.title + " logo"}/>
         <div className={styles.content}>
           <h2 className={styles.title}>{this.props.articleContent.title}</h2>
+          <img className={styles.imageSizes} src={"/img/" + this.props.articleContent.img} alt={this.props.articleContent.title}/>
           {finalContent.map((block) => block)}
         </div>
 
