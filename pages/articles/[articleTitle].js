@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function article({ articleContent, relatedArticles }) {
   const router = useRouter();
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
   }
   return (
     <Layout>
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const articles = (await res).data.articles;
  
   const paths = articles.map((article) => ({
-    params: {articleTitle: article.title}
+    params: {articleTitle: article.title.split(" ").join("-")}
   }));
   return {
     paths,

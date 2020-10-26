@@ -1,8 +1,7 @@
 import styles from "./ContentArticles.module.scss";
-import Link from "next/link";
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
-import axios from 'axios';
+
 import Pagination from './Pagination';
 
 class ContentArticles extends Component {

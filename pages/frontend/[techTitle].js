@@ -7,9 +7,9 @@ export default function definitionFrontend({
   asideParents,
   asideChildrens,
 }) {
-  const router = useRouter()
-  if(router.isFallback){
-    return <h1>Loading...</h1>
+  const router = useRouter();
+  if (router.isFallback) {
+    return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
   }
   return (
     <Layout>

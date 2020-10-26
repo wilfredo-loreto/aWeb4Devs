@@ -29,6 +29,23 @@
       @include fontSize(subtitle);
       margin: 20px;
     }
+    .list{
+      list-style: none;
+      li{
+        @include fontSize(text);
+        margin: 5px 0 5px 15px; 
+      }
+      li::before{
+        
+        content: "\2022";  
+        color: $main-color; 
+        display: inline-block; 
+        width: 1em; 
+        margin-left: -1em; 
+        font-weight: bold; 
+  
+  }
+    }
 
     p {
       margin-bottom: 30px;
@@ -54,20 +71,36 @@
         color: $main-color;
         margin-bottom: 10px;
       }
-
-      span {
-        margin-left: 10px;
-        margin-bottom: 10px;
-        color: $black;
-      }
-
-      a {
-        color: $main-color;
-        text-decoration: underline;
+      .list {
+        list-style: none;
+        li {
+          margin: 5px 0 5px 15px; 
+          span {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            color: $black;
+          }
+          
+          a {
+            color: $main-color;
+            text-decoration: underline;
+            transition: 300ms;
+            &:hover {
+              color: $black;
+            }
+          }
+        }
+        li::before {
+          content: "\2022";  
+          color: $main-color; 
+          display: inline-block; 
+          width: 1em; 
+          margin-left: -1em; 
+          font-weight: bold; 
+        }
       }
     }
   }
-
   .articleAside {
     margin-top: 130px !important;
   }
@@ -78,9 +111,9 @@
     align-items: center;
     margin-top: 20px;
     margin-right: 3%;
-     width: 20%;
-     min-width: 176px;
-     max-width: 300px;
+    width: 20%;
+    min-width: 176px;
+    max-width: 300px;
 
     .logo {
       width: 90px;
@@ -88,15 +121,13 @@
       border-radius: 5px;
     }
 
-    .asideContent{
-        margin:0 auto;
-        width: 75%;
-        .techBlock{
-          width: 100%;
-        }
+    .asideContent {
+      margin: 0 auto;
+      width: 75%;
+      .techBlock {
+        width: 100%;
+      }
     }
-
-    
 
     h3 {
       margin-bottom: 20px;
@@ -118,7 +149,6 @@
       li {
         @include fontSize(text);
       }
-
       a {
         color: $black;
         display: flex;

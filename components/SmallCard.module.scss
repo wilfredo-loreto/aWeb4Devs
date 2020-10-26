@@ -50,12 +50,12 @@
     height: 90%;
   }
 }
-@media screen and #{$breakpoint-mobile} {
-  .smallcard {
-    width: 92.5%;
-    height: 47%;
-    &:hover {
-      transform: none;
-    }
-  }
-}
+// @media screen and #{$breakpoint-mobile} {
+//   .smallcard {
+//     width: 92.5%;
+//     height: 47%;
+//     &:hover {
+//       transform: none;
+//     }
+//   }
+// }

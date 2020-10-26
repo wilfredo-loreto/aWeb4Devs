@@ -47,11 +47,10 @@ export default class ArticlePage extends Component {
         orderedChildrens[j].push(childrens[i]);
       }
       this.setState({ asideParents: parents, asideChilds: orderedChildrens });
-    });
+    }).catch((err)=>{console.log(err);});
   }
   render() {
     var finalContent = [];
-
     const { asideParents } = this.state;
     const { asideChilds } = this.state;
     console.log(asideParents);
@@ -68,7 +67,7 @@ export default class ArticlePage extends Component {
 
         case "image":
           finalContent.push(
-            <img src={block.content.src} alt={block.content.alt} />
+            <img src={"/img/" + block.content.src} alt={block.content.alt} />
           );
           break;
 
@@ -109,7 +108,7 @@ export default class ArticlePage extends Component {
     return (
       /* Definition of technologies */
       <div className={styles.mainContainer}>
-        <img className={styles.logo2} src={this.props.articleContent.logo} />
+        <img className={styles.logo2} src={"/img/"+this.props.articleContent.logo} alt={this.props.articleContent.title + " logo"}/>
         <div className={styles.content}>
           <h2 className={styles.title}>{this.props.articleContent.title}</h2>
           {finalContent.map((block) => block)}
@@ -159,6 +158,7 @@ export default class ArticlePage extends Component {
                         <img
                           className={styles.arrow}
                           src="/icons/listarrow.svg"
+                          alt=""
                           />
                         <li>{child.title}</li>
                       </a>

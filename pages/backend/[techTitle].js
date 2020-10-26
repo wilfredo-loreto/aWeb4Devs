@@ -1,9 +1,14 @@
 import Layout from "../../components/Layout";
 import DefinitionPage from "../../components/DefinitionPage";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 
 export default function definitionBackend({ content, asideParents,asideChildrens }) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
+  }
     return (
       <Layout>
         <div>
@@ -16,7 +21,7 @@ export default function definitionBackend({ content, asideParents,asideChildrens
     const res = axios.get("http://aweb4devsapi.herokuapp.com/techs/backend");
     const techs = (await res).data.techs;
     const paths = techs.map((tech) => ({
-      params: { techTitle: tech.title },
+      params: { techTitle: tech.title.split(" ").join("-")},
     }));
     return {
       paths,

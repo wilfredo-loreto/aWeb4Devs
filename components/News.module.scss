@@ -104,20 +104,20 @@
 
 @media screen and #{$breakpoint-mobile} {
   .maincontainer {
-    height: 300vh;
+    // height: 300vh;
     .rowcontainer {
       .container50width {
         order: -1;
         align-self: center;
-        width: 100%;
-        height: 60%;
+        // width: 100%;
+        // height: 60%;
       }
-      .colcontainer {
-        display: flex;
-        flex-flow: column nowrap;
-        width: 100%;
-        height: 100%;
-      }
+      // .colcontainer {
+      //   display: flex;
+      //   flex-flow: column nowrap;
+      //   width: 100%;
+      //   height: 100%;
+      // }
     }
   }
 }

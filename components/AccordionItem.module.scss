@@ -1,7 +1,12 @@
 @import 'global.scss';
 
 // Main container of dynamic item
-
+.orderNegative1{
+  order: -1;
+}
+.orderNegative2{
+  order: -2;
+}
 .accordionItem {
   width: 95%;
   z-index: 1;

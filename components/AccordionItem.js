@@ -1,7 +1,6 @@
 import styles from "./AccordionItem.module.scss";
 import React, { Component } from "react";
 import PanelItem from "./PanelItem";
-import axios from 'axios'
 
 export default class AccordionItem extends Component {
   
@@ -12,15 +11,15 @@ export default class AccordionItem extends Component {
     return (
       // accordion item and panel
       <React.Fragment>
-        <div id={this.props.accordionId} className={styles.accordionItem}>
-          <img className={styles.logo} src={this.props.logo} />
+        <div id={this.props.accordionId} className={this.props.title!="html" ? styles.accordionItem:[styles.accordionItem,styles.orderNegative2].join(' ')}>
+          <img className={styles.logo} src={"/img/" + this.props.logo} alt={this.props.title + " logo"}/>
           <div className={styles.textsContainer}>
             <h3 className={styles.title}>{this.props.title}</h3>
             <span className={styles.summary}>{this.props.summary}</span>
           </div>
-          <img className={styles.logo} src={this.props.logo} />
+          <img className={styles.logo} src={"/img/" + this.props.logo} alt={this.props.title + " logo"}/>
         </div>
-        <div id={this.props.panelId} className={styles.panel}>
+        <div id={this.props.panelId} className={this.props.title!="html" ? styles.panel:[styles.panel,styles.orderNegative1].join(' ')}>
           <ul className={styles.list}>
             
             <PanelItem

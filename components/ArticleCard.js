@@ -26,7 +26,7 @@ export default class ArticleCard extends Component {
             <div className={styles.contentImage}>
             <img
               className={styles.imageArticle}
-              src={data.img}
+              src={"/img/"+data.img}
               alt=""
             />
             </div>
@@ -37,7 +37,7 @@ export default class ArticleCard extends Component {
               <p className={styles.info}>
               {data.summary}
               </p>
-              {/* Date and vitists */}
+              {/* Date and visits */}
               <div className={styles.dataContainer}>
                 <span className={styles.date}>{date}</span>
                 <div>

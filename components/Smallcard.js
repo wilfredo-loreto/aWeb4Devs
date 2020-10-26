@@ -16,7 +16,7 @@ function SmallCard({img,title,type}) {
     gray = 'linear-gradient(180deg,rgba(68, 68, 68, 0.56) 99.98%,rgba(68, 68, 68, 0.5) 99.99%,rgba(255, 255, 255, 0) 100%),'
    }
   const background = {
-    background: `${gray}url(${img})`,
+    background: `${gray}url(/img/${img})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
