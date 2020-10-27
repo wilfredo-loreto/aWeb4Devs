@@ -1,0 +1,52 @@
+$main-color: #d11149ff;
+$background-color: #f9f9f9;
+$shadow-color: rgba(68, 68, 68, 0.15);
+$black:#2E2F2F;
+.mainContainer{
+   z-index: 50000;
+    *{
+        background: none;
+    }
+    position: fixed;
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background: $black;
+    color: $background-color;
+    padding: 0 32px;
+    box-shadow: 0 -2px 16px $black;
+    transition: 400ms;
+    span{
+        font-size:12px;
+        a{
+            color: $background-color;
+            text-decoration: underline;
+            transition: 200ms;
+            &:hover{
+                color:$main-color
+            }
+        }
+    }
+    .button{
+        background-color: $main-color;
+        width: 150px;
+        color: $background-color;
+        padding: 10px;
+        border-radius: 10px;
+        transition: color 400ms;
+        transition: background 400ms;
+        &:hover{
+        
+            background-color: $black;
+            cursor: pointer;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}

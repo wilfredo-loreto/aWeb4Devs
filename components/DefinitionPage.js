@@ -6,13 +6,31 @@ export default class DefinitionPage extends Component {
   slugSyntax(link) {
     return link.split(" ").join("-");
   }
-  shortURL(link){
-    return link.slice(0,25) + "..."
+  shortURL(link) {
+    return link.slice(0, 25) + "...";
+  }
+  componentWillMount(){
+    
+  }
+  componentDidMount(){
+    (window.adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
+    (window.adsbygoogle=window.adsbygoogle||[]).push({});
   }
   render() {
     var finalContent = [];
     if (this.props.allContent == undefined) {
-      return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
+      return (
+        <img
+          src="/img/loading.gif"
+          alt="loading gif"
+          style={{
+            height: "25%",
+            width: "25%",
+            display: "block",
+            margin: "5% auto",
+          }}
+        />
+      );
     }
     this.props.allContent.content.map((block) => {
       var i;
@@ -25,7 +43,11 @@ export default class DefinitionPage extends Component {
 
         case "image":
           finalContent.push(
-            <img className={styles.imageSizes} src={"/img/" + block.content.src} alt={block.content.alt} />
+            <img
+              className={styles.imageSizes}
+              src={"/img/" + block.content.src}
+              alt={block.content.alt}
+            />
           );
           break;
 
@@ -71,6 +93,7 @@ export default class DefinitionPage extends Component {
           src={"/img/" + this.props.allContent.logo}
           alt={this.props.allContent.title + " logo"}
         />
+
         <div className={styles.content}>
           <h2 className={styles.title}>{this.props.allContent.title}</h2>
           {finalContent.map((block) => block)}

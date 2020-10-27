@@ -6,7 +6,7 @@ function PrivacyPolicyContent() {
     <div className={styles.mainContainer}>
       <h3 className={styles.title}>Privacy Policy</h3>
       {/*  last update of the privacy policy */}
-      <span className={styles.lastUpdate}> Last updated Octobe 1, 2020</span>
+      <span className={styles.lastUpdate}> Last updated November 5, 2020</span>
       <p className={styles.text}>
         Thank you for choosing to be part of our community at aWeb4Devs
         (“Company”, “we”, “us”, or “our”). We are committed to protecting your
@@ -293,21 +293,23 @@ function PrivacyPolicyContent() {
             Google AdSense
           </li>
         </ul>
+        <p className={styles.text}>
+          Also, Google AdSense is using cookies for a best user experience whil 
+        </p>
       
       <h5 className={styles.subtitle}>
         5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
       </h5>
       <p className={styles.text}>
         <i>
-          <b>In Short:</b> We may use cookies and other tracking technologies to
-          collect and store your information.
+          <b>In Short:</b> Yes, we third parties companies (Google adsense) that may use cookies and other tracking technologies to
+          collect and store your information. 
         </i>
-        <br />
-        We may use cookies and similar tracking technologies (like web beacons
-        and pixels) to access or store information. Specific information about
+        <br /> Specific information about
         how we use such technologies and how you can refuse certain cookies is
         set out in our Cookie Notice.
       </p>
+        <p className={styles.text}>By last, if you want to know how Google Adsense uses cookies, please visit <a href={"https://policies.google.com/technologies/types?hl=en-US"}>https://policies.google.com/technologies/types?hl=en-US</a> </p>
       <h5 className={styles.subtitle}>
         6. HOW LONG DO WE KEEP YOUR INFORMATION?
       </h5>

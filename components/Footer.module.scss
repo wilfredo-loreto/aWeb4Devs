@@ -10,7 +10,9 @@
   background-color: $background-color;
   box-shadow: 0 -5px 10px -5px rgba(68, 68, 68, 0.25);
   height: fit-content;
- 
+ *{
+   background:none;
+ }
   .titles {
     text-align: center;
     font-family: "Century";
@@ -57,7 +59,7 @@
           margin-right: 4%;
          }
         span {
-          z-index: 10;
+         
           color: $black;
           @include fontSize(text);
           font-family: "Century";
@@ -80,7 +82,7 @@
         color: $black;
         font-weight: 900;
         margin-left: -3%;
-        z-index: 10;
+        
       }
       img{
         transition: 400ms;
