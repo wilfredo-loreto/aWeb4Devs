@@ -2,17 +2,18 @@ $main-color: #d11149ff;
 $background-color: #f9f9f9;
 $shadow-color: rgba(68, 68, 68, 0.15);
 $black:#2E2F2F;
+$breakpoint-mobile: "(max-width: 578px)";
 .mainContainer{
    z-index: 50000;
     *{
         background: none;
     }
     position: fixed;
-    height: 50px;
+    height: contain;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     bottom:0;
     left: 0;
     right: 0;
@@ -23,6 +24,8 @@ $black:#2E2F2F;
     transition: 400ms;
     span{
         font-size:12px;
+        text-align: justify;
+        padding: 15px 0;
         a{
             color: $background-color;
             text-decoration: underline;
@@ -37,6 +40,7 @@ $black:#2E2F2F;
         width: 150px;
         color: $background-color;
         padding: 10px;
+        margin: auto 10px;
         border-radius: 10px;
         transition: color 400ms;
         transition: background 400ms;
@@ -48,5 +52,11 @@ $black:#2E2F2F;
         &:focus{
             outline: none;
         }
+    }
+}
+
+@media screen and #{$breakpoint-mobile}{
+    .mainContainer{
+        
     }
 }

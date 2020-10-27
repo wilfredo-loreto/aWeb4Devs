@@ -28,7 +28,7 @@
     .subtitle {
       text-align: center;
       color: $main-color;
-      @include fontSize(subtitle);
+      @include fontSize(title);
       margin: 20px;
     }
     .list{
