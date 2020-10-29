@@ -31,6 +31,7 @@ $breakpoint-mobile: "(max-width: 578px)";
             text-decoration: underline;
             transition: 200ms;
             &:hover{
+                cursor: pointer;
                 color:$main-color
             }
         }
@@ -57,6 +58,12 @@ $breakpoint-mobile: "(max-width: 578px)";
 
 @media screen and #{$breakpoint-mobile}{
     .mainContainer{
-        
+        flex-flow: column nowrap !important;
+        span{
+            font-size:11px;
+        }
+        .button{
+            margin: 5px 10px;
+        }
     }
 }

@@ -42,7 +42,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/front-end">
+            <Link href="/frontend">
             <div className={styles.rowcontainer}>
               <img src="/icons/listarrow.svg" alt=""/>
               <a>Front-end</a>
@@ -50,7 +50,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/back-end">
+            <Link href="/backend">
             <div className={styles.rowcontainer}>
               <img src="/icons/listarrow.svg" alt=""/>
               <a>Back-end</a>

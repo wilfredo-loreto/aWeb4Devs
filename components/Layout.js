@@ -16,19 +16,46 @@ export default class Layout extends Component {
   }
 
   handleBanner(e){
+    const year = 1000*60*60*24*365
+    this.setWithExpiry("cookieBannerAccepted","true",year)
     this.setState({showCookieConsentBanner:false})
   }
   stopCookies(e){
+    const day = 1000*60*60*24
+    this.setWithExpiry("cookieBannerRejected","true",day)
     this.setState({showCookieConsentBanner:false})
     /*CODE HERE TO STOP COOKIES FROM GOOGLE ADSENSE*/
   }
+  setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  }
+  getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+    if (!itemStr) {
+      return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+   
+    if (now.getTime() > item.expiry) {
+     
+      localStorage.removeItem(key)
+      return null
+    }
+    return item.value
+  }
   componentDidMount(){
     setTimeout(()=>{
-      if(!localStorage.getItem("cookieBannerDisplayed")){
-        localStorage.setItem("cookieBannerDisplayed","true")
+      
+      if(!this.getWithExpiry("cookieBannerAccepted") && !this.getWithExpiry("cookieBannerRejected")){
         this.setState({showCookieConsentBanner:true})
       }
-    },2000)
+    },3000)
   }
 
 
