@@ -17,7 +17,6 @@ function PrivacyPolicyContent() {
         <br />
         When you visit our website
         <Link href="/">
-          
           <a> www.aweb4devs.com </a>
         </Link>
         (the "Website"), and more generally, use any of our services (the
@@ -92,8 +91,8 @@ function PrivacyPolicyContent() {
       <h6>Information automatically collected</h6>
       <p className={styles.text}>
         <i>
-         <b> In Short:</b>  Some information — such as your Internet Protocol (IP)
-          address and/or browser and device characteristics — is collected
+          <b> In Short:</b> Some information — such as your Internet Protocol
+          (IP) address and/or browser and device characteristics — is collected
           automatically when you visit our Website.
         </i>
         We automatically collect certain information when you visit, use or
@@ -286,30 +285,35 @@ function PrivacyPolicyContent() {
         revoke your consent, please contact us using the contact details
         provided in the section below titled "HOW CAN YOU CONTACT US ABOUT THIS
         NOTICE?".
-        </p>
-        <ul>
-          <li>
-            <b>Advertising, Direct Marketing, and Lead Generation</b> <br />{" "}
-            Google AdSense
-          </li>
-        </ul>
-        <p className={styles.text}>
-          Also, Google AdSense is using cookies for a best user experience whil 
-        </p>
-      
+      </p>
+      <ul>
+        <li>
+          <b>Advertising, Direct Marketing, and Lead Generation</b> <br />{" "}
+          Google AdSense
+        </li>
+      </ul>
+      <p className={styles.text}>
+        Also, Google AdSense is using cookies for a best user experience whil
+      </p>
       <h5 className={styles.subtitle}>
         5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
       </h5>
       <p className={styles.text}>
         <i>
-          <b>In Short:</b> Yes, we third parties companies (Google adsense) that may use cookies and other tracking technologies to
-          collect and store your information. 
+          <b>In Short:</b> Yes, we third parties companies (Google adsense) that
+          may use cookies and other tracking technologies to collect and store
+          your information.
         </i>
-        <br /> Specific information about
-        how we use such technologies and how you can refuse certain cookies is
-        set out in our Cookie Notice.
+        <br /> Specific information about how we use such technologies and how
+        you can refuse certain cookies is set out in our Cookie Notice.
       </p>
-        <p className={styles.text}>By last, if you want to know how Google Adsense uses cookies, please visit <a href={"https://policies.google.com/technologies/types?hl=en-US"}>https://policies.google.com/technologies/types?hl=en-US</a> </p>
+      <p className={styles.text}>
+        By last, if you want to know how Google Adsense uses cookies, please
+        visit{" "}
+        <a href={"https://policies.google.com/technologies/types?hl=en-US"}>
+          https://policies.google.com/technologies/types?hl=en-US
+        </a>{" "}
+      </p>
       <h5 className={styles.subtitle}>
         6. HOW LONG DO WE KEEP YOUR INFORMATION?
       </h5>
@@ -350,7 +354,6 @@ function PrivacyPolicyContent() {
         access the Website within a secure environment.
       </p>
       <h5 className={styles.subtitle}>8. WHAT ARE YOUR PRIVACY RIGHTS?</h5>
-        
       <p className={styles.text}>
         <i>
           <b>In Short:</b> In some regions, such as the European Economic Area,
@@ -380,20 +383,32 @@ function PrivacyPolicyContent() {
         If you are resident in the European Economic Area and you believe we are
         unlawfully processing your personal information, you also have the right
         to complain to your local data protection supervisory authority. You can
-        find their contact details 
-        <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm."> here</a>
+        find their contact details
+        <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.">
+          {" "}
+          here
+        </a>
         .
         <br />
         If you are resident in Switzerland, the contact details for the data
-        protection authorities are available <a href="https://www.edoeb.admin.ch/edoeb/en/home.html." target="_blank">here</a>
-        
+        protection authorities are available{" "}
+        <a
+          href="https://www.edoeb.admin.ch/edoeb/en/home.html."
+          target="_blank"
+        >
+          here
+        </a>
         <br />
         <b> Cookies and similar technologies:</b> Most Web browsers are set to
         accept cookies by default. If you prefer, you can usually choose to set
         your browser to remove cookies and to reject cookies. If you choose to
         remove cookies or reject cookies, this could affect certain features or
         services of our Website. To opt-out of interest-based advertising by
-        advertisers on our Website visit <a href="http://www.aboutads.info/choices/" target="_blank">aboutads</a>.
+        advertisers on our Website visit{" "}
+        <a href="http://www.aboutads.info/choices/" target="_blank">
+          aboutads
+        </a>
+        .
       </p>
       <h5 className={styles.subtitle}>9. CONTROLS FOR DO-NOT-TRACK FEATURES</h5>
       <p className={styles.text}>
@@ -448,7 +463,7 @@ function PrivacyPolicyContent() {
         <Link href="/contact">
           <a> contact page</a>
         </Link>
-         . We will respond to your request within 30 days.
+        . We will respond to your request within 30 days.
       </p>
     </div>
   );

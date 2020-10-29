@@ -6,7 +6,18 @@ import { useRouter } from "next/router";
 export default function article({ articleContent, relatedArticles }) {
   const router = useRouter();
   if (router.isFallback) {
-    return <img src="/img/loading.gif" alt="loading gif" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
+    return (
+      <img
+        src="/img/loading.gif"
+        alt="loading gif"
+        style={{
+          height: "25%",
+          width: "25%",
+          display: "block",
+          margin: "5% auto",
+        }}
+      />
+    );
   }
   return (
     <Layout>
@@ -23,9 +34,9 @@ export default function article({ articleContent, relatedArticles }) {
 export async function getStaticPaths() {
   const res = axios.get("http://aweb4devsapi.herokuapp.com/articles");
   const articles = (await res).data.articles;
- 
+
   const paths = articles.map((article) => ({
-    params: {articleTitle: article.title.split(" ").join("-")}
+    params: { articleTitle: article.title.split(" ").join("-") },
   }));
   return {
     paths,
@@ -38,8 +49,16 @@ export async function getStaticProps({ params }) {
     return str.split("-").join(" ");
   }
   const res = await Promise.all([
-    axios.get(`https://aweb4devsapi.herokuapp.com/article/${unSlug(params.articleTitle)}`),
-    axios.get(`https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(params.articleTitle)}`),
+    axios.get(
+      `https://aweb4devsapi.herokuapp.com/article/${unSlug(
+        params.articleTitle
+      )}`
+    ),
+    axios.get(
+      `https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(
+        params.articleTitle
+      )}`
+    ),
   ]);
 
   return {

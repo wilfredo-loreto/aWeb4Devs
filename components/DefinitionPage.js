@@ -9,12 +9,11 @@ export default class DefinitionPage extends Component {
   shortURL(link) {
     return link.slice(0, 25) + "...";
   }
-  componentWillMount(){
-    
-  }
-  componentDidMount(){
-    (window.adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
-    (window.adsbygoogle=window.adsbygoogle||[]).push({});
+  componentWillMount() {}
+  componentDidMount() {
+    (window.adsbygoogle =
+      window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
   render() {
     var finalContent = [];

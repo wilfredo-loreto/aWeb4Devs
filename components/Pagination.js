@@ -17,8 +17,7 @@ const defaultProps = {
 class Pagination extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pager: {},optionSelected:"Most recents" };
-
+    this.state = { pager: {}, optionSelected: "Most recents" };
   }
 
   componentWillMount() {
@@ -34,13 +33,13 @@ class Pagination extends React.Component {
       this.setPage(this.props.initialPage);
     }
   }
-  // Select order desplegable animation 
+  // Select order desplegable animation
   showOptions() {
     var options = document.getElementById("options");
     var option1 = document.getElementById("option1");
     var option2 = document.getElementById("option2");
     var icon = document.getElementById("icon");
-    
+
     options.classList.toggle(styles.hide);
     icon.classList.toggle(styles.iconActive);
 
@@ -53,73 +52,69 @@ class Pagination extends React.Component {
     }
   }
 
-    // Choise new order for cards
-    newOrder(x) {
-        var aux = true;
-        var result;
-        
-       
-      
-    
-        if (
-          (x == 1 && this.state.optionSelected == "Most recents") ||
-          (x == 2 && this.state.optionSelected == "Technology")
-        ) {
-          aux = false;
-          this.showOptions()
-        }
-    
-        if (aux) {
-      
-          switch (x) {
-            case 1:
-              result = "Most recents";
-              
-              const newestOrder = this.props.items.sort((a,b) => {
-    
-                  if(b.date.split("T")[0].split("-")[0] - a.date.split("T")[0].split("-")[0] == 0 ){
-    
-                    if(b.date.split("T")[0].split("-")[1] - a.date.split("T")[0].split("-")[1] == 0 ){
-    
-                      return(b.date.split("T")[0].split("-")[2] - a.date.split("T")[0].split("-")[2])
-                    }else{
-    
-                      return(b.date.split("T")[0].split("-")[1] - a.date.split("T")[0].split("-")[1])
-    
-                    }
-    
-                  }else{
-    
-                    return(b.date.split("T")[0].split("-")[0] - a.date.split("T")[0].split("-")[0])
-    
-                  }
-          
-              })
-              this.setState({ articles: newestOrder,optionSelected:result })
-              break;
-            case 2:
-              result = "Visits";
-         
-              const newOrder1 = this.props.items.sort((a,b) => {
-                return (b.visits - a.visits)
-              })
-    
-              this.setState({ optionSelected: result,articles: newOrder1 });
-            
-             
-              break;
-    
-              
-          }
-          this.showOptions()
-    this.setPage(1)
-            
-        }
-    
-      
-    
+  // Choise new order for cards
+  newOrder(x) {
+    var aux = true;
+    var result;
+
+    if (
+      (x == 1 && this.state.optionSelected == "Most recents") ||
+      (x == 2 && this.state.optionSelected == "Technology")
+    ) {
+      aux = false;
+      this.showOptions();
+    }
+
+    if (aux) {
+      switch (x) {
+        case 1:
+          result = "Most recents";
+
+          const newestOrder = this.props.items.sort((a, b) => {
+            if (
+              b.date.split("T")[0].split("-")[0] -
+                a.date.split("T")[0].split("-")[0] ==
+              0
+            ) {
+              if (
+                b.date.split("T")[0].split("-")[1] -
+                  a.date.split("T")[0].split("-")[1] ==
+                0
+              ) {
+                return (
+                  b.date.split("T")[0].split("-")[2] -
+                  a.date.split("T")[0].split("-")[2]
+                );
+              } else {
+                return (
+                  b.date.split("T")[0].split("-")[1] -
+                  a.date.split("T")[0].split("-")[1]
+                );
+              }
+            } else {
+              return (
+                b.date.split("T")[0].split("-")[0] -
+                a.date.split("T")[0].split("-")[0]
+              );
+            }
+          });
+          this.setState({ articles: newestOrder, optionSelected: result });
+          break;
+        case 2:
+          result = "Visits";
+
+          const newOrder1 = this.props.items.sort((a, b) => {
+            return b.visits - a.visits;
+          });
+
+          this.setState({ optionSelected: result, articles: newOrder1 });
+
+          break;
       }
-    
+      this.showOptions();
+      this.setPage(1);
+    }
+  }
 
   setPage(page) {
     var { items, pageSize } = this.props;
@@ -202,89 +197,88 @@ class Pagination extends React.Component {
       return null;
     }
 
-   
-      return (
-        <React.Fragment>
-          <div className={styles.containerOrder}>
-            <div className={styles.order}>
-              <span onClick={() => this.showOptions()}>Sort by:</span>
-              <div className={styles.selected}>
-                <span
-                  onClick={() => this.showOptions()}
-                  className={styles.showed}
-                >
-                  {this.state.optionSelected}
-                </span>
-                <div
-                  id="options"
-                  className={[styles.options, styles.hide].join(" ")}
-                >
-                  <span
-                    onClick={() => this.newOrder(1)}
-                    id="option1"
-                    className={styles.optionHide}
-                  >
-                    Most recents
-                  </span>
-                  <span
-                    onClick={() => this.newOrder(2)}
-                    id="option2"
-                    className={styles.optionHide}
-                  >
-                    Visits
-                  </span>
-                </div>
-              </div>
-              <img
-                id="icon"
+    return (
+      <React.Fragment>
+        <div className={styles.containerOrder}>
+          <div className={styles.order}>
+            <span onClick={() => this.showOptions()}>Sort by:</span>
+            <div className={styles.selected}>
+              <span
                 onClick={() => this.showOptions()}
-                className={styles.icon}
-                src="/icons/optionArros.png"
-              />
-            </div>
-          </div>
-          <div className={styles.containerPagination}>
-            <ul className="pagination">
-              <li className={pager.currentPage === 1 ? styles.disabled : ""}>
-                <a onClick={() => this.setPage(1)}>
-                  <img src="/icons/double-arrow-left.png" />
-                </a>
-              </li>
-              <li className={pager.currentPage === 1 ? styles.disabled : ""}>
-                <a onClick={() => this.setPage(pager.currentPage - 1)}>
-                  <img src="/icons/arrow-left.png" />
-                </a>
-              </li>
-              {pager.pages.map((page, index) => (
-                <li
-                  key={index}
-                  className={pager.currentPage === page ? styles.active : ""}
+                className={styles.showed}
+              >
+                {this.state.optionSelected}
+              </span>
+              <div
+                id="options"
+                className={[styles.options, styles.hide].join(" ")}
+              >
+                <span
+                  onClick={() => this.newOrder(1)}
+                  id="option1"
+                  className={styles.optionHide}
                 >
-                  <a onClick={() => this.setPage(page)}>{page}</a>
-                </li>
-              ))}
-              <li
-                className={
-                  pager.currentPage === pager.totalPages ? styles.disabled : ""
-                }
-              >
-                <a onClick={() => this.setPage(pager.currentPage + 1)}>
-                <img src="/icons/arrow-right.png" />
-                </a>
-              </li>
-              <li
-                className={
-                  pager.currentPage === pager.totalPages ? styles.disabled : ""
-                }
-              >
-                <a onClick={() => this.setPage(pager.totalPages)}>
-                <img src="/icons/double-arrow-right.png" />
-                </a>
-              </li>
-            </ul>
+                  Most recents
+                </span>
+                <span
+                  onClick={() => this.newOrder(2)}
+                  id="option2"
+                  className={styles.optionHide}
+                >
+                  Visits
+                </span>
+              </div>
+            </div>
+            <img
+              id="icon"
+              onClick={() => this.showOptions()}
+              className={styles.icon}
+              src="/icons/optionArros.png"
+            />
           </div>
-        </React.Fragment>
-      );
+        </div>
+        <div className={styles.containerPagination}>
+          <ul className="pagination">
+            <li className={pager.currentPage === 1 ? styles.disabled : ""}>
+              <a onClick={() => this.setPage(1)}>
+                <img src="/icons/double-arrow-left.png" />
+              </a>
+            </li>
+            <li className={pager.currentPage === 1 ? styles.disabled : ""}>
+              <a onClick={() => this.setPage(pager.currentPage - 1)}>
+                <img src="/icons/arrow-left.png" />
+              </a>
+            </li>
+            {pager.pages.map((page, index) => (
+              <li
+                key={index}
+                className={pager.currentPage === page ? styles.active : ""}
+              >
+                <a onClick={() => this.setPage(page)}>{page}</a>
+              </li>
+            ))}
+            <li
+              className={
+                pager.currentPage === pager.totalPages ? styles.disabled : ""
+              }
+            >
+              <a onClick={() => this.setPage(pager.currentPage + 1)}>
+                <img src="/icons/arrow-right.png" />
+              </a>
+            </li>
+            <li
+              className={
+                pager.currentPage === pager.totalPages ? styles.disabled : ""
+              }
+            >
+              <a onClick={() => this.setPage(pager.totalPages)}>
+                <img src="/icons/double-arrow-right.png" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

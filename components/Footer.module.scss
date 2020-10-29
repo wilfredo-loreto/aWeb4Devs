@@ -1,4 +1,4 @@
-@import './global.scss';
+@import "./global.scss";
 
 .maincontainer {
   user-select: none;
@@ -10,21 +10,21 @@
   background-color: $background-color;
   box-shadow: 0 -5px 10px -5px rgba(68, 68, 68, 0.25);
   height: fit-content;
- *{
-   background:none;
- }
+  * {
+    background: none;
+  }
   .titles {
     text-align: center;
     font-family: "Century";
     color: $black;
-    @include fontSize(title)
+    @include fontSize(title);
   }
   /* 
   * the maincontainer has 3 containers:
   * logo, icons and a small text 
   * links
   * contact form
-  */ 
+  */
   .colcontainer {
     display: flex;
     flex-flow: column nowrap;
@@ -36,14 +36,12 @@
     .logo {
       width: 45%;
       min-width: 200px;
-      
     }
     .informativetext {
       @include fontSize(text);
       font-family: "Century";
       color: $black;
       width: 120%;
-
     }
     a {
       .whatsapp,
@@ -54,21 +52,20 @@
         align-items: center;
         justify-content: flex-start;
         width: 120%;
-        
-        .footericon { 
+
+        .footericon {
           margin-right: 4%;
-         }
+        }
         span {
-         
           color: $black;
           @include fontSize(text);
           font-family: "Century";
           font-weight: bold;
           transition: 400ms;
         }
-        &:hover{
-          span{
-            color:$main-color;
+        &:hover {
+          span {
+            color: $main-color;
           }
         }
       }
@@ -82,23 +79,21 @@
         color: $black;
         font-weight: 900;
         margin-left: -3%;
-        
       }
-      img{
+      img {
         transition: 400ms;
-    
       }
-      &:hover{
-        img{
+      &:hover {
+        img {
           transform: translateX(15%);
         }
-        a{
+        a {
           color: $main-color;
         }
       }
     }
   }
-  
+
   .rowcontainer {
     display: flex;
     flex-flow: row nowrap;
@@ -119,10 +114,6 @@
   height: 85%;
 }
 
-
-
-
-
 // Styling 3rd container (contact form), advice and send button with flexbox
 
 form {
@@ -131,7 +122,7 @@ form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  
+
   input,
   textarea {
     resize: none;
@@ -159,20 +150,13 @@ form {
     width: 100%;
     height: 100%;
     justify-content: flex-start;
-    
-    
-  
-    
-    
-    
+
     .emailfield {
-      height:50px;
-      
+      height: 50px;
     }
     .messagefield {
       padding-top: 2%;
       height: 68%;
-      
     }
   }
   .rowcontainer {
@@ -181,18 +165,16 @@ form {
     justify-content: space-around;
     align-items: center !important;
     height: 20%;
-    
-   
 
     .advice {
       p {
         font-size: 11px;
-        span,a {
+        span,
+        a {
           color: $main-color;
         }
-        a{
+        a {
           text-decoration: underline;
-          
         }
       }
     }
@@ -213,7 +195,7 @@ form {
       transition: 400ms;
       outline: none;
       margin-top: 2%;
-      &:hover{
+      &:hover {
         color: $main-color;
         background-color: $background-color;
         border: solid 2px $main-color;
@@ -222,8 +204,7 @@ form {
   }
 }
 
-
-// Ended the styling from Desktop  
+// Ended the styling from Desktop
 
 // Creating breakpoints for mobile other devices.
 
@@ -231,12 +212,10 @@ $breakpoint-form-advice: 1012px;
 
 $breakpoint-change-font-size: 826px;
 
-
-// Main breakpoint for mobile. 
+// Main breakpoint for mobile.
 
 @media screen and #{$breakpoint-mobile} {
-
-// hidding the contact form in mobile devices
+  // hidding the contact form in mobile devices
   .maincontainer div:nth-child(3) {
     display: none;
   }
@@ -244,19 +223,19 @@ $breakpoint-change-font-size: 826px;
     margin-top: 5%;
   }
 
-// Styling the maincontainer (1 column in mobile)
+  // Styling the maincontainer (1 column in mobile)
   .maincontainer {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
-    height: 700px ;
-  
+    height: 700px;
+
     .colcontainer {
       width: 70%;
-      height: 100% ;
+      height: 100%;
       align-items: center;
-// Styling 1st container (logo and icons)
+      // Styling 1st container (logo and icons)
       .informativetext {
         text-align: center;
       }
@@ -284,21 +263,17 @@ $breakpoint-change-font-size: 826px;
   }
 }
 
-@media screen and (max-width:820px){
-
-  .break{
-    display:block;
+@media screen and (max-width: 820px) {
+  .break {
+    display: block;
   }
 }
 
 @media screen and #{$breakpoint-high-height-devices} {
-  .maincontainer{
+  .maincontainer {
     height: 30vh;
   }
 }
-
-
-
 
 @media screen and (max-width: $breakpoint-form-advice) {
   form {
@@ -310,7 +285,7 @@ $breakpoint-change-font-size: 826px;
     }
     .advice {
       p {
-        font-size:8px;
+        font-size: 8px;
       }
     }
   }

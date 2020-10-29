@@ -14,7 +14,7 @@ $breakpoint-mobile: "(max-width: 578px)";
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  bottom:0;
+  bottom: 0;
   left: 0;
   right: 0;
   background: $black;
@@ -25,7 +25,7 @@ $breakpoint-mobile: "(max-width: 578px)";
   animation-name: slidein;
   transition: 400ms;
 
-//   width: 95%;
+  //   width: 95%;
   span {
     font-size: 12px;
     text-align: justify;
@@ -58,16 +58,16 @@ $breakpoint-mobile: "(max-width: 578px)";
     }
   }
 }
-.hide{
-    animation-name: slideout;
-    animation-duration: 2.5s;
+.hide {
+  animation-name: slideout;
+  animation-duration: 2.5s;
 }
 @keyframes slidein {
   from {
     bottom: -100%;
   }
   to {
-    bottom:0;
+    bottom: 0;
   }
 }
 @keyframes slideout {

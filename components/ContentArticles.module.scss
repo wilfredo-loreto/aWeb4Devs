@@ -2,7 +2,7 @@
 
 .globalContainer {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-flow: column nowrap;
   margin-bottom: 10px;
   span {
@@ -17,39 +17,34 @@
     align-items: center;
     user-select: none;
     width: 210px;
-    
-    span{
+
+    span {
       cursor: pointer;
     }
-    
-      &:hover{
 
-        .selected{
-
-          .showed{
-            color: $main-color;
-          }
+    &:hover {
+      .selected {
+        .showed {
+          color: $main-color;
         }
       }
+    }
   }
-  
+
   .icon {
-   
     height: 15px;
     width: 8px;
     transition: 400ms;
     cursor: pointer;
   }
 
-  .iconActive{
+  .iconActive {
     transform: rotate(90deg);
   }
 
   .selected {
     display: flex;
     flex-direction: column;
-
-    
   }
 
   .options {
@@ -64,15 +59,14 @@
     border-radius: 5px;
     transition: 400ms;
     overflow: hidden;
-    box-shadow:2px 2px 6px rgba(68, 68, 68, 0.25);
+    box-shadow: 2px 2px 6px rgba(68, 68, 68, 0.25);
   }
   .showed {
     width: 125px;
     margin-left: 10px;
     transition: 400ms;
     cursor: pointer;
-    &:hover{
-    
+    &:hover {
       color: $main-color;
     }
   }
@@ -83,13 +77,12 @@
   }
   .option {
     transition: 400ms;
-  
+
     margin-bottom: 2px;
 
-    &:hover{
+    &:hover {
       color: $main-color;
     }
-
   }
   .optionHide {
     height: 0;
@@ -106,54 +99,51 @@
   }
 }
 
-.containerOrder{
-  order:-1;
+.containerOrder {
+  order: -1;
   width: 100%;
 }
-.containerPagination{
+.containerPagination {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 
-    ul{
-        width: 30%;
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        justify-content: space-around;
-        align-items: center;
+  ul {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  li {
+    cursor: pointer;
+    @include fontSize(text);
+    margin-left: 5px;
+    margin-right: 5px;
+    img {
+      transition: 200ms;
     }
 
-    li{
-      cursor: pointer;
-      @include fontSize(text);
-      margin-left: 5px;
-      margin-right: 5px;
-      img{
-        transition: 200ms;
-      }
-     
-      a{
-        display: flex;
-        align-items: center;
-      }
-
-      &:hover{
-        color: $main-color;
-
-        img{
-          transform: scale(1.1);
-        }
-      }
+    a {
+      display: flex;
+      align-items: center;
     }
 
-    
- 
-      .active{
-        color: $main-color;
-      }
+    &:hover {
+      color: $main-color;
 
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .active {
+    color: $main-color;
+  }
 }
 
 @media only screen and #{$breakpoint-tablet2} {
@@ -183,18 +173,12 @@
   .options {
     top: 19vh !important;
   }
-
 }
 
-@media only screen and (max-height: 570px){
-
-  .options{
+@media only screen and (max-height: 570px) {
+  .options {
     top: 22vh !important;
-   
   }
-
-
-
 }
 
 @media only screen and #{$breakpoint-high-height-devices} {
@@ -206,4 +190,3 @@
     width: 120px !important;
   }
 }
-

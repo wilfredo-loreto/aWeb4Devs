@@ -9,18 +9,17 @@
   height: 92.4%;
   filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
     drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
-  
+
   border-radius: 10px;
   overflow: hidden;
   transition: 400ms;
-  background-size: cover !important; 
-    background-position: center !important; 
-    background-repeat: no-repeat !important; 
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   &:hover {
-    
-    background-size: cover !important; 
-    background-position: center !important; 
-    background-repeat: no-repeat !important; 
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     .hidden {
       transform: translateY(0%);
       visibility: visible;

@@ -1,48 +1,39 @@
 @import "./global.scss";
 
-.carouselCard{
-  
+.carouselCard {
+  border-radius: 10px !important;
+  width: 100%;
+  height: 45vh;
+  max-height: 450px;
+
+  .image {
     border-radius: 10px !important;
     width: 100%;
     height: 45vh;
     max-height: 450px;
-
-    .image{
-        border-radius: 10px !important; 
-        width: 100%;
-        height: 45vh;
-        max-height: 450px;
-    }
-    
+  }
 }
 
-@media only screen and #{$breakpoint-mobile} { 
+@media only screen and #{$breakpoint-mobile} {
+  .carouselCard {
+    border-radius: 10px;
+    height: 20vh;
 
-    .carouselCard{
-  
-        border-radius: 10px;
-        height: 20vh;
-     
-    
-        .image{
-            width: 100%;
-            height: 20vh;
-           
-        } 
+    .image {
+      width: 100%;
+      height: 20vh;
     }
+  }
 }
 
-@media only screen and #{$breakpoint-tablet2} { 
+@media only screen and #{$breakpoint-tablet2} {
+  .carouselCard {
+    border-radius: 10px;
+    height: 35vh;
 
-    .carouselCard{
-      
-        border-radius: 10px;
-        height: 35vh;
-
-        .image{
-       
-            width: 100%;
-            height: 35vh;     
-        }      
+    .image {
+      width: 100%;
+      height: 35vh;
     }
+  }
 }

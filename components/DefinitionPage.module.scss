@@ -10,7 +10,7 @@
   .logo2 {
     display: none;
   }
-  .imageSizes{
+  .imageSizes {
     width: 100%;
   }
   .content {
@@ -24,29 +24,27 @@
       @include fontSize(title);
       margin: 40px;
     }
-    
+
     .subtitle {
       text-align: center;
       color: $main-color;
       @include fontSize(title);
       margin: 20px;
     }
-    .list{
+    .list {
       list-style: none;
-      li{
+      li {
         @include fontSize(text);
-        margin: 5px 0 5px 15px; 
+        margin: 5px 0 5px 15px;
       }
-      li::before{
-        
-        content: "\2022";  
-        color: $main-color; 
-        display: inline-block; 
-        width: 1em; 
-        margin-left: -1em; 
-        font-weight: bold; 
-  
-  }
+      li::before {
+        content: "\2022";
+        color: $main-color;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        font-weight: bold;
+      }
     }
 
     p {
@@ -76,13 +74,13 @@
       .list {
         list-style: none;
         li {
-          margin: 5px 0 5px 15px; 
+          margin: 5px 0 5px 15px;
           span {
             margin-left: 10px;
             margin-bottom: 10px;
             color: $black;
           }
-          
+
           a {
             color: $main-color;
             text-decoration: underline;
@@ -93,12 +91,12 @@
           }
         }
         li::before {
-          content: "\2022";  
-          color: $main-color; 
-          display: inline-block; 
-          width: 1em; 
-          margin-left: -1em; 
-          font-weight: bold; 
+          content: "\2022";
+          color: $main-color;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+          font-weight: bold;
         }
       }
     }
@@ -123,13 +121,13 @@
       border-radius: 5px;
     }
 
-    .asideContent{
-        margin:0 auto;
-        width: 75%;
-        .techBlock{
-          width: 100%;
-          margin-left: 15px;
-        }
+    .asideContent {
+      margin: 0 auto;
+      width: 75%;
+      .techBlock {
+        width: 100%;
+        margin-left: 15px;
+      }
     }
 
     h3 {
@@ -152,7 +150,7 @@
       li {
         @include fontSize(text);
       }
-      
+
       a {
         color: $black;
         display: flex;

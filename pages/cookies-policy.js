@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import CookiesPolicyContent from "../components/CookiesPolicyContent"
+import CookiesPolicyContent from "../components/CookiesPolicyContent";
 function CookiesPolicy() {
   return (
     <Layout>

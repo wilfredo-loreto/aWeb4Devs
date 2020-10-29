@@ -1,43 +1,41 @@
 import Layout from "../../components/Layout";
 import SearchResults from "../../components/SearchResults";
-import axios from 'axios';
-import {useRouter} from 'next/router'
+import axios from "axios";
+import { useRouter } from "next/router";
 
-export default function results({postsArticles, postsTechs}){
-    const router = useRouter()
-    const {keyWord} = router.query
-    
+export default function results({ postsArticles, postsTechs }) {
+  const router = useRouter();
+  const { keyWord } = router.query;
 
-    return(
-        <Layout>
-            <div>
-                <SearchResults
-                articles = {postsArticles.articles}
-                techs = {postsTechs.techs}
-                />
-            </div>
-        </Layout>
-    )
-
+  return (
+    <Layout>
+      <div>
+        <SearchResults
+          articles={postsArticles.articles}
+          techs={postsTechs.techs}
+        />
+      </div>
+    </Layout>
+  );
 }
 
-export async function getServerSideProps(ctx){
-
+export async function getServerSideProps(ctx) {
   const res = await Promise.all([
-    axios.get('http://aweb4devsapi.herokuapp.com/search-articles/'+ ctx.query.keyWord),
-    axios.get('http://aweb4devsapi.herokuapp.com/search-techs/'+ ctx.query.keyWord)
+    axios.get(
+      "http://aweb4devsapi.herokuapp.com/search-articles/" + ctx.query.keyWord
+    ),
+    axios.get(
+      "http://aweb4devsapi.herokuapp.com/search-techs/" + ctx.query.keyWord
+    ),
+  ]);
 
-  ]); 
-
-  const postsArticles = (await res[0]).data
-  const postsTechs = (await res[1]).data
+  const postsArticles = (await res[0]).data;
+  const postsTechs = (await res[1]).data;
 
   return {
     props: {
       postsArticles,
-      postsTechs
+      postsTechs,
     },
-  }
-
-
+  };
 }
