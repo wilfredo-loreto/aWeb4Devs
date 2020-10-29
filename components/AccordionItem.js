@@ -4,9 +4,6 @@ import PanelItem from "./PanelItem";
 
 export default class AccordionItem extends Component {
   
-  componentDidMount(){
-   console.log(this.props.childrens);
-  }
   render() {
     return (
       // accordion item and panel

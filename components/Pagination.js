@@ -57,7 +57,6 @@ class Pagination extends React.Component {
     newOrder(x) {
         var aux = true;
         var result;
-        console.log(this.state.optionSelected);
         
        
       
@@ -105,7 +104,6 @@ class Pagination extends React.Component {
                 return (b.visits - a.visits)
               })
     
-              console.log(this.props.items)
               this.setState({ optionSelected: result,articles: newOrder1 });
             
              
@@ -124,7 +122,6 @@ class Pagination extends React.Component {
     
 
   setPage(page) {
-    console.log("hola");
     var { items, pageSize } = this.props;
     var pager = this.state.pager;
 

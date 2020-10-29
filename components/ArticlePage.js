@@ -19,7 +19,6 @@ export default class ArticlePage extends Component {
   }
   
   componentDidMount() {
-    console.log(this.props.articleContent.type);
     Axios.get(
       `https://aweb4devsapi.herokuapp.com/aside-techs/${this.props.articleContent.type}`
     ).then((res) => {
@@ -50,14 +49,12 @@ export default class ArticlePage extends Component {
         orderedChildrens[j].push(childrens[i]);
       }
       this.setState({ asideParents: parents, asideChilds: orderedChildrens });
-    }).catch((err)=>{console.log(err);});
+    }).catch((err)=>{throw err;});
   }
   render() {
     var finalContent = [];
     const { asideParents } = this.state;
     const { asideChilds } = this.state;
-    console.log(asideParents);
-    console.log(asideChilds);
     if (this.props.articleContent == undefined) {
       return <img src="/img/loading.gif" alt="Loading" style={{height:"25%",width:"25%",display:"block",margin:"5% auto"}}/>;
     }

@@ -176,7 +176,6 @@ export default class Carousel extends Component {
 
   render() {
     const techs = this.props.carouselContent;
-    console.log(techs)
     var aux = -1 ;
     var classCard = [styles.contentCardI,styles.mainCard,styles.contentCardD,styles.hideCard]
   

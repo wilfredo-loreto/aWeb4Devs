@@ -32,7 +32,6 @@ export async function getStaticPaths() {
 
     params: { techTitle: tech.title.split(" ").join("-") },
   }));
-  console.log(paths);
   return {
     paths,
     fallback: true,

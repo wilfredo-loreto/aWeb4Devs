@@ -11,19 +11,25 @@ export default class Layout extends Component {
     this.state={
       showCookieConsentBanner:false
     }
-    this.handleBanner = this.handleBanner.bind(this)
+    this.allowCookies = this.allowCookies.bind(this)
     this.stopCookies= this.stopCookies.bind(this)
   }
 
-  handleBanner(e){
+  allowCookies(e){
     const year = 1000*60*60*24*365
+   
     this.setWithExpiry("cookieBannerAccepted","true",year)
-    this.setState({showCookieConsentBanner:false})
+    setTimeout(()=>{
+      this.setState({showCookieConsentBanner:false})
+    },1000)
   }
   stopCookies(e){
     const day = 1000*60*60*24
+   
     this.setWithExpiry("cookieBannerRejected","true",day)
-    this.setState({showCookieConsentBanner:false})
+    setTimeout(()=>{
+      this.setState({showCookieConsentBanner:false})
+    },1000)
     /*CODE HERE TO STOP COOKIES FROM GOOGLE ADSENSE*/
   }
   setWithExpiry(key, value, ttl) {
@@ -70,7 +76,7 @@ export default class Layout extends Component {
         <Header />
         <div> {this.props.children}</div>
       
-        {this.state.showCookieConsentBanner == true ? <CookieConsentBanner stopCookies={this.stopCookies} handleBanner={this.handleBanner}/>:null}
+        {this.state.showCookieConsentBanner == true ? <CookieConsentBanner stopCookies={this.stopCookies} allowCookies={this.allowCookies}/>:null}
         <Footer />
       </div>
     );

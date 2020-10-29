@@ -33,7 +33,7 @@ export async function getStaticProps() {
       
       orderedChildrens[j].push(childrens[i]);
     }
-console.log(orderedChildrens)
+
   
   return {
     props: {

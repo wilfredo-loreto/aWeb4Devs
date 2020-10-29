@@ -10,7 +10,6 @@ export default class News extends Component {
         title: this.props.recentArticles[0].title,
         summary: this.props.recentArticles[0].summary,
       };
-      console.log(bigCard);
       var smallCards1 = [
         {
           img: this.props.recentArticles[1].img,
