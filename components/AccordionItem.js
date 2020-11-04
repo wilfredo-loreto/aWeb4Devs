@@ -1,6 +1,6 @@
 import styles from "./AccordionItem.module.scss";
 import React, { Component } from "react";
-import PanelItem from "./PanelItem";
+import PanelItem from "./panelitem";
 
 export default class AccordionItem extends Component {
   render() {

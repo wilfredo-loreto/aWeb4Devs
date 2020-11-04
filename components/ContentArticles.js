@@ -2,7 +2,7 @@ import styles from "./ContentArticles.module.scss";
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 
-import Pagination from "./Pagination";
+import Pagination from "./pagination";
 
 class ContentArticles extends Component {
   constructor(props) {

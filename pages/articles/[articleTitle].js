@@ -36,7 +36,7 @@ export async function getStaticPaths() {
   const articles = (await res).data.articles;
 
   const paths = articles.map((article) => ({
-    params: { articleTitle: article.title.split(" ").join("-") },
+    params: { articletitle: article.title.split(" ").join("-") },
   }));
   return {
     paths,
@@ -51,12 +51,12 @@ export async function getStaticProps({ params }) {
   const res = await Promise.all([
     axios.get(
       `https://aweb4devsapi.herokuapp.com/article/${unSlug(
-        params.articleTitle
+        params.articletitle
       )}`
     ),
     axios.get(
       `https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(
-        params.articleTitle
+        params.articletitle
       )}`
     ),
   ]);

@@ -1,7 +1,7 @@
 import styles from "./Carousel.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
-import CarouselCard from "./CarouselCard";
+import CarouselCard from "./carouselCard";
 
 export default class Carousel extends Component {
   constructor(props) {

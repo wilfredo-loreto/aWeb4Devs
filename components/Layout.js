@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Header from "./Header";
-import Footer from "./Footer";
-import CookieConsentBanner from "./CookieConsentBanner";
+import Header from "./header";
+import Footer from "./footer";
+import CookieConsentBanner from "./cookieconsentbanner";
 import React, { Component } from "react";
 
 export default class Layout extends Component {

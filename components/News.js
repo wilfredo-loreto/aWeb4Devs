@@ -1,5 +1,5 @@
 import styles from "./News.module.scss";
-import SmallCard from "./SmallCard";
+import SmallCard from "./smallcard";
 import BigCard from "./BigCard";
 import React, { Component } from "react";
 export default class News extends Component {

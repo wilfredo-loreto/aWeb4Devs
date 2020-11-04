@@ -1,7 +1,7 @@
 import styles from "./Accordion.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./accordionitem";
 
 export default class Accordion extends Component {
   componentDidMount() {
