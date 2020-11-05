@@ -12,7 +12,6 @@
   transition: 400ms;
   filter: drop-shadow(-4px -4px 8px rgba(68, 68, 68, 0.25))
     drop-shadow(4px 4px 8px rgba(68, 68, 68, 0.25));
- 
 
   &:hover {
     transform: scale(1.1);
@@ -50,12 +49,12 @@
     height: 90%;
   }
 }
-@media screen and #{$breakpoint-mobile} {
-  .smallcard {
-    width: 92.5%;
-    height: 47%;
-    &:hover {
-      transform: none;
-    }
-  }
-}
+// @media screen and #{$breakpoint-mobile} {
+//   .smallcard {
+//     width: 92.5%;
+//     height: 47%;
+//     &:hover {
+//       transform: none;
+//     }
+//   }
+// }

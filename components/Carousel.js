@@ -1,29 +1,25 @@
 import styles from "./Carousel.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
-import CarouselCard from "./CarouselCard";
-
+import CarouselCard from "./carouselCard";
 
 export default class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { actualCardF: 2, actualCardB: 2, techs: []  };
+    this.state = { actualCardF: 2, actualCardB: 2, techs: [] };
   }
 
   //Animation left Carousel
   animationCarouselLeft(x, max) {
-
-    if(this.props.aux){
-
+    if (this.props.aux) {
       var card = "cardF";
-
-    }else{
+    } else {
       var card = "cardB";
     }
 
     //Cards are laaded
     var actual = document.getElementById(card + x);
-  
+
     if (x == max) {
       var siguiente = document.getElementById(card + 1);
     } else {
@@ -47,7 +43,7 @@ export default class Carousel extends Component {
       x -= 1;
     }
 
-    //Card class are changed to make move animation 
+    //Card class are changed to make move animation
     siguiente.classList.replace(styles.contentCardD, styles.hideCardD);
     siguiente.classList.replace(styles.hideCardD, styles.hideCard);
     nueva.classList.replace(styles.contentCardI, styles.mainCard);
@@ -55,36 +51,27 @@ export default class Carousel extends Component {
     oculta.classList.replace(styles.hideCardI, styles.contentCardI);
     actual.classList.replace(styles.mainCard, styles.contentCardD);
 
-
     clearInterval(this.timerID);
 
     this.automaticCarousel();
 
-    if(this.props.aux){
-     this.setState({actualCardF: x});
-     
-
-    }else{
-      this.setState({actualCardB: x});
-     
+    if (this.props.aux) {
+      this.setState({ actualCardF: x });
+    } else {
+      this.setState({ actualCardB: x });
     }
-  
   }
 
-  
   //Animation right Carousel
   animationCarouselRight(x, max) {
-
-    if(this.props.aux){
-
+    if (this.props.aux) {
       var card = "cardF";
-
-    }else{
+    } else {
       var card = "cardB";
     }
-   
+
     var actual = document.getElementById(card + x);
-  
+
     if (x == max) {
       var nueva = document.getElementById(card + 1);
     } else {
@@ -125,61 +112,56 @@ export default class Carousel extends Component {
     oculta.classList.replace(styles.hideCardD, styles.contentCardD);
     actual.classList.replace(styles.mainCard, styles.contentCardI);
 
-  
     clearInterval(this.timerID);
 
     this.automaticCarousel();
 
-    if(this.props.aux){
-      this.setState({actualCardF: x});
-      
-      
-   
-    }else{
-      this.setState({actualCardB: x});
-    
+    if (this.props.aux) {
+      this.setState({ actualCardF: x });
+    } else {
+      this.setState({ actualCardB: x });
     }
-
   }
 
-  
-  //Time animation of carousel 
+  //Time animation of carousel
   componentDidMount() {
+    this.setState({ actualCardF: 2 });
+    this.setState({ actualCardB: 2 });
 
-    this.setState({actualCardF: 2});
-    this.setState({actualCardB: 2});
-   
     this.automaticCarousel();
   }
 
   componentWillUnmount() {
     clearInterval(this.timerID);
-
   }
 
-  increaseCounter(aux){
-
-    aux < 3 ? aux+=1 : aux=3
+  increaseCounter(aux) {
+    aux < 3 ? (aux += 1) : (aux = 3);
 
     return aux;
   }
 
-  automaticCarousel(){
+  automaticCarousel() {
     this.timerID = setInterval(
       () =>
-        ( this.animationCarouselRight(
+        this.animationCarouselRight(
           this.props.aux ? this.state.actualCardF : this.state.actualCardB,
-          this.props.carouselContent.length)),
+          this.props.carouselContent.length
+        ),
       5000
     );
   }
 
   render() {
     const techs = this.props.carouselContent;
-    console.log(techs)
-    var aux = -1 ;
-    var classCard = [styles.contentCardI,styles.mainCard,styles.contentCardD,styles.hideCard]
-  
+    var aux = -1;
+    var classCard = [
+      styles.contentCardI,
+      styles.mainCard,
+      styles.contentCardD,
+      styles.hideCard,
+    ];
+
     return (
       <div className={styles.contentCarousel}>
         {/* Subtitle */}
@@ -187,56 +169,61 @@ export default class Carousel extends Component {
 
         {/* carousel and arrow container */}
         <div className={styles.container2}>
-
           {/* Left arrow and left div for carousel activation */}
-          <div  className={styles.movilAnimationI}  onClick={() =>
-              ( this.animationCarouselLeft(
-                this.props.aux ? this.state.actualCardF : this.state.actualCardB,
+          <div
+            className={styles.movilAnimationI}
+            onClick={() =>
+              this.animationCarouselLeft(
+                this.props.aux
+                  ? this.state.actualCardF
+                  : this.state.actualCardB,
                 this.props.carouselContent.length
-              ))
-            }>
-          <img
-           
-            className={styles.arrows}
-            src="icons/arrowL.png"
-            alt=""
-          />
+              )
+            }
+          >
+            <img
+              className={styles.arrows}
+              src="icons/arrowL.png"
+              alt="Move carousel to left side"
+            />
           </div>
           {/* Carousel container */}
           <div className={styles.carousel} id="carousel">
-            
             {/* Carousel items/cards */}
             {techs.map((tech, count) => (
-           
-
-              <div key={"div" + count} id={this.props.aux ? "cardF"+(count+1) : "cardB"+(count+1)} className={classCard[aux=this.increaseCounter(aux)]}>
-              <CarouselCard 
-              image = {tech.img}
-              title = {tech.title}
-              type = {tech.type}
-              />
+              <div
+                key={"div" + count}
+                id={
+                  this.props.aux ? "cardF" + (count + 1) : "cardB" + (count + 1)
+                }
+                className={classCard[(aux = this.increaseCounter(aux))]}
+              >
+                <CarouselCard
+                  image={tech.img}
+                  title={tech.title}
+                  type={tech.type}
+                />
               </div>
-        
             ))}
-
-          
-         
           </div>
           {/* Right Arrow and right div for carousel activation */}
-          <div  className={styles.movilAnimationD}  onClick={() =>
-              (this.animationCarouselRight(
-                this.props.aux ? this.state.actualCardF : this.state.actualCardB,
+          <div
+            className={styles.movilAnimationD}
+            onClick={() =>
+              this.animationCarouselRight(
+                this.props.aux
+                  ? this.state.actualCardF
+                  : this.state.actualCardB,
                 this.props.carouselContent.length
-              ))
-            }>
-          <img
-       
-            className={styles.arrows}
-            src="icons/arrowR.png"
-            alt=""
-          />
+              )
+            }
+          >
+            <img
+              className={styles.arrows}
+              src="icons/arrowR.png"
+              alt="Move carousel to right side"
+            />
           </div>
-         
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
-import Layout from "../components/Layout"
-import ContactInfo from "../components/ContactInfo"
-import ContactForm from "../components/ContactForm"
+import Layout from "../components/Layout";
+import ContactInfo from "../components/ContactInfo";
+import ContactForm from "../components/ContactForm";
 function Contact() {
   return (
     <Layout>

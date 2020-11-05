@@ -1,15 +1,26 @@
 import Layout from "../../components/Layout";
 import DefinitionPage from "../../components/DefinitionPage";
 import axios from "axios";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 export default function definitionFrontend({
   content,
   asideParents,
   asideChildrens,
 }) {
-  const router = useRouter()
-  if(router.isFallback){
-    return <h1>Loading...</h1>
+  const router = useRouter();
+  if (router.isFallback) {
+    return (
+      <img
+        src="/img/loading.gif"
+        alt="loading gif"
+        style={{
+          height: "25%",
+          width: "25%",
+          display: "block",
+          margin: "5% auto",
+        }}
+      />
+    );
   }
   return (
     <Layout>
@@ -25,14 +36,14 @@ export default function definitionFrontend({
   );
 }
 export async function getStaticPaths() {
-  const res = axios.get("http://aweb4devsapi.herokuapp.com/aside-techs/frontend");
+  const res = axios.get(
+    "http://aweb4devsapi.herokuapp.com/aside-techs/frontend"
+  );
   const techs = (await res).data.techs;
 
   const paths = techs.map((tech) => ({
-
-    params: { techTitle: tech.title.split(" ").join("-") },
+    params: { techtitle: tech.title.split(" ").join("-") },
   }));
-  console.log(paths);
   return {
     paths,
     fallback: true,
@@ -43,12 +54,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
-  function unSlug(link){
-    return link.split("-").join(" ")
+  function unSlug(link) {
+    return link.split("-").join(" ");
   }
 
   const res = await Promise.all([
-    axios.get(`https://aweb4devsapi.herokuapp.com/tech/${unSlug(params.techTitle)}`),
+    axios.get(
+      `https://aweb4devsapi.herokuapp.com/tech/${unSlug(params.techtitle)}`
+    ),
     axios.get(`https://aweb4devsapi.herokuapp.com/techs/frontend`),
   ]);
 
@@ -66,19 +79,18 @@ export async function getStaticProps({ params }) {
     orderedChildrens[i] = [];
   }
   var j = 0;
-  var band = true
-    for (i = 0; i <= childrens.length - 1; i++) {
-      band = true
-        while (parents[j].title != childrens[i].parent && band) {
-          j++;
-          if(parents[j]== undefined){
-            band=false
-          }
-        }
-      
-      
-      orderedChildrens[j].push(childrens[i]);
+  var band = true;
+  for (i = 0; i <= childrens.length - 1; i++) {
+    band = true;
+    while (parents[j].title != childrens[i].parent && band) {
+      j++;
+      if (parents[j] == undefined) {
+        band = false;
+      }
     }
+
+    orderedChildrens[j].push(childrens[i]);
+  }
 
   // Pass post data to the page via props
   return {

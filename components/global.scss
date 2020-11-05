@@ -9,21 +9,21 @@
   src: url("/fonts/CenturyGothicBold.ttf");
 }
 
-@font-face{
-  font-family:"OpenSans";
+@font-face {
+  font-family: "OpenSans";
   src: url("/fonts/OpenSans-Regular.ttf");
 }
 /* Colors */
 $main-color: #d11149ff;
 $background-color: #f9f9f9;
 $shadow-color: rgba(68, 68, 68, 0.15);
-$black:#2E2F2F;
+$black: #2e2f2f;
 
 /* Media Query */
 $breakpoint-tablet: "(max-width: 769px)";
 $breakpoint-tablet2: "(max-width: 769px) and (min-width: 579px)";
 $breakpoint-mobile: "(max-width: 578px)";
-$breakpoint-high-height-devices:"(min-height:1081px)";
+$breakpoint-high-height-devices: "(min-height:1081px)";
 
 /* Font Sizes in different devices. M=Mobile,T=Tablet,D=Desktop*/
 
@@ -39,40 +39,38 @@ $D-text: 18px;
 $D-subtitle: 22px;
 $D-title: 36px;
 
-@mixin fontSize($type){
-  @media screen and (min-width: 768px){
-    @if($type == title){
+@mixin fontSize($type) {
+  @media screen and (min-width: 768px) {
+    @if ($type == title) {
       font-size: $D-title;
-    }@else if($type == subtitle){
+    } @else if($type == subtitle) {
       font-size: $D-subtitle;
-    }@else if($type == text){
+    } @else if($type == text) {
       font-size: $D-text;
     }
   }
-  @media screen and (min-width: 579px) and  (max-width:767px){
-    @if($type == title){
+  @media screen and (min-width: 579px) and (max-width: 767px) {
+    @if ($type == title) {
       font-size: $T-title;
-    }@else if($type == subtitle){
+    } @else if($type == subtitle) {
       font-size: $T-subtitle;
-    }@else if($type == text){
+    } @else if($type == text) {
       font-size: $T-text;
     }
   }
-  @media screen and (max-width: 578px){
-    @if($type == title){
+  @media screen and (max-width: 578px) {
+    @if ($type == title) {
       font-size: $M-title;
-    }@else if($type == subtitle){
+    } @else if($type == subtitle) {
       font-size: $M-subtitle;
-    }@else if($type == text){
+    } @else if($type == text) {
       font-size: $M-text;
     }
   }
 }
 
-@mixin test($color){
-  
-   border: solid 5px $color;
-  
+@mixin test($color) {
+  border: solid 5px $color;
 }
 
 * {
@@ -80,13 +78,11 @@ $D-title: 36px;
   padding: 0;
   font-family: "Century";
   background: $background-color;
-  ::selection{
-
-    background: #FFDFE8
-    
+  ::selection {
+    background: #ffdfe8;
   }
-  ::-moz-selection{
-    background: #FFDFE8
+  ::-moz-selection {
+    background: #ffdfe8;
   }
 }
 

@@ -1,5 +1,5 @@
 import styles from "./News.module.scss";
-import SmallCard from "./SmallCard";
+import SmallCard from "./smallcard";
 import BigCard from "./BigCard";
 import React, { Component } from "react";
 export default class News extends Component {
@@ -10,7 +10,6 @@ export default class News extends Component {
         title: this.props.recentArticles[0].title,
         summary: this.props.recentArticles[0].summary,
       };
-      console.log(bigCard);
       var smallCards1 = [
         {
           img: this.props.recentArticles[1].img,
@@ -25,12 +24,12 @@ export default class News extends Component {
         {
           img: this.props.recentTechs[0].img,
           title: this.props.recentTechs[0].title,
-          type: this.props.recentTechs[0].type
+          type: this.props.recentTechs[0].type,
         },
         {
           img: this.props.recentTechs[1].img,
           title: this.props.recentTechs[1].title,
-          type: this.props.recentTechs[1].type
+          type: this.props.recentTechs[1].type,
         },
       ];
     } else if (this.props.type == "visiteds") {
@@ -90,8 +89,16 @@ export default class News extends Component {
             />
           </div>
           <div className={styles.colcontainer}>
-            <SmallCard type={smallCards2[0].type} img={smallCards2[0].img} title={smallCards2[0].title} />
-            <SmallCard type={smallCards2[1].type} img={smallCards2[1].img} title={smallCards2[1].title} />
+            <SmallCard
+              type={smallCards2[0].type}
+              img={smallCards2[0].img}
+              title={smallCards2[0].title}
+            />
+            <SmallCard
+              type={smallCards2[1].type}
+              img={smallCards2[1].img}
+              title={smallCards2[1].title}
+            />
           </div>
         </div>
       </section>

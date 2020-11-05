@@ -1,0 +1,92 @@
+$main-color: #d11149ff;
+$background-color: #f9f9f9;
+$shadow-color: rgba(68, 68, 68, 0.15);
+$black: #2e2f2f;
+$breakpoint-mobile: "(max-width: 578px)";
+.mainContainer {
+  z-index: 50000;
+  * {
+    background: none;
+  }
+  position: fixed;
+  height: contain;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $black;
+  color: $background-color;
+  padding: 0 32px;
+  box-shadow: 0 -2px 16px $black;
+  animation-duration: 1.2s;
+  animation-name: slidein;
+  transition: 400ms;
+
+  //   width: 95%;
+  span {
+    font-size: 12px;
+    text-align: justify;
+    padding: 15px 0;
+    a {
+      color: $background-color;
+      text-decoration: underline;
+      transition: 200ms;
+      &:hover {
+        cursor: pointer;
+        color: $main-color;
+      }
+    }
+  }
+  .button {
+    background-color: $main-color;
+    width: 150px;
+    color: $background-color;
+    padding: 10px;
+    margin: auto 10px;
+    border-radius: 10px;
+    transition: color 400ms;
+    transition: background 400ms;
+    &:hover {
+      background-color: $black;
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.hide {
+  animation-name: slideout;
+  animation-duration: 2.5s;
+}
+@keyframes slidein {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes slideout {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+
+@media screen and #{$breakpoint-mobile} {
+  .mainContainer {
+    flex-flow: column nowrap !important;
+    span {
+      font-size: 11px;
+    }
+    .button {
+      margin: 5px 10px;
+    }
+  }
+}

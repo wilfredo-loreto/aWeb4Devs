@@ -1,18 +1,14 @@
 import styles from "./Accordion.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./accordionitem";
 
 export default class Accordion extends Component {
-  
-  
-  componentDidMount(){
-
-    
+  componentDidMount() {
     /* Setting the event "Toggle Panel" to all the accordion components.*/
     var acc = [];
 
-    for (var i = 0; i <= this.props.parents.length -1 ; i++) {
+    for (var i = 0; i <= this.props.parents.length - 1; i++) {
       acc[i] = document.getElementById("accordionItem" + i);
       acc[i].addEventListener("click", function () {
         var panel = this.nextElementSibling;
@@ -24,7 +20,6 @@ export default class Accordion extends Component {
           panel.style.maxHeight = null;
         }
       });
-      
     }
     /* Closes the opened accordion and removes the "active" class when clicking in another one */
     function closeOpenPanel(accordion, actualPanel) {
@@ -35,21 +30,18 @@ export default class Accordion extends Component {
           panel.style.maxHeight = 0;
           accordion[i].classList.remove(styles.active);
         }
-        
+
         i++;
       }
     }
-    
-    
   }
-    
-  render() {
 
+  render() {
     return (
       /* main container which have all the accordion items */
       <div className={styles.mainContainer}>
         {/* Dynamic insert of accordion items*/}
-        {this.props.parents.map((accordion,cont) => (
+        {this.props.parents.map((accordion, cont) => (
           <AccordionItem
             title={accordion.title}
             summary={accordion.summary}
@@ -57,10 +49,10 @@ export default class Accordion extends Component {
             accordionId={"accordionItem" + cont}
             panelId={"panel" + cont}
             type={this.props.requestType}
-            childrens={this.props.childrens[cont]} 
+            childrens={this.props.childrens[cont]}
             key={cont}
           />
-         ))} 
+        ))}
       </div>
     );
   }
