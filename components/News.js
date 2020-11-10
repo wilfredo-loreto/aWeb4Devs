@@ -1,5 +1,6 @@
 import styles from "./News.module.scss";
-import SmallCard from "./smallcard";
+import SmallCardArticle from "./smallcardarticle";
+import SmallCardTech from "./smallcardtech"
 import BigCard from "./BigCard";
 import React, { Component } from "react";
 export default class News extends Component {
@@ -32,6 +33,19 @@ export default class News extends Component {
           type: this.props.recentTechs[1].type,
         },
       ];
+      var card1 = <SmallCardTech
+      type={smallCards2[0].type}
+      img={smallCards2[0].img}
+      title={smallCards2[0].title}
+      isTech={true}
+    />
+    var card2 = <SmallCardTech
+    type={smallCards2[1].type}
+    img={smallCards2[1].img}
+    title={smallCards2[1].title}
+    isTech={true}
+  />
+    
     } else if (this.props.type == "visiteds") {
       var bigCard = {
         img: this.props.mostVisiteds[0].img,
@@ -58,6 +72,9 @@ export default class News extends Component {
           title: this.props.mostVisiteds[4].title,
         },
       ];
+      var card1 = <SmallCardArticle img={smallCards2[0].img} title={smallCards2[0].title}/>
+      var card2 = <SmallCardArticle img={smallCards2[1].img} title={smallCards2[1].title}/>
+     
     }
 
     return (
@@ -78,8 +95,8 @@ export default class News extends Component {
               this.props.order ? styles.order1 : styles.order0,
             ].join(" ")}
           >
-            <SmallCard img={smallCards1[1].img} title={smallCards1[1].title} />
-            <SmallCard img={smallCards1[0].img} title={smallCards1[0].title} />
+            <SmallCardArticle img={smallCards1[1].img} title={smallCards1[1].title}/>
+            <SmallCardArticle img={smallCards1[0].img} title={smallCards1[0].title}/>
           </div>
           <div className={styles.container50width}>
             <BigCard
@@ -89,16 +106,8 @@ export default class News extends Component {
             />
           </div>
           <div className={styles.colcontainer}>
-            <SmallCard
-              type={smallCards2[0].type}
-              img={smallCards2[0].img}
-              title={smallCards2[0].title}
-            />
-            <SmallCard
-              type={smallCards2[1].type}
-              img={smallCards2[1].img}
-              title={smallCards2[1].title}
-            />
+            {card1}
+            {card2}
           </div>
         </div>
       </section>

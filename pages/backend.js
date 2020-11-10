@@ -42,7 +42,7 @@ export async function getStaticProps() {
 
 function BackEnd({ orderedChildrens, parents }) {
   return (
-    <Layout>
+    <Layout pageTitle="AWeb4Devs - Backend Technologies">
       <div>
         <Concept
           title="Back-end"

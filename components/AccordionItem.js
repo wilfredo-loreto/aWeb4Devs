@@ -22,7 +22,7 @@ export default class AccordionItem extends Component {
           />
           <div className={styles.textsContainer}>
             <h3 className={styles.title}>{this.props.title}</h3>
-            <span className={styles.summary}>{this.props.summary}</span>
+            <p className={styles.summary}>{this.props.summary}</p>
           </div>
           <img
             className={styles.logo}

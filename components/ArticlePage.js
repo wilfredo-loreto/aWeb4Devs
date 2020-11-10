@@ -129,13 +129,8 @@ export default class ArticlePage extends Component {
     return (
       /* Definition of technologies */
       <div className={styles.mainContainer}>
-        <img
-          className={styles.logo2}
-          src={"/img/" + this.props.articleContent.logo}
-          alt={this.props.articleContent.title + " logo"}
-        />
         <div className={styles.content}>
-          <h2 className={styles.title}>{this.props.articleContent.title}</h2>
+          <h1 className={styles.title}>{this.props.articleContent.title}</h1>
           <img
             className={styles.imageSizes}
             src={"/img/" + this.props.articleContent.img}

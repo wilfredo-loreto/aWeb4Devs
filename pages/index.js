@@ -46,7 +46,7 @@ function HomePage({
   backendCarousel,
 }) {
   return (
-    <Layout>
+    <Layout pageTitle="AWeb4Devs - Articles and technologies about web development">
       <div>
         <News
           type="recents"

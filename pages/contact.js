@@ -3,7 +3,7 @@ import ContactInfo from "../components/ContactInfo";
 import ContactForm from "../components/ContactForm";
 function Contact() {
   return (
-    <Layout>
+    <Layout pageTitle="AWeb4Devs - Contact us">
       <ContactInfo />
       <ContactForm />
     </Layout>

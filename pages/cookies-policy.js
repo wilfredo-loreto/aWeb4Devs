@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import CookiesPolicyContent from "../components/CookiesPolicyContent";
 function CookiesPolicy() {
   return (
-    <Layout>
+    <Layout pageTitle="AWeb4Devs - Cookies Policy">
       <CookiesPolicyContent />
     </Layout>
   );

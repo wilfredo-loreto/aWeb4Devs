@@ -89,7 +89,7 @@ export default class DefinitionPage extends Component {
         />
 
         <div className={styles.content}>
-          <h2 className={styles.title}>{this.props.allContent.title}</h2>
+          <h1 className={styles.title}>{this.props.allContent.title}</h1>
           {finalContent.map((block) => block)}
         </div>
 
