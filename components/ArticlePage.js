@@ -54,6 +54,55 @@ export default class ArticlePage extends Component {
       .catch((err) => {
         throw err;
       });
+
+
+      if(this.props.isArticle){
+        var doc = this.props.articleContent
+        var url = "http://aweb4devsapi.herokuapp.com/article/" + doc.title
+        var minute = 1000 * 60 
+        var newVisit = {
+          title: doc.title,
+          visits: doc.visits + 1,
+          password: "Add 1 Visit to Our WebSite"
+        }
+  
+        if(this.getWithExpiry("visits") == null){
+         
+          try {
+            const saveDoc = Axios.put(url, newVisit);
+            const res = (saveDoc).data;
+            console.log(res);
+            this.setWithExpiry("visits","true",minute)
+
+          } catch (err) {
+            console.log(err);
+        
+          }
+          
+        }
+      }
+  }
+  setWithExpiry(key, value, ttl) {
+    const now = new Date();
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+  getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+      return null;
+    }
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return item.value;
   }
   render() {
     var finalContent = [];

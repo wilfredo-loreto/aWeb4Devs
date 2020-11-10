@@ -25,6 +25,7 @@ export default function article({ articleContent, relatedArticles }) {
         <ArticlePage
           articleContent={articleContent}
           relatedArticles={relatedArticles}
+          isArticle = {true}
         />
       </div>
     </Layout>
@@ -66,6 +67,6 @@ export async function getStaticProps({ params }) {
       articleContent: res[0].data.article,
       relatedArticles: res[1].data.result,
     },
-    revalidate: 1,
+    revalidate: 86400,
   };
 }

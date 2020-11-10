@@ -85,6 +85,6 @@ export async function getStaticProps({ params }) {
       asideParents: parents,
       asideChildrens: orderedChildrens,
     },
-    revalidate: 1,
+    revalidate: 86400,
   };
 }
