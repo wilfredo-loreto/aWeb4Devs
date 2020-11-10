@@ -157,6 +157,19 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 10px;
+        transition: 400ms;
+        img {
+          transition: 400ms;
+          background: none;
+        }
+        &:hover{
+
+          color: $main-color;
+
+          img {
+            transform: translateX(20%);
+          }
+        }
       }
     }
 

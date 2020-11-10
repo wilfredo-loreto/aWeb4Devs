@@ -93,8 +93,8 @@ export default class DefinitionPage extends Component {
           {finalContent.map((block) => block)}
         </div>
 
-        {/* Lateral Aside */}
-        <div className={styles.aside}>
+        {/* Aside */}
+        <aside className={styles.aside}>
           <img
             className={styles.logo}
             src={"/img/" + this.props.allContent.logo}
@@ -137,7 +137,7 @@ export default class DefinitionPage extends Component {
               </div>
             ))}
           </div>
-        </div>
+        </aside>
       </div>
     );
   }

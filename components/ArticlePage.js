@@ -176,13 +176,8 @@ export default class ArticlePage extends Component {
     });
 
     return (
-      /* Definition of technologies */
+      /* Definition of articles */
       <div className={styles.mainContainer}>
-        <img
-          className={styles.logo2}
-          src={"/img/" + this.props.articleContent.logo}
-          alt={this.props.articleContent.title + " logo"}
-        />
         <div className={styles.content}>
           <h2 className={styles.title}>{this.props.articleContent.title}</h2>
           <img
@@ -194,7 +189,7 @@ export default class ArticlePage extends Component {
         </div>
 
         {/* Aside */}
-        <div className={[styles.aside, styles.articleAside].join(" ")}>
+        <aside className={[styles.aside, styles.articleAside].join(" ")}>
           <h3>More Content</h3>
           <div className={styles.asideContent}>
             {this.props.relatedArticles.length != 0 ? (
@@ -259,7 +254,7 @@ export default class ArticlePage extends Component {
               </React.Fragment>
             ) : null}
           </div>
-        </div>
+        </aside>
       </div>
     );
   }
