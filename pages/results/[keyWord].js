@@ -1,11 +1,9 @@
 import Layout from "../../components/Layout";
 import SearchResults from "../../components/SearchResults";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 
 export default function results({ postsArticles, postsTechs }) {
-  const router = useRouter();
-  const { keyWord } = router.query;
 
   return (
     <Layout pageTitle="Search Results...">

@@ -14,9 +14,7 @@ export async function getStaticProps() {
     axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/3articles`),
     axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/2techs`),
     axios.get(`https://aweb4devsapi.herokuapp.com/homepage/carousel/`),
-    axios.get(
-      `https://aweb4devsapi.herokuapp.com/homepage/news/most-visited-articles`
-    ),
+    axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/most-visited-articles`),
   ]);
 
   var i = 0;

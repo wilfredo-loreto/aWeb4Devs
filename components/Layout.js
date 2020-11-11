@@ -21,6 +21,7 @@ export default class Layout extends Component {
     setTimeout(() => {
       this.setState({ showCookieConsentBanner: false });
     }, 1000);
+    /*CODE HERE TO START PERSONALIZED ADS (ENABLED COOKIES) FROM GOOGLE ADSENSE*/
   }
   stopCookies(e) {
     const day = 1000 * 60 * 60 * 24;
@@ -29,7 +30,7 @@ export default class Layout extends Component {
     setTimeout(() => {
       this.setState({ showCookieConsentBanner: false });
     }, 1000);
-    /*CODE HERE TO STOP COOKIES FROM GOOGLE ADSENSE*/
+    /*CODE HERE TO STOP PERSONALIZED ADS (DISABLED COOKIES) FROM GOOGLE ADSENSE*/
   }
   setWithExpiry(key, value, ttl) {
     const now = new Date();
@@ -65,13 +66,17 @@ export default class Layout extends Component {
   }
 
   render() {
+    const generalKeywords = "web,web development,web application,web page,application,website,developers,frontend,backend,full-stack,app"
+    const customKeywords = this.props.keywords.join(",")
+    const allKeywords = generalKeywords + customKeywords
+    
     return (
       <div>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <meta charSet="UTF-8"/>
           <meta name="description" content={this.props.description}/>
-          <meta name="keywords" content={""}/>
+          {this.props.keywords ? <meta name="keywords" content={allKeywords}/>:<meta name="keywords" content={generalKeywords}/>}
           <title>{this.props.pageTitle}</title>
           <link rel="icon" type="image/png" href="/img/favicon.png" />
         </Head>
