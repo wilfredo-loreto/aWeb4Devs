@@ -54,7 +54,7 @@ export default class DefinitionPage extends Component {
           finalContent.push(
             <ul className={styles.list}>
               {block.content.map((item, i) => (
-                <li>{item}</li>
+                <li key={"list" + i}>{item}</li>
               ))}
             </ul>
           );
@@ -65,8 +65,8 @@ export default class DefinitionPage extends Component {
             <div className={styles.references}>
               <h5>References:</h5>
               <ul className={styles.list}>
-                {block.content.references.map((item) => (
-                  <li>
+                {block.content.map((item) => (
+                  <li key={"refs" + i}>
                     {item.author} -{" "}
                     <a href={item.link} target="_blank">
                       {this.shortURL(item.link)}
@@ -103,7 +103,7 @@ export default class DefinitionPage extends Component {
           <h3>More Content</h3>
           <div className={styles.asideContent}>
             {this.props.asideParents.map((parent, i) => (
-              <div className={styles.techBlock}>
+              <div key={"asideParents" + i} className={styles.techBlock}>
                 <Link
                   href={
                     "/" + this.props.type + "/" + this.slugSyntax(parent.title)
@@ -116,6 +116,7 @@ export default class DefinitionPage extends Component {
                 <ul>
                   {this.props.asideChildrens[i].map((child) => (
                     <Link
+                      key={"asideChildrens" + i}
                       href={
                         "/" +
                         this.props.type +

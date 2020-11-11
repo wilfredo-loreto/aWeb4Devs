@@ -23,7 +23,7 @@ export default function definitionFrontend({
     );
   }
   return (
-    <Layout pageTitle={content.title}>
+    <Layout pageTitle={content.title} description={content.summary} keywords={content.tags}>
       <div>
         <DefinitionPage
           allContent={content}

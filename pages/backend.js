@@ -42,11 +42,11 @@ export async function getStaticProps() {
 
 function BackEnd({ orderedChildrens, parents }) {
   return (
-    <Layout pageTitle="AWeb4Devs - Backend Technologies">
+    <Layout pageTitle="AWeb4Devs - Backend Technologies" description="The backend is the part of a computer system or application that is not directly accessed by the user, typically responsible for storing and manipulating internal and external data.">
       <div>
         <Concept
           title="Back-end"
-          description="The backend is the part of a computer system or application that is not directly accessed by the user, typically responsible for storing and manipulating  internal and external data."
+          description="The backend is the part of a computer system or application that is not directly accessed by the user, typically responsible for storing and manipulating internal and external data."
         />
         <Accordion
           type="back-end"

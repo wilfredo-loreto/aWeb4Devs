@@ -150,7 +150,7 @@ export default class ArticlePage extends Component {
           finalContent.push(
             <ul className={styles.list}>
               {block.content.map((item, i) => (
-                <li>{item}</li>
+                <li key={"list" + i}>{item}</li>
               ))}
             </ul>
           );
@@ -161,8 +161,8 @@ export default class ArticlePage extends Component {
             <div className={styles.references}>
               <h5>References:</h5>
               <ul className={styles.list}>
-                {block.content.references.map((item) => (
-                  <li>
+                {block.content.map((item) => (
+                  <li  key={"refs" + i}>
                     {item.author + " - "}
                     <a href={item.link} target="_blank">
                       {this.shortURL(item.link)}
@@ -197,7 +197,7 @@ export default class ArticlePage extends Component {
                 <h4>Related Articles</h4>
                 <ul>
                   {this.props.relatedArticles.map((title) => (
-                    <Link href={"/articles/" + this.slugSyntax(title)}>
+                    <Link key={"asideArticles" + i} href={"/articles/" + this.slugSyntax(title)}>
                       <a>
                         <div>
                           <img
@@ -218,7 +218,7 @@ export default class ArticlePage extends Component {
               <React.Fragment>
                 <h4>Related Techs</h4>
                 {asideParents.map((parent, i) => (
-                  <div className={styles.techBlock}>
+                  <div  key={"asideTech" + i} className={styles.techBlock}>
                     <Link
                       href={
                         "/" + parent.type + "/" + this.slugSyntax(parent.title)
