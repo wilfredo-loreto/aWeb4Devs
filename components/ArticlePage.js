@@ -179,7 +179,7 @@ export default class ArticlePage extends Component {
       /* Definition of articles */
       <div className={styles.mainContainer}>
         <div className={styles.content}>
-          <h2 className={styles.title}>{this.props.articleContent.title}</h2>
+          <h1 className={styles.title}>{this.props.articleContent.title}</h1>
           <img
             className={styles.imageSizes}
             src={"/img/" + this.props.articleContent.img}

@@ -68,7 +68,11 @@ export default class Layout extends Component {
     return (
       <div>
         <Head>
-          <title>AWeb4Devs</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta charSet="UTF-8"/>
+          <meta name="description" content={this.props.description}/>
+          <meta name="keywords" content={""}/>
+          <title>{this.props.pageTitle}</title>
           <link rel="icon" type="image/png" href="/img/favicon.png" />
         </Head>
         <Header />

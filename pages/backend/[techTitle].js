@@ -24,7 +24,7 @@ export default function definitionBackend({
     );
   }
   return (
-    <Layout>
+    <Layout pageTitle={content.title}>
       <div>
         <DefinitionPage
           allContent={content}

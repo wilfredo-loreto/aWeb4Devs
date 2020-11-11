@@ -8,7 +8,7 @@ export default function results({ postsArticles, postsTechs }) {
   const { keyWord } = router.query;
 
   return (
-    <Layout>
+    <Layout pageTitle="Search Results...">
       <div>
         <SearchResults
           articles={postsArticles.articles}

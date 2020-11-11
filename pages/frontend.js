@@ -42,7 +42,7 @@ export async function getStaticProps() {
 
 function FrontEnd({ orderedChildrens, parents }) {
   return (
-    <Layout>
+    <Layout pageTitle="Main Frontend Technologies for Web Development">
       <div>
         <Concept
           title="Front-end"

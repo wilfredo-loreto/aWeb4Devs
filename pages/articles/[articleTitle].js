@@ -20,7 +20,7 @@ export default function article({ articleContent, relatedArticles }) {
     );
   }
   return (
-    <Layout>
+    <Layout pageTitle={articleContent.title}>
       <div>
         <ArticlePage
           articleContent={articleContent}

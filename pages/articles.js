@@ -4,7 +4,7 @@ import axios from "axios";
 
 function articles({ posts }) {
   return (
-    <Layout>
+    <Layout pageTitle="News and Articles about Web Development Technologies">
       <div>
         <ContentArticles articles={posts.articles} />
       </div>

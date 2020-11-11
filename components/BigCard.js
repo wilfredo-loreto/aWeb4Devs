@@ -1,6 +1,6 @@
 import styles from "./BigCard.module.scss";
 import Link from "next/link";
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 
 export default class BigCard extends Component {
   slugSyntax(link) {
