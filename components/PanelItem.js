@@ -1,4 +1,4 @@
-import styles from "./PanelItem.module.scss";
+import styles from "./panelitem.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 

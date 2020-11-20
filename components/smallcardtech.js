@@ -1,4 +1,4 @@
-import styles from "./Smallcard.module.scss";
+import styles from "./smallcard.module.scss";
 import Link from "next/link";
 
 function SmallCardTech({ img, title,type }) {

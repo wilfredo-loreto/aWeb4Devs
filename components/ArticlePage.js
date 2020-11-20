@@ -1,4 +1,4 @@
-import styles from "./DefinitionPage.module.scss";
+import styles from "./definitionpage.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import Axios from "axios";
@@ -229,8 +229,9 @@ export default class ArticlePage extends Component {
                       </a>
                     </Link>
                     <ul>
-                      {asideChilds[i].map((child,i) => (
+                      {asideChilds[i].map((child, i) => (
                         <Link
+                          key={"asideChildrens" + i}
                           href={
                             "/" +
                             child.type +

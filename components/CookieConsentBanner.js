@@ -1,4 +1,4 @@
-import styles from "./CookieConsentBanner.module.scss";
+import styles from "./cookieconsentbanner.module.scss";
 import React, { Component } from "react";
 
 export default class CookieConsentBanner extends Component {

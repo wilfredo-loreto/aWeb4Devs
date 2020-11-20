@@ -1,4 +1,4 @@
-import styles from "./ResultCard.module.scss";
+import styles from "./resultcard.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 

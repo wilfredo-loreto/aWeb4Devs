@@ -1,6 +1,6 @@
-import News from "../components/News";
-import Layout from "../components/Layout";
-import Carousel from "../components/Carousel";
+import News from "../components/news";
+import Layout from "../components/layout";
+import Carousel from "../components/carousel";
 import axios from "axios";
 
 export async function getStaticProps() {

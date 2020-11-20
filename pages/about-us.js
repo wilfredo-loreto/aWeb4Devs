@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import AboutUsContent from "../components/about-us";
 
 export default function aboutUs() {

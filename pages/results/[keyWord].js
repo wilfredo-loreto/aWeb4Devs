@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import SearchResults from "../../components/SearchResults";
+import Layout from "../../components/layout";
+import SearchResults from "../../components/searchresults";
 import axios from "axios";
 
 
@@ -20,10 +20,10 @@ export default function results({ postsArticles, postsTechs }) {
 export async function getServerSideProps(ctx) {
   const res = await Promise.all([
     axios.get(
-      "http://aweb4devsapi.herokuapp.com/search-articles/" + ctx.query.keyWord
+      "http://aweb4devsapi.herokuapp.com/search-articles/" + ctx.query.keyword
     ),
     axios.get(
-      "http://aweb4devsapi.herokuapp.com/search-techs/" + ctx.query.keyWord
+      "http://aweb4devsapi.herokuapp.com/search-techs/" + ctx.query.keyword
     ),
   ]);
 

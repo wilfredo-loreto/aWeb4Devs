@@ -1,4 +1,4 @@
-import styles from "./Concept.module.scss";
+import styles from "./concept.module.scss";
 
 import React, { Component } from "react";
 

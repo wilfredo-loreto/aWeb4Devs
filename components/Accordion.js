@@ -1,4 +1,4 @@
-import styles from "./Accordion.module.scss";
+import styles from "./accordion.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import AccordionItem from "./accordionitem";

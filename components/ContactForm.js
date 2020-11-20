@@ -1,4 +1,4 @@
-import styles from "./ContactForm.module.scss";
+import styles from "./contactform.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 

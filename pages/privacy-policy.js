@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import PrivacyPolicyContent from "../components/PrivacyPolicyContent";
+import Layout from "../components/layout";
+import PrivacyPolicyContent from "../components/privacypolicycontent";
 function PrivacyPolicy() {
   return (
     <Layout pageTitle="AWeb4Devs - Privacy Policy" description="Privacy Policies for AWeb4Devs Page. This privacy notice applies to all information collected through our

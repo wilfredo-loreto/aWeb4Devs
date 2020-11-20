@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import Concept from "../components/Concept";
-import Accordion from "../components/Accordion";
+import Layout from "../components/layout";
+import Concept from "../components/concept";
+import Accordion from "../components/accordion";
 import axios from "axios";
 
 export async function getStaticProps() {
