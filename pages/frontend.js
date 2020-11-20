@@ -42,7 +42,7 @@ export async function getStaticProps() {
 
 function FrontEnd({ orderedChildrens, parents }) {
   return (
-    <Layout pageTitle="Main Frontend Technologies for Web Development" description="The frontend of a website or software is everything with which the user interacts. From a developer, it is design and the programming that makes the interface works correctly.">
+    <Layout pageTitle="AWeb4Devs - Frontend Technologies" description="The frontend of a website or software is everything with which the user interacts. From a developer, it is design and the programming that makes the interface works correctly.">
       <div>
         <Concept
           title="Front-end"
