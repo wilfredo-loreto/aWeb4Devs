@@ -13,7 +13,7 @@ function SmallCardArticle({ img, title, type }) {
   };
 
   return (
-    <Link href={"/" + type + "/" + slugSyntax(title)}>
+    <Link href={"/articles/" + slugSyntax(title)}>
       <div className={styles.smallcard} style={background}>
         <h3 className={styles.articletitle}>{title}</h3>
         <button className={styles.morebutton}>More</button>
