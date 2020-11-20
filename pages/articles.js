@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
-import ContentArticles from "../components/ContentArticles";
+import Layout from "../components/layout";
+import ContentArticles from "../components/contentarticles";
 import axios from "axios";
 
 function articles({ posts }) {

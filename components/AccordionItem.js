@@ -1,4 +1,4 @@
-import styles from "./AccordionItem.module.scss";
+import styles from "./accordionItem.module.scss";
 import React, { Component } from "react";
 import PanelItem from "./panelitem";
 

@@ -1,4 +1,4 @@
-import styles from "./DefinitionPage.module.scss";
+import styles from "./definitionpage.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 import Axios from "axios";
@@ -196,7 +196,7 @@ export default class ArticlePage extends Component {
               <React.Fragment>
                 <h4>Related Articles</h4>
                 <ul>
-                  {this.props.relatedArticles.map((title) => (
+                  {this.props.relatedArticles.map((title,i) => (
                     <Link key={"asideArticles" + i} href={"/articles/" + this.slugSyntax(title)}>
                       <a>
                         <div>
@@ -229,8 +229,9 @@ export default class ArticlePage extends Component {
                       </a>
                     </Link>
                     <ul>
-                      {asideChilds[i].map((child) => (
+                      {asideChilds[i].map((child, i) => (
                         <Link
+                          key={"asideChildrens" + i}
                           href={
                             "/" +
                             child.type +

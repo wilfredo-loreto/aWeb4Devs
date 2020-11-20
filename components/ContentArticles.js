@@ -1,6 +1,6 @@
-import styles from "./ContentArticles.module.scss";
+import styles from "./contentarticles.module.scss";
 import React, { Component } from "react";
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "./articlecard";
 
 import Pagination from "./pagination";
 

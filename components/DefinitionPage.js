@@ -1,4 +1,4 @@
-import styles from "./DefinitionPage.module.scss";
+import styles from "./definitionpage.module.scss";
 import Link from "next/link";
 import React, { Component } from "react";
 
@@ -114,7 +114,7 @@ export default class DefinitionPage extends Component {
                   </a>
                 </Link>
                 <ul>
-                  {this.props.asideChildrens[i].map((child) => (
+                  {this.props.asideChildrens[i].map((child, i) => (
                     <Link
                       key={"asideChildrens" + i}
                       href={

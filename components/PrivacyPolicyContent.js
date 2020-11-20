@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./PrivacyPolicyContent.module.scss";
+import styles from "./privacypolicycontent.module.scss";
 
 function PrivacyPolicyContent() {
   return (

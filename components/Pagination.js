@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./ContentArticles.module.scss";
+import styles from "./contentarticles.module.scss";
 
 const propTypes = {
   items: PropTypes.array.isRequired,

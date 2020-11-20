@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import ArticlePage from "../../components/ArticlePage";
+import Layout from "../../components/layout";
+import ArticlePage from "../../components/articlepage";
 import axios from "axios";
 import { useRouter } from "next/router";
 

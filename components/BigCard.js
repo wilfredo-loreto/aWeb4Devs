@@ -1,4 +1,4 @@
-import styles from "./BigCard.module.scss";
+import styles from "./bigcard.module.scss";
 import Link from "next/link";
 import React, { Component} from "react";
 
