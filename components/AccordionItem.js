@@ -10,7 +10,7 @@ export default class AccordionItem extends Component {
         <div
           id={this.props.accordionId}
           className={
-            this.props.title != "html"
+            this.props.title != "HTML"
               ? styles.accordionItem
               : [styles.accordionItem, styles.orderNegative2].join(" ")
           }
@@ -33,7 +33,7 @@ export default class AccordionItem extends Component {
         <div
           id={this.props.panelId}
           className={
-            this.props.title != "html"
+            this.props.title != "HTML"
               ? styles.panel
               : [styles.panel, styles.orderNegative1].join(" ")
           }

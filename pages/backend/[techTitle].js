@@ -49,8 +49,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  function unSlug(link) {
+    return link.split("-").join(" ");
+  }
   const res = await Promise.all([
-    axios.get(`https://aweb4devsapi.herokuapp.com/tech/${params.techtitle}`),
+    axios.get(`https://aweb4devsapi.herokuapp.com/tech/${unSlug(params.techtitle)}`),
     axios.get(`https://aweb4devsapi.herokuapp.com/aside-techs/backend`),
   ]);
 

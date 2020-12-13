@@ -51,14 +51,10 @@ export async function getStaticProps({ params }) {
   }
   const res = await Promise.all([
     axios.get(
-      `https://aweb4devsapi.herokuapp.com/article/${unSlug(
-        params.articletitle
-      )}`
+      `https://aweb4devsapi.herokuapp.com/article/${unSlug(params.articletitle)}`
     ),
     axios.get(
-      `https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(
-        params.articletitle
-      )}`
+      `https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(params.articletitle)}`
     ),
   ]);
 
