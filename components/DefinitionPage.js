@@ -39,7 +39,7 @@ export default class DefinitionPage extends Component {
           finalContent.push(
             <img
               className={styles.imageSizes}
-              src={"/img/" + block.content.src}
+              src={"/img/" + block.content.img}
               alt={block.content.alt}
             />
           );
