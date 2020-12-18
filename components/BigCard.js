@@ -4,7 +4,7 @@ import React, { Component} from "react";
 
 export default class BigCard extends Component {
   slugSyntax(link) {
-    return link.split(" ").join("-");
+    return link.split(" ").join("-").replace("?","%3F");
   }
   MouseOver(event) {
     event.target.style.background = `linear-gradient(180deg,rgba(68, 68, 68, 0.56) 99.98%,rgba(68, 68, 68, 0.5) 99.99%,rgba(255, 255, 255, 0) 100%),url(/img/${this.props.img})`;

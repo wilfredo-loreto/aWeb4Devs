@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function SmallCardTech({ img, title,type }) {
   function slugSyntax(link) {
-    return link.split(" ").join("-");
+    return link.split(" ").join("-").replace("?","%3F");
   }
   return (
     <Link href={"/" + type + "/"+ slugSyntax(title)}>

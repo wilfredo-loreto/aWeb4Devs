@@ -124,3 +124,19 @@
     height: 50vh;
   }
 }
+
+@media screen and (max-width:900px){
+  .maincontainer {
+    height: 115vh;
+  }
+}
+@media screen and (max-width:800px){
+  .maincontainer {
+    height: 130vh;
+  }
+}
+@media screen and (max-width:1000px){
+  .maincontainer {
+    height: 100vh;
+  }
+}

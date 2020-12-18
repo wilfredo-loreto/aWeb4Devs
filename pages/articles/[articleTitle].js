@@ -37,27 +37,33 @@ export async function getStaticPaths() {
   const articles = (await res).data.articles;
 
   const paths = articles.map((article) => ({
-    params: { articletitle: article.title.split(" ").join("-") },
+    params: { articletitle: article.title.split(" ").join("-").replace("?","%3F") },
   }));
   return {
     paths,
-    fallback: true,
+    fallback: true, 
   };
 }
-
+ 
 export async function getStaticProps({ params }) {
   function unSlug(str) {
     return str.split("-").join(" ");
   }
+  function fixedEncodeURIComponent(str) {
+    return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+      return '%' + c.charCodeAt(0).toString(16);
+    });
+  }
+  let request = fixedEncodeURIComponent(unSlug(params.articletitle))
   const res = await Promise.all([
     axios.get(
-      `https://aweb4devsapi.herokuapp.com/article/${unSlug(params.articletitle)}`
+      `https://aweb4devsapi.herokuapp.com/article/${request}`
     ),
     axios.get(
-      `https://aweb4devsapi.herokuapp.com/article/aside/${unSlug(params.articletitle)}`
+      `https://aweb4devsapi.herokuapp.com/article/aside/${request}`
     ),
   ]);
-
+  console.log(fixedEncodeURIComponent(unSlug(params.articletitle)));
   return {
     props: {
       articleContent: res[0].data.article,

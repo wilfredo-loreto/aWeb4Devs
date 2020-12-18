@@ -15,7 +15,7 @@ export default class ArticlePage extends Component {
     return link.slice(0, 25) + "...";
   }
   slugSyntax(link) {
-    return link.split(" ").join("-");
+    return link.split(" ").join("-").replace("?","%3F");
   }
 
   componentDidMount() {
