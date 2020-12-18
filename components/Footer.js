@@ -1,7 +1,13 @@
 import styles from "./footer.module.scss";
 import Link from "next/link";
+import axios from "axios";
 
 export default function Footer() {
+  var contact = {
+    email: "",
+    content: ""
+  }
+
   return (
     <div className={styles.maincontainer}>
       {/* First container: logo, icons and a small text */}
@@ -107,14 +113,18 @@ export default function Footer() {
           <h5 className={styles.titles}>Contact us</h5>
           <div className={styles.fieldscontainer}>
             <input
+              onChange = {(e) => contact.email = e.target.value}
               className={styles.emailfield}
               type="email"
               placeholder="Email"
+              id="email"
             />
             <textarea
+              onChange = {(e) => contact.content = e.target.value}
               className={styles.messagefield}
               placeholder="Message..."
               rows="5"
+              id= "message"
             />
           </div>
           <div className={styles.rowcontainer}>
@@ -128,11 +138,38 @@ export default function Footer() {
               </p>
             </div>
             <div className={styles.sendbutton}>
-              <button type="submit">Send</button>
+              <button onClick = {() => sendEmail(contact)} type="button">Send</button>
             </div>
           </div>
         </form>
       </div>
     </div>
   );
+}
+
+async function sendEmail(contact){
+
+    var email = document.getElementById("email");
+    var message = document.getElementById("message");
+    var url = "http://aweb4devsapi.herokuapp.com/mail";
+    var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+    if (emailRegex.test(contact.email)) {
+      email.value = "";
+      message.value = "";
+
+      try{
+        const sendContactEmail = axios.post(url, contact);
+        const res = (await sendContactEmail).data;
+        console.log(res);
+
+      }catch(err){
+        console.log(err);
+      }
+
+
+    } else {
+      alert("The email is not valid");
+    }
+
 }
