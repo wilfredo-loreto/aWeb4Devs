@@ -103,7 +103,7 @@ export default function Footer() {
 
       {/* Third container: contact form */}
       <div className={styles.colcontainer}>
-        <form action="">
+        <form action="mailto:support@aweb4devs.com">
           <h5 className={styles.titles}>Contact us</h5>
           <div className={styles.fieldscontainer}>
             <input

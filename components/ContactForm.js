@@ -12,7 +12,7 @@ export default class ContactInfo extends Component {
   render() {
     return (
       // Form of the contact page
-      <form className={styles.form}>
+      <form className={styles.form} action="mailto:support@aweb4devs.com">
         <div className={styles.mainContainer}>
           <div className={styles.fieldsContainer}>
             <div className={styles.field}>

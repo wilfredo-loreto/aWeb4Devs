@@ -49,6 +49,8 @@
       background: none;
       color: $background-color;
       @include fontSize(text);
+      text-overflow: ellipsis;
+      height: 27px;
     }
   }
 }
