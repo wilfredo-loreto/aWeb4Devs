@@ -14,6 +14,7 @@ export default class ContactInfo extends Component {
               <a
                 className={styles.emailWhatsapp}
                 href="https://api.whatsapp.com/send?phone=584244320635&text=Hello!%20Can%20i%20have%20information%20about%20aWeb4Devs.com%3F"
+                target="_blank"
               >
                 <img src="/icons/whatsapp.svg" alt="whatsapp logo" />
                 <span className={styles.hiddenMobile}>+58 4244320635</span>
