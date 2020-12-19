@@ -211,6 +211,11 @@
     }
 
     .aside {
+      width: 100%;
+      .asideContent{
+        width: 100%;
+      }
+       
       .logo {
         display: none;
       }
