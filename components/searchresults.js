@@ -1,6 +1,5 @@
 import styles from "./searchresults.module.scss";
 import ResultCard from "./resultcard";
-import Link from "next/link";
 import React, { Component } from "react";
 
 export default class SearchResults extends Component {
