@@ -15,7 +15,7 @@ export default class ArticleCard extends Component {
   render() {
     var data = this.props.data;
     var date = this.shortDate();
-    var link = this.slugSyntax(data.title);
+    var link = this.slugSyntax(data.title).replace("?","%3F");
     return (
       /* Article Card  */
       <div title={data.summary} className={styles.globalContainer}>
