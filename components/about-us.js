@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function AboutUsContent() {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.rowContainer}>
+      <div className={styles.rowContainer}> 
         <div>
           <h3>Who we are?</h3>
           <p>Hello! We are Wilfredo Loreto and Anderson Arciniegas.</p>
