@@ -11,13 +11,16 @@ export default class ContactInfo extends Component {
           <div className={styles.colContainer}>
             <span className={styles.subtitle}>Get in Touch</span>
             <div className={styles.rrssContainer}>
-              <a className={styles.emailWhatsapp} href="">
+              <a
+                className={styles.emailWhatsapp}
+                href="https://api.whatsapp.com/send?phone=584244320635&text=Hello!%20Can%20i%20have%20information%20about%20aWeb4Devs.com%3F"
+              >
                 <img src="/icons/whatsapp.svg" alt="whatsapp logo" />
                 <span className={styles.hiddenMobile}>+58 4244320635</span>
               </a>
             </div>
             <div className={styles.rrssContainer}>
-              <a className={styles.emailWhatsapp} href="">
+              <a className={styles.emailWhatsapp} href="mailto: aweb4devs@gmail.com">
                 <img src="/icons/email.svg" alt="email logo" />
                 <span className={styles.hiddenMobile}>
                   support@<span className={styles.break}> </span>aweb4devs.com

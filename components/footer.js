@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </a>
 
-        <a href="mailto: support@aweb4devs.com">
+        <a href="mailto: aweb4devs@gmail.com">
           <div className={styles.email}>
             <img
               className={styles.footericon}
