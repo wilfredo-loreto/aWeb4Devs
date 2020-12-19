@@ -1,7 +1,7 @@
 import styles from "./news.module.scss";
 import SmallCardArticle from "./smallcardarticle";
 import SmallCardTech from "./smallcardtech"
-import BigCard from "./bigCard";
+import BigCard from "./bigcard";
 import React, { Component } from "react";
 export default class News extends Component {
   render() {

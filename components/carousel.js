@@ -1,5 +1,4 @@
 import styles from "./carousel.module.scss";
-import Link from "next/link";
 import React, { Component } from "react";
 import CarouselCard from "./carouselcard";
 

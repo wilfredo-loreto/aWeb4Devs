@@ -1,4 +1,4 @@
-import styles from "./PrivacyPolicyContent.module.scss";
+import styles from "./privacypolicycontent.module.scss";
 
 export default function CookiesPolicyContent() {
   return (
