@@ -16,7 +16,7 @@
 
 @media only screen and #{$breakpoint-mobile} {
   .carouselCard {
-    border-radius: 10px;
+   
     height: 20vh;
 
     .image {
@@ -28,7 +28,7 @@
 
 @media only screen and #{$breakpoint-tablet2} {
   .carouselCard {
-    border-radius: 10px;
+
     height: 35vh;
 
     .image {

@@ -148,7 +148,7 @@
 
 @media only screen and #{$breakpoint-tablet2} {
   .articlesContainer {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 50% 50% !important;
     grid-auto-rows: 355px;
   }
   .options {
@@ -161,7 +161,7 @@
     width: 93% !important;
     padding-left: 7% !important;
     padding-top: 5% !important;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 100% !important;
     grid-auto-rows: 355px;
   }
 
