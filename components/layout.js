@@ -66,7 +66,7 @@ export default class Layout extends Component {
   }
 
   render() {
-    const generalKeywords = "web,web development,web application,web page,application,website,developers,frontend,backend,full-stack,app"
+    const generalKeywords = "dev,devs,web,web development,web application,web page,application,website,developers,frontend,backend,full-stack,app"
   
     if(this.props.keywords != null){
       const customKeywords = this.props.keywords.join(",")

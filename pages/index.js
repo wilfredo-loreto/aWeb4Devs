@@ -4,11 +4,7 @@ import Carousel from "../components/carousel";
 import axios from "axios";
 
 export async function getStaticProps() {
-  // params contains the post `id`.
-  // If the route is like /posts/1, then params.id is 1
-  function unSlug(link) {
-    return link.split("-").join(" ");
-  }
+ 
 
   var res = await Promise.all([
     axios.get(`https://aweb4devsapi.herokuapp.com/homepage/news/3articles`),
@@ -30,8 +26,7 @@ export async function getStaticProps() {
       frontendCarousel: frontendTechs,
       backendCarousel: res[2].data.techs,
     },
-    // Re-generate the post at most once per second
-    // if a request comes in
+    
     revalidate: 86400,
   };
 }
