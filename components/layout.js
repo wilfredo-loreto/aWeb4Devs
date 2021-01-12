@@ -84,6 +84,7 @@ export default class Layout extends Component {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <meta charSet="UTF-8"/>
+          <meta name="google-site-verification" content="fEItVepHn_jJoO8-KuJjTRlibnbsp-EwZsQqTmJG82M" />
           <meta name="description" content={this.props.description}/>
           {this.props.keywords ? <meta name="keywords" content={allKeywords}/>:<meta name="keywords" content={generalKeywords}/>}
           <title>{this.props.pageTitle}</title>
