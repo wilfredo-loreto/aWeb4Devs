@@ -1,0 +1,54 @@
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            
+                        <url>
+                            <loc>https://aweb4devs.com/about-us</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/articles</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/backend</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/contact</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/cookies-policy</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/frontend</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/privacy-policy</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/articles/[articletitle]</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/backend/[techtitle]</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/frontend/[techtitle]</loc>
+                        </url>
+                    
+                        <url>
+                            <loc>https://aweb4devs.com/results/[keyword]</loc>
+                        </url>
+                    
+        </urlset>
+    

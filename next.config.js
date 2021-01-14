@@ -4,5 +4,15 @@ module.exports = withSass(withFonts({
   webpack(config, options) {
    return config
   },
-  cssModules: true
+  cssModules: true,
+  
 }))
+module.exports = {
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./components/generate-sitemap');
+    }
+
+    return config;
+  }
+};
