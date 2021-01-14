@@ -86,6 +86,7 @@ export default class Layout extends Component {
           <meta charSet="UTF-8"/>
           <meta name="google-site-verification" content="fEItVepHn_jJoO8-KuJjTRlibnbsp-EwZsQqTmJG82M" />
           <meta name="description" content={this.props.description}/>
+          {this.props.noIndexPage ? <meta name="robots" content="noindex"/> : null}
           {this.props.keywords ? <meta name="keywords" content={allKeywords}/>:<meta name="keywords" content={generalKeywords}/>}
           <title>{this.props.pageTitle}</title>
           <link rel="icon" type="image/png" href="/img/favicon.png" />
