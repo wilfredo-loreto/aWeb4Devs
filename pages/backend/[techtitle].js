@@ -40,7 +40,7 @@ export async function getStaticPaths() {
   const res = axios.get("http://aweb4devsapi.herokuapp.com/techs/backend");
   const techs = (await res).data.techs;
   const paths = techs.map((tech) => ({
-    params: { techtitle: tech.title.split(" ").join("-") },
+    params: { techtitle: tech.title.split(" ").join("-").replace("?","%3F") },
   }));
   return {
     paths,
