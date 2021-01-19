@@ -29,9 +29,9 @@ const axios = require("axios");
   const frontendTechs = (await res[1]).data.techs;
   const backendTechs = (await res[2]).data.techs;
 
-  const articlesRoutes = articles.map(article => article.title.split(" ").join("-").replace("?","%3F") )
-  const frontendRoutes = frontendTechs.map(tech => tech.title.split(" ").join("-").replace("?","%3F") )
-  const backendRoutes = backendTechs.map(tech => tech.title.split(" ").join("-").replace("?","%3F") )
+  const articlesRoutes = articles.map(article => article.title.split(" ").join("-").replace("?","%3F").replace("&","&amp;").replace("<","&lt;").replace(">","gt;") )
+  const frontendRoutes = frontendTechs.map(tech => tech.title.split(" ").join("-").replace("?","%3F").replace("&","&amp;").replace("<","&lt;").replace(">","gt;") )
+  const backendRoutes = backendTechs.map(tech => tech.title.split(" ").join("-").replace("?","%3F").replace("&","&amp;").replace("<","&lt;").replace(">","gt;") )
  
   const xmlArticlesList = `
   ${articlesRoutes
