@@ -49,7 +49,7 @@ const axios = require("axios");
       .map(techTitleSlugSyntax => {
           return `
         <url>
-          <loc>${`https://aweb4devs.com/articles/${techTitleSlugSyntax}`}</loc>
+          <loc>${`https://aweb4devs.com/frontend/${techTitleSlugSyntax}`}</loc>
           <lastmod>${getDate}</lastmod>
         </url>`;
       })
@@ -60,7 +60,7 @@ const axios = require("axios");
       .map(techTitleSlugSyntax => {
           return `
         <url>
-          <loc>${`https://aweb4devs.com/articles/${techTitleSlugSyntax}`}</loc>
+          <loc>${`https://aweb4devs.com/backend/${techTitleSlugSyntax}`}</loc>
           <lastmod>${getDate}</lastmod>
         </url>`;
       })
